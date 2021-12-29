@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="ArtBro">
+	<title>Статья</title>
+	<link rel="stylesheet" href="./assets/style/css/libraries/swiper-bundle.min.css">
+	<link rel="stylesheet" href="./assets/style/css/style.css">
+</head>
+
+<body>
+	<div class="page article-pg">
+		<!-- HEADER -->
+		<header class="header">
+			<!-- header top -->
+			<div class="header__top">
+				<div class="header__top-container container">
+					<!-- header top left -->
+					<div class="header__top-left">
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Бесплатная доставка
+						</div>
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Монтаж
+						</div>
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Техническое обслуживание
+						</div>
+					</div>
+					<!-- header top right -->
+					<div class="header__top-right">
+						<div class="firm-info firm-info--clock">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+								</use>
+							</svg>
+							пн-пт 09:00 - 19:00
+						</div>
+						<!-- massangers -->
+						<div class="header__sci sci">
+							<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--phone" href="tel:+78125651163">
+								+7&nbsp;(812)&nbsp;565-11-63</span>
+							</a>
+						</div>
+						<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+								</use>
+							</svg>
+							info@avtocharge.ru
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="header__container container">
+				<!-- header middle -->
+				<div class="header__middle">
+					<!-- separable links -->
+					<div class="header__separable-links separable-links">
+						<a href="#">Для частного использования</a>
+						<a href="#">Решения для бизнеса</a>
+						<a href="#">Для гос предприятий</a>
+					</div>
+					<!-- search -->
+					<form class="header__search search" data-search-panel>
+						<div class="search__inner">
+							<input class="search__input" type="search" placeholder="Поиск">
+							<button class="search__submit" type="button" aria-label="Закрыть поиск"
+								data-search-close="">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+								</svg>
+							</button>
+							<button class="search__close" type="button" aria-label="Закрыть поиск" data-search-close="">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.97 47.97">
+									<path
+										d="M28.23,24,47.09,5.12A3,3,0,0,0,42.85.88L24,19.74,5.12.88A3,3,0,0,0,.88,5.12L19.74,24,.88,42.85A3,3,0,0,0,3,48a3,3,0,0,0,2.12-.88L24,28.23,42.85,47.09a3,3,0,0,0,4.24-4.24Z">
+									</path>
+								</svg>
+							</button>
+						</div>
+					</form>
+					<!-- button -->
+					<button class="header__callback btn-t btn-t--size_l" aria-label="Заказать звонок">Заказать
+						звонок</button>
+				</div>
+				<!-- header bottom -->
+				<div class="header__bottom">
+					<!-- logo -->
+					<a class="header__logo logo" href="#">
+						<img src="./assets/img/logo.svg" alt="logo">
+					</a>
+					<!-- hamburger -->
+					<button class="header__hamburger hamburger" type="button">
+						<span></span>
+						<b>Меню</b>
+					</button>
+					<!-- mobile tel -->
+					<a class="firm-info firm-info--phone" href="tel:+78125651163">
+						<svg class="firm-info__ic">
+							<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+							</use>
+						</svg>
+					</a>
+					<!-- burger -->
+					<div class="header__burger">
+						<div class="header__burger-inner">
+							<!-- separable links -->
+							<div class="separable-links">
+								<a href="#">Для частного использования</a>
+								<a href="#">Решения для бизнеса</a>
+								<a href="#">Для гос предприятий</a>
+							</div>
+							<!-- navigation -->
+							<nav class="header__nav">
+								<ul class="header__menu menu">
+									<li class="menu__item menu__item--drop">
+										<button class="menu__item-toggle hamburger" type="button"
+											aria-label="Открыть подменю">
+											<span></span>
+										</button>
+										<a class="menu__link" href="#"><span>Каталог</span></a>
+										<ul class="menu__submenu  js-tree-menu">
+											<li class="menu__item">
+												<a class="menu__link" href="#">
+													<span>Зарядные станции</span>
+													<span class="menu__arr">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</a>
+												<ul class="menu__submenu">
+													<li class="menu__item">
+														<a class="menu__link" href="#"><span>Зарядный кабель</span></a>
+													</li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Сервисное оборудование
+															</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Адаптеры</span></a></li>
+												</ul>
+											</li>
+											<li class="menu__item">
+												<a class="menu__link" href="#">
+													<span>Аксессуары</span>
+													<span class="menu__arr">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</a>
+												<ul class="menu__submenu">
+													<li class="menu__item">
+														<a class="menu__link" href="#"><span>Зарядный кабель</span></a>
+													</li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Сервисное оборудование
+															</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Адаптеры</span></a></li>
+													<li class="menu__item"><a class="menu__link" href="#"><span>Колонны
+																для
+																монтажа</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Запчасти</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Держатель кабеля</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Другое</span></a></li>
+												</ul>
+											</li>
+											<li class="menu__item">
+												<a class="menu__link" href="#">
+													<span>Управление и учет зарядными станциями</span>
+													<span class="menu__arr">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</a>
+												<ul class="menu__submenu">
+													<li class="menu__item"><a class="menu__link" href="#"><span>Колонны
+																для
+																монтажа</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Запчасти</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Держатель кабеля</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Другое</span></a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>База знаний</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">
+											<span>Обзоры</span>
+										</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>О компании</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Доставка и оплата</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Контакты</span></a>
+									</li>
+								</ul>
+							</nav>
+							<div class="firm-info firm-info--clock">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+									</use>
+								</svg>
+								пн-пт 09:00 - 19:00
+							</div>
+							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+									</use>
+								</svg>
+								info@avtocharge.ru
+							</a>
+							<!-- massangers -->
+							<div class="header__sci sci">
+								<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+									</svg>
+								</a>
+								<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+									</svg>
+								</a>
+								<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+									</svg>
+								</a>
+							</div>
+
+						</div>
+					</div>
+					<!-- row -->
+					<div class="header__bottom-row">
+						<!-- search toggle -->
+						<button class="header__search-toggle" button="button" aria-label="Показать поиск"
+							data-search-toggle="">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+							</svg>
+						</button>
+						<a class="icon-link icon-link--account" href="#">
+							<div class="icon-link__icon-wrap">
+								<svg class="icon-link__ic">
+									<use xlink:href="./assets/img/icons/sprite.svg#user"></use>
+								</svg>
+							</div>
+							<span class="icon-link__text">Кабинет</span>
+						</a>
+						<a class="icon-link icon-link--favourites" href="#">
+							<div class="icon-link__icon-wrap">
+								<svg class="icon-link__ic">
+									<use xlink:href="./assets/img/icons/sprite.svg#heart"></use>
+								</svg>
+								<strong>0</strong>
+							</div>
+
+							<span class="icon-link__text">Закладки</span>
+
+						</a>
+						<a class="icon-link icon-link--basket" href="#">
+							<div class="icon-link__icon-wrap">
+								<svg class="icon-link__ic">
+									<use xlink:href="./assets/img/icons/sprite.svg#basket"></use>
+								</svg>
+								<strong>0</strong>
+							</div>
+							<span class="icon-link__text">Корзина</span>
+
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- BREAD CRUMB -->
+		<div class="bread-crumb">
+			<div class="bread-crumb__container container">
+				<a href="#" class="bread-crumb__item">Главная</a>
+				<span class="bread-crumb__item">База знаний</span>
+			</div>
+		</div>
+		<div class="content-wrap">
+			<!-- MAIN -->
+			<main>
+				<div class="article-fl">
+					<!-- article head -->
+					<div class="article-fl__head">
+						<div class="article-fl__head-container container-l">
+							<!-- bg -->
+							<div class="article-fl__head-bg">
+								<picture>
+									<source srcset="./assets/img/pages/article-fl/bg-1.jpg" type="image/webp">
+									<img class="fit-cover" src="./assets/img/pages/article-fl/bg-1.jpg" alt="">
+								</picture>
+							</div>
+							<!-- content -->
+							<div class="article-fl__head-textBox">
+								<div class="container">
+									<h1>
+										Audi e-tron: особенности и преимущества нового электромобиля
+									</h1>
+									<p>
+										Обзор линейки самых необычных электромобилей бренда Audi
+									</p>
+									<div class="article-fl__head-meta note-meta">
+										<div class="note-meta__item note-meta__item--date">
+											<svg class="firm-info__ic">
+												<use xlink:href="assets/img/icons/sprite.svg#clock_fill">
+												</use>
+											</svg>
+											19/05/2021
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- article body -->
+					<div class="article-fl__body text text--lh_s">
+						<div class="container">
+							<div class="topics-article">
+								<div class="topics-article__title">По теме:</div>
+								<div class="topics-article__list-wrap">
+									<div class="topics-article__list">
+										<!-- card -->
+										<div class="topics-article__card">
+											<div class="topics-article__card-img">
+												<img src="./assets/img/components/articles/img-1.jpg" alt="">
+											</div>
+											<div class="topics-article__card-text">
+												<div class="topics-article__card-title">
+													Обзор зарядок для электромобилей
+												</div>
+												<div class="topics-article__card-desc">
+													CCS Combo против CHAdeMO: битва окончена, и кто победил?
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p>
+								В основе проекта Audi e-tron лежит «матрица» разработок MLB evo, которая изначально не
+								планировалась как проекция электромобиля. Руководство рассчитывало на быстрый результат,
+								планируя в перспективе выпуск седана Audi e-tron GT, созданный на платформе Premium
+								Platform Electric (РРЕ).
+							</p>
+							<q>
+								<b>
+									Запас хода электрокара Audi e-tron — 304 км. Эта цифра высвечивается на дисплее
+									электрокара при условии, что батарея заряжена до отказа. У первого серийного
+									представителя электромобилей семейства Ауди запас хода был солидней — 417 км,
+									согласно процедуре WLTR.
+								</b>
+							</q>
+							<p>
+								Комплектация е-трона — типичная для электрокаров с полным приводом:</p>
+							<ul style="margin-top: 0;">
+								<li>литий-ионная АКБ, размещённая в пространстве под полом;</li>
+								<li>инверторы, которые установлены над передней осью;</li>
+								<li>два электродвижка, расположенных поперечно друг другу.</li>
+							</ul>
+							<p>
+								Батарейный отсек из алюминия повлиял на жёсткость кузова в плане кручения в лучшую
+								сторону, но интеграции в силовую структуру не произошло, как у аналога (имеется в виду
+								Тайкан). Из-за этого у модели появился «лишний вес» — две с половиной тонны. По
+								сравнению с более габаритным электрокаром Тесла Model X, новинка Ауди тяжелее на 50
+								килограммов.
+							</p>
+							<p>
+								Если сравнивать размеры е-трона, можно сказать, что он — «золотая» середина между
+								кроссоверами средних и крупных габаритов. E-tron превосходит по размерам электромобили
+								I-Pacе от Ягуар, EQC от концерна Мерседес. Но, по сравнению с Теслой, он считается
+								компактным — всего 4901 мм длиной.
+							</p>
+							<p>
+								Асинхронные электродвигатели — результат собственной разработки компании.
+							</p>
+							<p>
+								По показателям суммарной отдачи в пике модель уступает полноприводным авто Тесла, но
+								примерно схожа с ягуаровскими: у е-трона — 300 кВт, у Ягуара — 296. Но существует один
+								момент, который объединяет электрокары Тесла и e-tron — разница в мощности у переднего и
+								заднего движка. Задний немного мощнее — 165 кВт, передний — 135 кВт.
+							</p>
+							<p>
+								Салон практически идентичен внутреннему содержанию автомобилей Audi А7, А8 — те же
+								угловатые сенсорные панели и приборы. Но разработчики всё же приготовили для
+								пользователей пару сюрпризов в виде дисплеев и опционных камер в конструкции дверей,
+								взамен обычных наружных зеркал. Но минус у виртуальных зеркал всё же есть — блики
+								дисплеев при ярком солнечном свете.
+							</p>
+							<p>
+								Что касается «пуска», он срабатывает после нажатия кнопки, как в обычной машине. Широкий
+								подладонник на левом торце заменяет селектор трансмиссии. У него нефиксированный
+								двигатель. Активность S-режима у Ауди сохраняется в течение 8 секунд. Причина такого
+								короткого промежутка времени — нагрев электрических силовых агрегатов, в связи с этим
+								следующий разгон происходит медленнее предыдущего, при условии небольшого перерыва между
+								действиями. Но главным сдерживающим критерием инженеры считают температурный режим АКБ,
+								а не движков.
+							</p>
+							<p>
+								К контролю терморежима электрических компонентов у разработчиков серьёзный подход.
+								Система охлаждения с собственным радиатором содержит 20 литров охлаждающей субстанции,
+								которая проходит не только внутри электромоторов, но и через сеть аккумулятора, через
+								отопитель салона. В результате в холодное время года можно сэкономить на обогреве.
+								Специалисты концерна Ауди гарантируют, что проблем с автомобилем не возникнет вплоть до
+								−30 градусов. Но, всё же, советуют оставлять е-трон подключённым к электричеству, если
+								столбик термометра опустился ниже —10 градусов по Цельсию.
+							</p>
+						</div>
+						<div class="container-l">
+							<div class="img-slider-wrap slider-wrap">
+								<!-- slider -->
+								<div class="img-slider swiper">
+									<div class="swiper-wrapper">
+										<!-- slide -->
+										<div class="img-slider__slide swiper-slide" data-label="Ellica EV Speed model">
+											<picture>
+												<source srcset="./assets/img/pages/article-fl/bg-1.jpg"
+													type="image/webp">
+												<img class="fit-cover" src="./assets/img/pages/article-fl/bg-1.jpg"
+													alt="">
+											</picture>
+										</div>
+										<!-- slide -->
+										<div class="img-slider__slide swiper-slide" data-label="Еще какой-то заголовок">
+											<picture>
+												<source srcset="./assets/img/pages/article-fl/bg-1.jpg"
+													type="image/webp">
+												<img class="fit-cover" src="./assets/img/pages/article-fl/bg-1.jpg"
+													alt="">
+											</picture>
+										</div>
+										<!-- slide -->
+										<div class="img-slider__slide swiper-slide">
+											<picture>
+												<source srcset="./assets/img/pages/article-fl/bg-1.jpg"
+													type="image/webp">
+												<img class="fit-cover" src="./assets/img/pages/article-fl/bg-1.jpg"
+													alt="">
+											</picture>
+										</div>
+									</div>
+								</div>
+								<div class="img-slider-bottom">
+									<!-- pagination -->
+									<div class="img-slider-pagination slider-pagination"></div>
+									<!-- label -->
+									<div class="img-slider__label">
+										Ellica EV Speed model
+									</div>
+									<!-- nav -->
+									<div class="img-slider-nav slider-nav">
+										<button class="slider-arr slider-arr--prev">
+											<svg>
+												<use xlink:href="./assets/img/icons/sprite.svg#arr-tr-right">
+												</use>
+											</svg>
+										</button>
+										<button class="slider-arr slider-arr--next">
+											<svg>
+												<use xlink:href="./assets/img/icons/sprite.svg#arr-tr-right">
+												</use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="container">
+							<p>
+								Рекуперация слабоватая (около 0,15g), но, по утверждению инженерного штаба Audi, было
+								принято решение придерживаться «комфортной» концепции в этом плане. Объясняют это
+								экономическим аспектом — накат считается эффективным. Засчёт отличной навигационной
+								системы, электромобиль сам «знает»: где нужно ускориться, а где — притормозить.
+								Автономное управление пока запрещено, поэтому речь не идёт о внедрении полноценного
+								автопилота.
+							</p>
+							<p>
+								В базовой комплектации у Audi e-Tron имеется пневмоподвеска.
+							</p>
+							<p>
+								Приятный момент: как и у других представителей автомобильной электрической индустрии, у
+								е-Трон отсутствует громкий звук, он укутан звукоизоляцией, шумопоглощающими матами.
+								Также необходимо учесть, что двойные стёкла — составляющие акустического функционала.
+							</p>
+							<p>
+								Укомплектован е-Трон компактной зарядной станцией. Зарядная станция, произведенная
+								компанией <a href="#">ABL</a>, для е-Трон оснащена удобным блоком управления со штекером
+								Type 2. Зарядку такой станцией можно производить, как от домашней сети (тогда вам
+								понадобится штекер для обычной розетки), так и от трехфазной розетки (используется
+								зарядный кабель с 5-контактным штекером CEE, входящий в комплект e-Трон). Время зарядки
+								от обычной сети составит до 47 часов, а от трехфазной, при мощности в 11 кВт, до 9
+								часов.
+							</p>
+							<p>
+								В современных условиях эксплуатации электрокаров, при динамичном ритме жизни, с учетом
+								погодных условий в нашей стране, рекомендуется использовать зарядную станцию <a
+									href="#">Juice Booster 2</a> для е-Трон. Мощность в 22 кВт сокращает время зарядки
+								автомобиля с 9 часов до 4,5. Juice Booster 2 подходит для эксплуатации в любых погодных
+								условиях, кроме того у этой зарядной станции, в отличие от ABL, встроен функционал по
+								контролю заземления и контактная группа в быстросъемном разъеме покрыта серебром, что
+								существенно улучшает проводимость.
+							</p>
+							<p>
+								В гипермаркете зарядных станций Avtocharge вы можете найти ту зарядную станцию, которая
+								больше всего подходит под ваши условия эксплуатации и пожелания среди множества брендов.
+								Быстрый подбор и консультацию вы можете получить оперативно через форму обратного звонка
+								на сайте или по телефону: <a href="tel:+78125651163">+7 (812) 565-11-63</a>.
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- news -->
+				<section class="news-b section">
+					<div class="news-b__container container">
+						<h2 class="title-1 title--underline section__title">Полезные статьи</h2>
+					</div>
+					<!-- slider wrap -->
+					<div class="hiding-slider-wrap slider-wrap">
+						<div class="container">
+							<!-- slider -->
+							<div class="hiding-slider swiper">
+								<div class="swiper-wrapper">
+									<!-- slider -->
+									<article class="news-note hiding-slider__slide swiper-slide">
+										<div class="news-note__img">
+											<picture>
+												<source srcset="./assets/img/components/news-notes/img-1.webp"
+													type="image/webp">
+												<img src="./assets/img/components/news-notes/img-1.jpg" alt="">
+											</picture>
+										</div>
+										<div class="news-note__textBox">
+											<h4 class="news-note__title">Сеть электрозаправочных станций от Audi</h4>
+											<div class="news-note__text">
+												<p>Компания Audi разрабатывает концепцию электрозаправочных станций
+													быстрой
+													зарядки для электромобилей собственной марки.</p>
+											</div>
+											<div class="news-note__bottom">
+												<div class="note-meta">
+													<div class="note-meta__item note-metadata__item--date">
+														<svg>
+															<use xlink:href="./assets/img/icons/sprite.svg#clock_fill">
+															</use>
+														</svg>
+														29/08/2021
+													</div>
+												</div>
+												<a class="news-note__more btn-go" href="#">
+													<svg>
+														<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+														</use>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</article>
+									<!-- slider -->
+									<article class="news-note hiding-slider__slide swiper-slide">
+										<div class="news-note__img">
+											<picture>
+												<source srcset="./assets/img/components/news-notes/img-1.webp"
+													type="image/webp">
+												<img src="./assets/img/components/news-notes/img-1.jpg" alt="">
+											</picture>
+										</div>
+										<div class="news-note__textBox">
+											<h4 class="news-note__title">Сеть электрозаправочных станций от Audi</h4>
+											<div class="news-note__text">
+												<p>Компания Audi разрабатывает концепцию электрозаправочных станций
+													быстрой
+													зарядки для электромобилей собственной марки.</p>
+											</div>
+											<div class="news-note__bottom">
+												<div class="note-meta">
+													<div class="note-meta__item note-metadata__item--date">
+														<svg>
+															<use xlink:href="./assets/img/icons/sprite.svg#clock_fill">
+															</use>
+														</svg>
+														29/08/2021
+													</div>
+												</div>
+												<a class="news-note__more btn-go" href="#">
+													<svg>
+														<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+														</use>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</article>
+									<!-- slider -->
+									<article class="news-note hiding-slider__slide swiper-slide">
+										<div class="news-note__img">
+											<picture>
+												<source srcset="./assets/img/components/news-notes/img-1.webp"
+													type="image/webp">
+												<img src="./assets/img/components/news-notes/img-1.jpg" alt="">
+											</picture>
+										</div>
+										<div class="news-note__textBox">
+											<h4 class="news-note__title">Сеть электрозаправочных станций от Audi</h4>
+											<div class="news-note__text">
+												<p>Компания Audi разрабатывает концепцию электрозаправочных станций
+													быстрой
+													зарядки для электромобилей собственной марки.</p>
+											</div>
+											<div class="news-note__bottom">
+												<div class="note-meta">
+													<div class="note-meta__item note-metadata__item--date">
+														<svg>
+															<use xlink:href="./assets/img/icons/sprite.svg#clock_fill">
+															</use>
+														</svg>
+														29/08/2021
+													</div>
+												</div>
+												<a class="news-note__more btn-go" href="#">
+													<svg>
+														<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+														</use>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="footer__container container">
+				<!-- footer toop -->
+				<div class="footer__top">
+					<!-- logo -->
+					<a class="footer__logo logo" href="#">
+						<img src="./assets/img/logo@light.svg" alt="logo">
+					</a>
+					<!-- menu -->
+					<ul class="footer__menu menu">
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>База знаний</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#">
+								<span>Обзоры</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>О компании</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>Доставка и оплата</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>Контакты</span></a>
+						</li>
+					</ul>
+				</div>
+				<!-- footer middle -->
+				<div class="footer__middle">
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p>
+							УНП:1177847044132
+						</p>
+						<p>
+							Санкт-Петербург, Пискаревский проспект,
+						</p>
+						<p>д. 63б, офис 422</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p>
+							<a href="#">Зарядные станции</a>
+						</p>
+						<p>
+							<a href="#">Аксессуары</a>
+						</p>
+						<p>
+							<a href="#">Управление и учет зарядными станциями</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__delivery-parters">
+						<p>
+							Наши партнеры по доставке
+							<span class="b-row">
+								<a class="b-col" href="#" target="_blank">
+									<img src="./assets/img/components/delivery-partners/img-1.png" alt="">
+								</a>
+								<a class="b-col" href="#" target="_blank">
+									<img src="./assets/img/components/delivery-partners/img-2.png" alt="">
+								</a>
+							</span>
+						</p>
+						<p>
+							Стандартная доставка бесплатно
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p class="firm-info firm-info--clock">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+								</use>
+							</svg>
+							пн-пт 09:00 - 19:00
+						</p>
+						<p>
+							<a class="firm-info firm-info--phone" href="tel:+78125651163">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+									</use>
+								</svg>
+								+7&nbsp;(812)&nbsp;565-11-63</span>
+							</a>
+						</p>
+						<p>
+							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+									</use>
+								</svg>
+								info@avtocharge.ru
+							</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__sci sci">
+						<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+							</svg>
+						</a>
+						<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+							</svg>
+						</a>
+						<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+							</svg>
+						</a>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p class="footer__payment-systems">
+							<img src="./assets/img/components/payment-system/img-1.png" alt="">
+							<img src="./assets/img/components/payment-system/img-2.png" alt="">
+							<img src="./assets/img/components/payment-system/img-3.png" alt="">
+						</p>
+						<p style="font-weight: 500;">
+							Все цены указаны с учетом НДС и, <br>
+							возможно, плюс стоимость доставки
+						</p>
+					</div>
+				</div>
+				<!-- footer bottom -->
+				<div class="footer__bottom">
+					<a href="#">Политика конфеданциальности</a>
+					<a class="ArtBro" href="https://cweb.by/" target="_blank">
+						Разработка и продвижение cweb
+					</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- swiper js -->
+	<script src="./assets/js/libraries/swiper-bundle.min.js"></script>
+	<!-- fslightbox js -->
+	<script src="./assets/js/libraries/fslightbox.js"></script>
+	<!-- main js -->
+	<script src="./assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+/*==================== FOOTER ====================*/
+.footer {
+	margin-top: auto;
+	padding: 34px 0 0;
+	font-size: 14px;
+	line-height: (17/14);
+	color: #fff;
+	background-color: #212121;
+
+	a {
+		transition: color $duration;
+
+		&:hover {
+			color: var(--color-primary);
+		}
+	}
+
+	/*footer top*/
+	&__top {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		max-width: 275px;
+	}
+
+	&__menu {
+		margin-left: -15px;
+		font-size: 16px;
+	}
+
+	/*footer middle*/
+	&__middle {
+		display: grid;
+		grid-template-columns: repeat(5, auto);
+		align-items: flex-end;
+		column-gap: 30px;
+		padding: 55px 0 40px;
+
+		&-col {
+			p {
+				margin-top: getEm(17, 14);
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	&__delivery-parters {
+		--air-l: 11px;
+		--air-b: 8px;
+		.b-row {
+			align-items: center;
+			margin-top: getEm(9, 14);
+		}
+
+		p {
+			margin-top: getEm(12, 14);
+		}
+	}
+
+	&__payment-systems {
+		--air-l: 10px;
+		--air-b: 8px;
+
+		@include row-flex;
+
+		img {
+			@include col;
+		}
+	}
+
+	&__sci {
+		display: none;
+	}
+
+	.firm-info {
+		white-space: nowrap;
+
+		&__ic {
+			fill: #fff;
+		}
+
+		&--phone {
+			.firm-info__ic {
+				fill: var(--color-primary);
+			}
+		}
+	}
+
+	/*footer bottom*/
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		padding: getEm(19, 14) 0;
+	}
+
+	@include table {
+		&__top {
+			flex-direction: column;
+		}
+
+		&__logo {
+			margin: 0 0 25px;
+		}
+
+		&__middle {
+			grid-template-columns: repeat(3, auto);
+			align-items: flex-start;
+			row-gap: 30px;
+			padding: 15px 0;
+		}
+	}
+
+	@include mobile {
+		padding: 40px 0 0;
+		&__middle {
+			grid-template-columns: auto;
+
+			&-col {
+				p {
+					margin-top: getEm(7, 12);
+				}
+			}
+		}
+
+		&__sci {
+			display: flex;
+		}
+	}
+
+	@include tel {
+		font-size: 12px;
+
+		&__container {
+			display: flex;
+			flex-direction: column;
+			margin: 0 auto;
+			max-width: 300px;
+		}
+
+		&__top {
+			align-items: center;
+		}
+
+		&__logo {
+			max-width: 213px;
+		}
+
+		&__middle {
+			row-gap: 25px;
+		}
+
+		&__menu {
+			font-size: inherit;
+
+			& > .menu__item {
+				margin-right: 0;
+			}
+		}
+
+		&__bottom {
+			justify-content: center;
+			a:not(.ArtBro) {
+				display: none;
+			}
+		}
+	}
+}

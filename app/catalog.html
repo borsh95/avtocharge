@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="ArtBro">
+	<title>Каталог</title>
+	<link rel="stylesheet" href="./assets/style/css/libraries/swiper-bundle.min.css">
+	<link rel="stylesheet" href="./assets/style/css/style.css">
+</head>
+
+<body>
+	<div class="page catalog-pg">
+		<!-- HEADER -->
+		<header class="header">
+			<!-- header top -->
+			<div class="header__top">
+				<div class="header__top-container container">
+					<!-- header top left -->
+					<div class="header__top-left">
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Бесплатная доставка
+						</div>
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Монтаж
+						</div>
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Техническое обслуживание
+						</div>
+					</div>
+					<!-- header top right -->
+					<div class="header__top-right">
+						<div class="firm-info firm-info--clock">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+								</use>
+							</svg>
+							пн-пт 09:00 - 19:00
+						</div>
+						<!-- massangers -->
+						<div class="header__sci sci">
+							<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--phone" href="tel:+78125651163">
+								+7&nbsp;(812)&nbsp;565-11-63</span>
+							</a>
+						</div>
+						<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+								</use>
+							</svg>
+							info@avtocharge.ru
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="header__container container">
+				<!-- header middle -->
+				<div class="header__middle">
+					<!-- separable links -->
+					<div class="header__separable-links separable-links">
+						<a href="#">Для частного использования</a>
+						<a href="#">Решения для бизнеса</a>
+						<a href="#">Для гос предприятий</a>
+					</div>
+					<!-- search -->
+					<form class="header__search search" data-search-panel>
+						<div class="search__inner">
+							<input class="search__input" type="search" placeholder="Поиск">
+							<button class="search__submit" type="button" aria-label="Закрыть поиск"
+								data-search-close="">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+								</svg>
+							</button>
+							<button class="search__close" type="button" aria-label="Закрыть поиск" data-search-close="">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.97 47.97">
+									<path
+										d="M28.23,24,47.09,5.12A3,3,0,0,0,42.85.88L24,19.74,5.12.88A3,3,0,0,0,.88,5.12L19.74,24,.88,42.85A3,3,0,0,0,3,48a3,3,0,0,0,2.12-.88L24,28.23,42.85,47.09a3,3,0,0,0,4.24-4.24Z">
+									</path>
+								</svg>
+							</button>
+						</div>
+					</form>
+					<!-- button -->
+					<button class="header__callback btn-t btn-t--size_l" aria-label="Заказать звонок">Заказать
+						звонок</button>
+				</div>
+				<!-- header bottom -->
+				<div class="header__bottom">
+					<!-- logo -->
+					<a class="header__logo logo" href="#">
+						<img src="./assets/img/logo.svg" alt="logo">
+					</a>
+					<!-- hamburger -->
+					<button class="header__hamburger hamburger" type="button">
+						<span></span>
+						<b>Меню</b>
+					</button>
+					<!-- mobile tel -->
+					<a class="firm-info firm-info--phone" href="tel:+78125651163">
+						<svg class="firm-info__ic">
+							<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+							</use>
+						</svg>
+					</a>
+					<!-- burger -->
+					<div class="header__burger">
+						<div class="header__burger-inner">
+							<!-- separable links -->
+							<div class="separable-links">
+								<a href="#">Для частного использования</a>
+								<a href="#">Решения для бизнеса</a>
+								<a href="#">Для гос предприятий</a>
+							</div>
+							<!-- navigation -->
+							<nav class="header__nav">
+								<ul class="header__menu menu">
+									<li class="menu__item menu__item--drop">
+										<button class="menu__item-toggle hamburger" type="button"
+											aria-label="Открыть подменю">
+											<span></span>
+										</button>
+										<a class="menu__link" href="#"><span>Каталог</span></a>
+										<ul class="menu__submenu  js-tree-menu">
+											<li class="menu__item">
+												<a class="menu__link" href="#">
+													<span>Зарядные станции</span>
+													<span class="menu__arr">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</a>
+												<ul class="menu__submenu">
+													<li class="menu__item">
+														<a class="menu__link" href="#"><span>Зарядный кабель</span></a>
+													</li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Сервисное оборудование
+															</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Адаптеры</span></a></li>
+												</ul>
+											</li>
+											<li class="menu__item">
+												<a class="menu__link" href="#">
+													<span>Аксессуары</span>
+													<span class="menu__arr">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</a>
+												<ul class="menu__submenu">
+													<li class="menu__item">
+														<a class="menu__link" href="#"><span>Зарядный кабель</span></a>
+													</li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Сервисное оборудование
+															</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Адаптеры</span></a></li>
+													<li class="menu__item"><a class="menu__link" href="#"><span>Колонны
+																для
+																монтажа</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Запчасти</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Держатель кабеля</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Другое</span></a></li>
+												</ul>
+											</li>
+											<li class="menu__item">
+												<a class="menu__link" href="#">
+													<span>Управление и учет зарядными станциями</span>
+													<span class="menu__arr">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</a>
+												<ul class="menu__submenu">
+													<li class="menu__item"><a class="menu__link" href="#"><span>Колонны
+																для
+																монтажа</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Запчасти</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Держатель кабеля</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Другое</span></a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>База знаний</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">
+											<span>Обзоры</span>
+										</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>О компании</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Доставка и оплата</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Контакты</span></a>
+									</li>
+								</ul>
+							</nav>
+							<div class="firm-info firm-info--clock">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+									</use>
+								</svg>
+								пн-пт 09:00 - 19:00
+							</div>
+							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+									</use>
+								</svg>
+								info@avtocharge.ru
+							</a>
+							<!-- massangers -->
+							<div class="header__sci sci">
+								<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+									</svg>
+								</a>
+								<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+									</svg>
+								</a>
+								<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+									</svg>
+								</a>
+							</div>
+
+						</div>
+					</div>
+					<!-- row -->
+					<div class="header__bottom-row">
+						<!-- search toggle -->
+						<button class="header__search-toggle" button="button" aria-label="Показать поиск"
+							data-search-toggle="">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+							</svg>
+						</button>
+						<a class="icon-link icon-link--account" href="#">
+							<div class="icon-link__icon-wrap">
+								<svg class="icon-link__ic">
+									<use xlink:href="./assets/img/icons/sprite.svg#user"></use>
+								</svg>
+							</div>
+							<span class="icon-link__text">Кабинет</span>
+						</a>
+						<a class="icon-link icon-link--favourites" href="#">
+							<div class="icon-link__icon-wrap">
+								<svg class="icon-link__ic">
+									<use xlink:href="./assets/img/icons/sprite.svg#heart"></use>
+								</svg>
+								<strong>0</strong>
+							</div>
+
+							<span class="icon-link__text">Закладки</span>
+
+						</a>
+						<a class="icon-link icon-link--basket" href="#">
+							<div class="icon-link__icon-wrap">
+								<svg class="icon-link__ic">
+									<use xlink:href="./assets/img/icons/sprite.svg#basket"></use>
+								</svg>
+								<strong>0</strong>
+							</div>
+							<span class="icon-link__text">Корзина</span>
+
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- BREAD CRUMB -->
+		<div class="bread-crumb">
+			<div class="bread-crumb__container container">
+				<a href="#" class="bread-crumb__item">Главная</a>
+				<span class="bread-crumb__item">Каталог</span>
+			</div>
+		</div>
+		<div class="content-wrap">
+			<!-- MAIN -->
+			<main>
+				<!-- main banner -->
+				<div class="main-banner main-banner--line-content">
+					<div class="main-banner__container container-l">
+						<!-- background image -->
+						<div class="main-banner__bg">
+							<picture>
+								<source type="image/webp" srcset="./assets/img/pages/catalog/banner.webp">
+								<img src="./assets/img/pages/catalog/banner.jpg" alt="">
+							</picture>
+						</div>
+						<!-- content -->
+						<div class="main-banner__content-wrap container">
+							<div class="main-banner__content">
+								<h1 class="main-banner__title">Каталог</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- banner specific -->
+				<div class="banner-specific">
+					<div class="banner-specific__container-l container-l">
+						<div class="banner-specific__container container">
+							<div class="banner-specific__content">
+								<!-- headgroup -->
+								<div class="banner-specific__headgroup">
+									<div class="banner-specific__title">
+										Audi e-tron 55
+									</div>
+									<p class="banner-specific__subtitle">
+										Продолжительность полного <br>
+										цикла зарядки
+									</p>
+								</div>
+								<!-- indicator list -->
+								<div class="banner-specific__indicat-list">
+									<!-- indicator -->
+									<div class="banner-specific__indicat">
+										<div class="banner-specific__indicat-time">
+											<img src="./assets/img/components/banner-specific/time-indicat-1.svg"
+												alt="">
+											<!-- time -->
+											<div class="banner-specific__indicat-val">
+												48 <br>
+												мин
+											</div>
+										</div>
+										<p>
+											Мощность зарядной станции (DC)
+										</p>
+										<b>150 кВт</b>
+									</div>
+									<!-- indicator -->
+									<div class="banner-specific__indicat">
+										<div class="banner-specific__indicat-time">
+											<img src="./assets/img/components/banner-specific/time-indicat-2.svg"
+												alt="">
+											<!-- time -->
+											<div class="banner-specific__indicat-val">
+												4:30 <br>
+												ч
+											</div>
+										</div>
+										<p>
+											Мощность зарядной станции (DC)
+										</p>
+										<b>22 кВт</b>
+									</div>
+									<!-- indicator -->
+									<div class="banner-specific__indicat">
+										<div class="banner-specific__indicat-time">
+											<img src="./assets/img/components/banner-specific/time-indicat-3.svg"
+												alt="">
+											<!-- time -->
+											<div class="banner-specific__indicat-val">
+												13:46 <br>
+												ч
+											</div>
+										</div>
+										<p>
+											Мощность зарядной станции (DC)
+										</p>
+										<b>7,4 кВт</b>
+									</div>
+									<!-- indicator -->
+									<div class="banner-specific__indicat">
+										<div class="banner-specific__indicat-time">
+											<img src="./assets/img/components/banner-specific/time-indicat-4.svg"
+												alt="">
+											<!-- time -->
+											<div class="banner-specific__indicat-val">
+												44:42 <br>
+												ч
+											</div>
+										</div>
+										<p>
+											Мощность зарядной станции (DC)
+										</p>
+										<b>2,3 кВт</b>
+									</div>
+								</div>
+								<!-- img -->
+								<div class="banner-specific__img">
+									<img src="./assets/img/components/banner-specific/audi-e-tron.jpg" alt="">
+								</div>
+								<div class="banner-specific__controls">
+									<button class="banner-specific__btn btn-t" aria-label="Помощь с выбором">Помощь с
+										выбором</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- product selection -->
+				<div class="product-selection-b section">
+					<div class="product-selection-b__container-l container-l">
+						<div class="product-selection-b__container container">
+							<div class="product-selection-b__inner">
+								<div class="product-selection-b__heading">
+									<div class="product-selection-b__heading-inner fw-600">
+										<span>
+											Быстрый подбор зарядных станций для вашего авто:
+										</span>
+									</div>
+								</div>
+								<div class="product-selection-b__bg">
+									<img src="./assets/img/components/product-selection/bg.png" alt="">
+								</div>
+								<form class="product-selection-b__form" action="#">
+									<div class="product-selection-b__form-selects">
+										<div class="product-selection-b__select-wrap">
+											<select class="custom-select" name="marka">
+												<option>Марка вашего авто</option>
+												<option value="!">Porshe</option>
+												<option value="!">Tesla</option>
+												<option value="!">Audi</option>
+												<option>Марка вашего авто</option>
+												<option value="!">Porshe</option>
+												<option value="!">Tesla</option>
+												<option value="!">Audi</option>
+												<option>Марка вашего авто</option>
+												<option value="!">Porshe</option>
+												<option value="!">Tesla</option>
+												<option value="!">Audi</option>
+											</select>
+										</div>
+										<div class="product-selection-b__select-wrap">
+											<select name="chapter">
+												<option>Выберите раздел для перехода</option>
+											</select>
+										</div>
+									</div>
+									<button class="product-selection-b__submit btn" type="submit">Выбрать</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- compatibility block -->
+				<section class="compatibility-b section">
+					<div class="compatibility-b__container container">
+						<h2 class="title-1 title--underline section__title">Мы предлагаем зарядные станции от
+							следующих <br> производителей</h2>
+						<div class="compatibility-b__list js-incomplete-list" data-incomplete-num="11">
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-1.jpg" alt="">
+							</div>
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-2.jpg" alt="">
+							</div>
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-3.jpg" alt="">
+							</div>
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-4.jpg" alt="">
+							</div>
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-5.jpg" alt="">
+							</div>
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-6.jpg" alt="">
+							</div>
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-7.jpg" alt="">
+							</div>
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-8.jpg" alt="">
+							</div>
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-9.jpg" alt="">
+							</div>
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-10.jpg" alt="">
+							</div>
+							<div class="compatibility-b__item">
+								<img src="./assets/img/components/producer/img-11.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="catalog-cards-b section">
+					<div class="catalog-cards-b__container container">
+						<div class="catalog-cards-b__list">
+							<!-- card -->
+							<div class="catalog-card">
+								<div class="catalog-card__ic">
+									<svg>
+										<use xlink:href="./assets/img/components/categories/sprite.svg#icon-1"></use>
+									</svg>
+								</div>
+								<div class="catalog-card__title">Для дома</div>
+								<div class="catalog-card__text">
+									Независимо от того, хотите ли вы заряжать свой электромобиль в паркинге своего ЖК, в
+									частном доме, или в пути - у нас есть для вас подходящее решение.
+								</div>
+								<a class="catalog-card__more btn-go" href="#">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+										</use>
+									</svg>
+								</a>
+							</div>
+							<!-- card -->
+							<div class="catalog-card">
+								<div class="catalog-card__ic">
+									<svg>
+										<use xlink:href="./assets/img/components/categories/sprite.svg#icon-2"></use>
+									</svg>
+								</div>
+								<div class="catalog-card__title">Для бизнеса</div>
+								<div class="catalog-card__text">
+									При выборе зарядных станций для общественных парковок, ТЦ, БЦ, АЗС, отелей,
+									ресторанов необходимо учитывать множество факторов. Расскажем как это сделать.
+								</div>
+								<a class="catalog-card__more btn-go" href="#">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+										</use>
+									</svg>
+								</a>
+							</div>
+							<!-- card -->
+							<div class="catalog-card">
+								<div class="catalog-card__ic">
+									<svg>
+										<use xlink:href="./assets/img/components/categories/sprite.svg#icon-3"></use>
+									</svg>
+								</div>
+								<div class="catalog-card__title">Для государственных организаций</div>
+								<div class="catalog-card__text">
+									Закупка зарядных станций для государственных учреждений - простая задача. Расскажем
+									про требования 44 и 223 ФЗ, сориентируем в ТЗ.
+								</div>
+								<a class="catalog-card__more btn-go" href="#">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+										</use>
+									</svg>
+								</a>
+							</div>
+							<!-- card -->
+							<div class="catalog-card">
+								<div class="catalog-card__ic">
+									<svg>
+										<use xlink:href="./assets/img/components/categories/sprite.svg#icon-4"></use>
+									</svg>
+								</div>
+								<div class="catalog-card__title">Для девелоперов</div>
+								<div class="catalog-card__text">
+									Подберем вариант, под ваш объект недвижимости. Составим проект, согласуем мощности с
+									поставщиком электроэнергии, обучим УК эксплуатации зарядных станций.
+								</div>
+								<a class="catalog-card__more btn-go" href="#">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+										</use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-links-b">
+					<div class="card-links-b__container container">
+						<div class="card-links-b__list">
+							<!-- card -->
+							<div class="card-links">
+								<div class="card-links__title">
+									Зарядные станции
+								</div>
+								<div class="card-links__img">
+									<img src="./assets/img/components/catalog/img-1.jpg" alt="">
+								</div>
+								<div class="card-links__links">
+									<a class="btn-t" href="#">Зарядые станции настенного монтажа (Wallbox)</a>
+									<a class="btn-t" href="#">Зарядные станции постоянного тока (DC)</a>
+									<a class="btn-t" href="#">Портативные зарядные станции</a>
+									<a class="btn-t" href="#">Зарядные станции напольного монтажа (Charge Pole)</a>
+								</div>
+							</div>
+							<!-- card -->
+							<div class="card-links">
+								<div class="card-links__title">
+									Аксессуары
+								</div>
+								<div class="card-links__img">
+									<img src="./assets/img/components/catalog/img-2.jpg" alt="">
+								</div>
+								<div class="card-links__links card-links__links--double-row">
+									<a class="btn-t" href="#">Зарядный кабель</a>
+									<a class="btn-t" href="#">Сервисное оборудование</a>
+									<a class="btn-t" href="#">Адаптеры</a>
+									<a class="btn-t" href="#">Комплектующие для зарядных станций</a>
+									<a class="btn-t" href="#">Колонны для монтажа</a>
+									<a class="btn-t" href="#">Запчасти</a>
+									<a class="btn-t" href="#">Держатель кабеля</a>
+									<a class="btn-t" href="#">Шкафы</a>
+									<a class="btn-t" href="#">Другое</a>
+								</div>
+							</div>
+							<!-- card -->
+							<div class="card-links">
+								<div class="card-links__title">
+									Управление и учет зарядными станциями
+								</div>
+								<div class="card-links__img">
+									<img src="./assets/img/components/catalog/img-3.jpg" alt="">
+								</div>
+								<div class="card-links__links">
+									<a class="btn-t" href="#">Мониторинг</a>
+									<a class="btn-t" href="#">Управление нагузкой</a>
+								</div>
+							</div>
+							<!-- card -->
+							<div class="card-links">
+								<div class="card-links__title">
+									Услуги
+								</div>
+								<div class="card-links__img">
+									<img src="./assets/img/components/catalog/img-4.jpg" alt="">
+								</div>
+								<div class="card-links__links">
+									<a class="btn-t" href="#">Монтаж</a>
+									<a class="btn-t" href="#">Техническое обслуживание</a>
+									<a class="btn-t" href="#">Изготовление колонн</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- product slider -->
+				<section class="products-slider-b section">
+					<div class="products-slider-b__container container">
+						<h2 class="title-1 title--underline section__title">Хит продаж</h2>
+					</div>
+					<div class="products-slider-wrap slider-wrap">
+						<div class="products-slider-container container">
+							<!-- slider -->
+							<div class="products-slider swiper">
+								<div class="swiper-wrapper">
+									<!-- card -->
+									<div class="product-card swiper-slide">
+										<div class="product-card__labels">
+											<div class="product-label product-label--power"
+												style="background-image: url(./assets/img/components/product-card/label-power.png);">
+												<span>22</span>
+												<span>kw</span>
+											</div>
+											<div class="product-label product-label--type"
+												style="background-image: url(./assets/img/components/product-card/label-type.png);">
+												T2
+											</div>
+										</div>
+										<a class="product-card__img" href="#">
+											<picture>
+												<source srcset="./assets/img/components/product-card/product-1.webp"
+													type="image/webp">
+												<img src="./assets/img/components/product-card/product-1.png" alt="">
+											</picture>
+										</a>
+										<div class="product-card__title">
+											ABL Wallbox eMH2 2W2241 Зарядная станция (6.35 м)
+										</div>
+										<div
+											class="product-card__availability availability-label availability-label--available">
+											В наличии</div>
+										<div class="product-card__desc">
+											<img src="./assets/img/components/product-card/desc-control.png"
+												alt="Уппавление">
+											<img src="./assets/img/components/product-card/desc-lan.png"
+												alt="Локальная сеть">
+											<img src="./assets/img/components/product-card/desc-ocpp.png"
+												alt="Протокол открытой точки зарядки">
+											<img src="./assets/img/components/product-card/desc-rfid.png"
+												alt="Радиочастотная идентификация">
+											<img src="./assets/img/components/product-card/desc-sim.png"
+												alt="Сим карта">
+										</div>
+										<div class="product-card__price">
+											<div class="product-card__price-inner">
+												<div class="product-card__price-val">176 200 ₽</div>
+											</div>
+										</div>
+										<div class="product-card__bottom">
+											<a href="#" class="product-card__buy btn-t">Купить</a>
+											<button class="product-card__compare btn-compare" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#random-ic">
+													</use>
+												</svg>
+											</button>
+											<button class="product-card__fav btn-fav" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#heart-shadow">
+													</use>
+												</svg>
+											</button>
+										</div>
+									</div>
+									<!-- card -->
+									<div class="product-card swiper-slide">
+										<div class="product-card__labels">
+											<div class="product-label product-label--power"
+												style="background-image: url(./assets/img/components/product-card/label-power.png);">
+												<span>7.4</span>
+												<span>kw</span>
+											</div>
+											<div class="product-label product-label--type"
+												style="background-image: url(./assets/img/components/product-card/label-type.png);">
+												T1
+											</div>
+											<div class="product-label">
+												<img src="./assets/img/components/product-card/label-sale.png" alt="">
+											</div>
+											<div class="product-label">
+												<img src="./assets/img/components/product-card/label-hit.png" alt="">
+											</div>
+										</div>
+										<a class="product-card__img" href="#">
+											<picture>
+												<source srcset="./assets/img/components/product-card/product-2.webp"
+													type="image/webp">
+												<img src="./assets/img/components/product-card/product-2.png" alt="">
+											</picture>
+										</a>
+										<div class="product-card__title">
+											Wallbox Pulsar
+											Зарядная станция (5 м)
+										</div>
+										<div
+											class="product-card__availability availability-label availability-label--available">
+											В наличии</div>
+										<div class="product-card__desc">
+											<img src="./assets/img/components/product-card/desc-control.png"
+												alt="Уппавление">
+											<img src="./assets/img/components/product-card/desc-web-is.png"
+												alt="web интерфейс">
+											<img src="./assets/img/components/product-card/desc-ocpp.png"
+												alt="Протокол открытой точки зарядки">
+										</div>
+										<div class="product-card__price">
+											<div class="product-card__price-inner">
+												<div class="product-card__price-val">90 900 ₽</div>
+											</div>
+										</div>
+										<div class="product-card__bottom">
+											<a href="#" class="product-card__buy btn-t">Купить</a>
+											<button class="product-card__compare btn-compare" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#random-ic">
+													</use>
+												</svg>
+											</button>
+											<button class="product-card__fav btn-fav" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#heart-shadow">
+													</use>
+												</svg>
+											</button>
+										</div>
+									</div>
+									<!-- card -->
+									<div class="product-card swiper-slide">
+										<div class="product-card__labels">
+											<div class="product-label product-label--power"
+												style="background-image: url(./assets/img/components/product-card/label-power.png);">
+												<span>22</span>
+												<span>kw</span>
+											</div>
+											<div class="product-label product-label--type"
+												style="background-image: url(./assets/img/components/product-card/label-type.png);">
+												T2
+											</div>
+										</div>
+										<a class="product-card__img" href="#">
+											<picture>
+												<source srcset="./assets/img/components/product-card/product-1.webp"
+													type="image/webp">
+												<img src="./assets/img/components/product-card/product-1.png" alt="">
+											</picture>
+										</a>
+										<div class="product-card__title">
+											ABL Wallbox eMH2 2W2241 Зарядная станция (6.35 м)
+										</div>
+										<div
+											class="product-card__availability availability-label availability-label--available">
+											В наличии</div>
+										<div class="product-card__desc">
+											<img src="./assets/img/components/product-card/desc-control.png"
+												alt="Уппавление">
+											<img src="./assets/img/components/product-card/desc-lan.png"
+												alt="Локальная сеть">
+											<img src="./assets/img/components/product-card/desc-ocpp.png"
+												alt="Протокол открытой точки зарядки">
+											<img src="./assets/img/components/product-card/desc-rfid.png"
+												alt="Радиочастотная идентификация">
+											<img src="./assets/img/components/product-card/desc-sim.png"
+												alt="Сим карта">
+										</div>
+										<div class="product-card__price">
+											<div class="product-card__price-inner">
+												<div class="product-card__price-val">176 200 ₽</div>
+											</div>
+										</div>
+										<div class="product-card__bottom">
+											<a href="#" class="product-card__buy btn-t">Купить</a>
+											<button class="product-card__compare btn-compare" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#random-ic">
+													</use>
+												</svg>
+											</button>
+											<button class="product-card__fav btn-fav" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#heart-shadow">
+													</use>
+												</svg>
+											</button>
+										</div>
+									</div>
+									<!-- card -->
+									<div class="product-card swiper-slide">
+										<div class="product-card__labels">
+											<div class="product-label product-label--power"
+												style="background-image: url(./assets/img/components/product-card/label-power.png);">
+												<span>7.4</span>
+												<span>kw</span>
+											</div>
+											<div class="product-label product-label--type"
+												style="background-image: url(./assets/img/components/product-card/label-type.png);">
+												T1
+											</div>
+											<div class="product-label">
+												<img src="./assets/img/components/product-card/label-sale.png" alt="">
+											</div>
+											<div class="product-label">
+												<img src="./assets/img/components/product-card/label-hit.png" alt="">
+											</div>
+										</div>
+										<a class="product-card__img" href="#">
+											<picture>
+												<source srcset="./assets/img/components/product-card/product-2.webp"
+													type="image/webp">
+												<img src="./assets/img/components/product-card/product-2.png" alt="">
+											</picture>
+										</a>
+										<div class="product-card__title">
+											Wallbox Pulsar
+											Зарядная станция (5 м)
+										</div>
+										<div
+											class="product-card__availability availability-label availability-label--available">
+											В наличии</div>
+										<div class="product-card__desc">
+											<img src="./assets/img/components/product-card/desc-control.png"
+												alt="Уппавление">
+											<img src="./assets/img/components/product-card/desc-web-is.png"
+												alt="web интерфейс">
+											<img src="./assets/img/components/product-card/desc-ocpp.png"
+												alt="Протокол открытой точки зарядки">
+										</div>
+										<div class="product-card__price">
+											<div class="product-card__price-inner">
+												<div class="product-card__price-val">90 900 ₽</div>
+											</div>
+										</div>
+										<div class="product-card__bottom">
+											<a href="#" class="product-card__buy btn-t">Купить</a>
+											<button class="product-card__compare btn-compare" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#random-ic">
+													</use>
+												</svg>
+											</button>
+											<button class="product-card__fav btn-fav" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#heart-shadow">
+													</use>
+												</svg>
+											</button>
+										</div>
+									</div>
+									<!-- card -->
+									<div class="product-card swiper-slide">
+										<div class="product-card__labels">
+											<div class="product-label product-label--power"
+												style="background-image: url(./assets/img/components/product-card/label-power.png);">
+												<span>22</span>
+												<span>kw</span>
+											</div>
+											<div class="product-label product-label--type"
+												style="background-image: url(./assets/img/components/product-card/label-type.png);">
+												T2
+											</div>
+										</div>
+										<a class="product-card__img" href="#">
+											<picture>
+												<source srcset="./assets/img/components/product-card/product-1.webp"
+													type="image/webp">
+												<img src="./assets/img/components/product-card/product-1.png" alt="">
+											</picture>
+										</a>
+										<div class="product-card__title">
+											ABL Wallbox eMH2 2W2241 Зарядная станция (6.35 м)
+										</div>
+										<div
+											class="product-card__availability availability-label availability-label--available">
+											В наличии</div>
+										<div class="product-card__desc">
+											<img src="./assets/img/components/product-card/desc-control.png"
+												alt="Уппавление">
+											<img src="./assets/img/components/product-card/desc-lan.png"
+												alt="Локальная сеть">
+											<img src="./assets/img/components/product-card/desc-ocpp.png"
+												alt="Протокол открытой точки зарядки">
+											<img src="./assets/img/components/product-card/desc-rfid.png"
+												alt="Радиочастотная идентификация">
+											<img src="./assets/img/components/product-card/desc-sim.png"
+												alt="Сим карта">
+										</div>
+										<div class="product-card__price">
+											<div class="product-card__price-inner">
+												<div class="product-card__price-val">176 200 ₽</div>
+											</div>
+										</div>
+										<div class="product-card__bottom">
+											<a href="#" class="product-card__buy btn-t">Купить</a>
+											<button class="product-card__compare btn-compare" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#random-ic">
+													</use>
+												</svg>
+											</button>
+											<button class="product-card__fav btn-fav" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#heart-shadow">
+													</use>
+												</svg>
+											</button>
+										</div>
+									</div>
+									<!-- card -->
+									<div class="product-card swiper-slide">
+										<div class="product-card__labels">
+											<div class="product-label product-label--power"
+												style="background-image: url(./assets/img/components/product-card/label-power.png);">
+												<span>7.4</span>
+												<span>kw</span>
+											</div>
+											<div class="product-label product-label--type"
+												style="background-image: url(./assets/img/components/product-card/label-type.png);">
+												T1
+											</div>
+											<div class="product-label">
+												<img src="./assets/img/components/product-card/label-sale.png" alt="">
+											</div>
+											<div class="product-label">
+												<img src="./assets/img/components/product-card/label-hit.png" alt="">
+											</div>
+										</div>
+										<a class="product-card__img" href="#">
+											<picture>
+												<source srcset="./assets/img/components/product-card/product-2.webp"
+													type="image/webp">
+												<img src="./assets/img/components/product-card/product-2.png" alt="">
+											</picture>
+										</a>
+										<div class="product-card__title">
+											Wallbox Pulsar
+											Зарядная станция (5 м)
+										</div>
+										<div
+											class="product-card__availability availability-label availability-label--available">
+											В наличии</div>
+										<div class="product-card__desc">
+											<img src="./assets/img/components/product-card/desc-control.png"
+												alt="Уппавление">
+											<img src="./assets/img/components/product-card/desc-web-is.png"
+												alt="web интерфейс">
+											<img src="./assets/img/components/product-card/desc-ocpp.png"
+												alt="Протокол открытой точки зарядки">
+										</div>
+										<div class="product-card__price">
+											<div class="product-card__price-inner">
+												<div class="product-card__price-val">90 900 ₽</div>
+											</div>
+										</div>
+										<div class="product-card__bottom">
+											<a href="#" class="product-card__buy btn-t">Купить</a>
+											<button class="product-card__compare btn-compare" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#random-ic">
+													</use>
+												</svg>
+											</button>
+											<button class="product-card__fav btn-fav" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#heart-shadow">
+													</use>
+												</svg>
+											</button>
+										</div>
+									</div>
+									<!-- card -->
+									<div class="product-card swiper-slide">
+										<div class="product-card__labels">
+											<div class="product-label product-label--power"
+												style="background-image: url(./assets/img/components/product-card/label-power.png);">
+												<span>22</span>
+												<span>kw</span>
+											</div>
+											<div class="product-label product-label--type"
+												style="background-image: url(./assets/img/components/product-card/label-type.png);">
+												T2
+											</div>
+										</div>
+										<a class="product-card__img" href="#">
+											<picture>
+												<source srcset="./assets/img/components/product-card/product-1.webp"
+													type="image/webp">
+												<img src="./assets/img/components/product-card/product-1.png" alt="">
+											</picture>
+										</a>
+										<div class="product-card__title">
+											ABL Wallbox eMH2 2W2241 Зарядная станция (6.35 м)
+										</div>
+										<div
+											class="product-card__availability availability-label availability-label--available">
+											В наличии</div>
+										<div class="product-card__desc">
+											<img src="./assets/img/components/product-card/desc-control.png"
+												alt="Уппавление">
+											<img src="./assets/img/components/product-card/desc-lan.png"
+												alt="Локальная сеть">
+											<img src="./assets/img/components/product-card/desc-ocpp.png"
+												alt="Протокол открытой точки зарядки">
+											<img src="./assets/img/components/product-card/desc-rfid.png"
+												alt="Радиочастотная идентификация">
+											<img src="./assets/img/components/product-card/desc-sim.png"
+												alt="Сим карта">
+										</div>
+										<div class="product-card__price">
+											<div class="product-card__price-inner">
+												<div class="product-card__price-val">176 200 ₽</div>
+											</div>
+										</div>
+										<div class="product-card__bottom">
+											<a href="#" class="product-card__buy btn-t">Купить</a>
+											<button class="product-card__compare btn-compare" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#random-ic">
+													</use>
+												</svg>
+											</button>
+											<button class="product-card__fav btn-fav" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#heart-shadow">
+													</use>
+												</svg>
+											</button>
+										</div>
+									</div>
+									<!-- card -->
+									<div class="product-card swiper-slide">
+										<div class="product-card__labels">
+											<div class="product-label product-label--power"
+												style="background-image: url(./assets/img/components/product-card/label-power.png);">
+												<span>7.4</span>
+												<span>kw</span>
+											</div>
+											<div class="product-label product-label--type"
+												style="background-image: url(./assets/img/components/product-card/label-type.png);">
+												T1
+											</div>
+											<div class="product-label">
+												<img src="./assets/img/components/product-card/label-sale.png" alt="">
+											</div>
+											<div class="product-label">
+												<img src="./assets/img/components/product-card/label-hit.png" alt="">
+											</div>
+										</div>
+										<a class="product-card__img" href="#">
+											<picture>
+												<source srcset="./assets/img/components/product-card/product-2.webp"
+													type="image/webp">
+												<img src="./assets/img/components/product-card/product-2.png" alt="">
+											</picture>
+										</a>
+										<div class="product-card__title">
+											Wallbox Pulsar
+											Зарядная станция (5 м)
+										</div>
+										<div
+											class="product-card__availability availability-label availability-label--available">
+											В наличии</div>
+										<div class="product-card__desc">
+											<img src="./assets/img/components/product-card/desc-control.png"
+												alt="Уппавление">
+											<img src="./assets/img/components/product-card/desc-web-is.png"
+												alt="web интерфейс">
+											<img src="./assets/img/components/product-card/desc-ocpp.png"
+												alt="Протокол открытой точки зарядки">
+										</div>
+										<div class="product-card__price">
+											<div class="product-card__price-inner">
+												<div class="product-card__price-val">90 900 ₽</div>
+											</div>
+										</div>
+										<div class="product-card__bottom">
+											<a href="#" class="product-card__buy btn-t">Купить</a>
+											<button class="product-card__compare btn-compare" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#random-ic">
+													</use>
+												</svg>
+											</button>
+											<button class="product-card__fav btn-fav" type="butotn"
+												aria-activedescendant="В сравнение">
+												<svg>
+													<use xlink:href="./assets/img/icons/sprite.svg#heart-shadow">
+													</use>
+												</svg>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- pagination -->
+							<div class="products-slider-pagination slider-pagination"></div>
+						</div>
+					</div>
+				</section>
+				<!-- oggers block -->
+				<div class="offers-b section">
+					<div class=" container">
+						<h2 class="title-1 title--underline section__title"><span>Каких производителей зарядных
+								станций
+								мы предлагаем и
+								чем они отличаются?</span></h2>
+					</div>
+					<!-- hint -->
+					<div class="offers-b__hint">
+						<div class="offers-b__hint-container container">
+							<p>
+								С подходящей зарядной станцией для Вашего электромобиля, Вы сократите время зарядки. Не
+								все
+								зарядные станции одинаковы. В то время как некоторые из них особенно просты в
+								использовании,
+								интеллектуальные зарядные станции предлагают дополнительные возможности и могут быть
+								интегрированы, например, в систему "умного дома". Мы предлагаем Вам широкий ассортимент
+								высококачественных зарядных станций от лидеров отрасли!
+							</p>
+						</div>
+					</div>
+					<!-- slider wrapper -->
+					<div class="slider-sm-wrap offers-b__list-wrap slider-wrap">
+						<div class="container">
+							<!-- slider -->
+							<div class="slider-sm swiper">
+								<div class="offers-b__list  swiper-wrapper">
+									<article class="info-card slider-sm__slide swiper-slide">
+										<div class="info-card__img">
+											<picture>
+												<source type="image/webp"
+													srcset="./assets/img/components/offers/img-1.webp">
+												<img src="./assets/img/components/offers/img-1.jpg" alt="">
+											</picture>
+										</div>
+										<h4 class="info-card__title">
+											ABL
+										</h4>
+										<div class="info-card__text">
+											<p>
+												ABL – семейная компания родом из Баварии. Еще в 1925 году ее основатель
+												Альберт Бюттнер разработал разъем SCHUKO, самый распространенный вариант
+												розеточной вилки. Компания ABL продолжает оставаться лидером на рынке
+												электронной промышленности. Сегодня в ассортименте компании ABL широкий
+												выбор высококачественного оборудования под любые задачи. Продукция
+												компании
+												ABL успешно работает в различных климатических зонах и условиях
+												эксплуатации
+												и надежно зарекомендовала себя во всем мире. В 2018 зарядная станция
+												eMH1
+												выиграла конкурс в номинации Wallbox по версии ADAC.
+											</p>
+										</div>
+									</article>
+									<article class="info-card slider-sm__slide swiper-slide">
+										<div class="info-card__img">
+											<picture>
+												<source type="image/webp"
+													srcset="./assets/img/components/offers/img-2.webp">
+												<img src="./assets/img/components/offers/img-2.jpg" alt="">
+											</picture>
+										</div>
+										<h4 class="info-card__title">
+											Schneider Electric
+										</h4>
+										<div class="info-card__text">
+											<p>
+												Schneider Electric – французская компания с мировым именем, прошедшая
+												путь от изготовления военной техники до электрооборудования. С 1919
+												компания изменила свой вектор развития и начала свой путь к олимпу в
+												сфере электроэнергетики. Сегодня Schneider Electric по праву считается
+												одним из самых надежных и качественных производителей во всем мире.
+												Компания не только следует тенденциям рынка, но и сотрудничает с
+												мировыми лидерами по производству электромобилей, внедряя технологии в
+												свои инновационные зарядные станции первой среди гигантов
+												электроэнергетики.
+											</p>
+										</div>
+									</article>
+									<article class="info-card slider-sm__slide swiper-slide">
+										<div class="info-card__img">
+											<picture>
+												<source type="image/webp"
+													srcset="./assets/img/components/offers/img-3.webp">
+												<img src="./assets/img/components/offers/img-3.jpg" alt="">
+											</picture>
+										</div>
+										<h4 class="info-card__title">
+											Juice Technology
+										</h4>
+										<div class="info-card__text">
+											<p>
+												Компания Juice Technology AG, расположенная в г. Кам (Цуг, Швейцария),
+												является ведущим мировым производителем мобильных зарядных станций
+												мощностью 22 кВт. В группу компаний входят также Juice Services AG и
+												немецкая Juice Europe GmbH с филиалом в Мюнхене. Обширный ассортимент
+												решений швейцарской компании включает в себя также интеллектуальные
+												системы зарядки и управления нагрузкой, зарядные станции, настенные
+												коробки и станции зарядки постоянного тока. Группа компаний Juice
+												представлена по всему миру собственными представительствами и
+												партнерами.
+											</p>
+										</div>
+									</article>
+									<article class="info-card slider-sm__slide swiper-slide">
+										<div class="info-card__img">
+											<picture>
+												<source type="image/webp"
+													srcset="./assets/img/components/offers/img-4.webp">
+												<img src="./assets/img/components/offers/img-4.jpg" alt="">
+											</picture>
+										</div>
+										<h4 class="info-card__title">
+											ABB
+										</h4>
+										<div class="info-card__text">
+											<p>
+												ABB — это швейцарско-шведская корпорация, специализирующаяся в области
+												электротехники, энергетического машиностроения и информационных
+												технологий. Компания основана в 1988 году слиянием шведской компании
+												ASEA и швейцарской Brown, Boveri & Cie. ABB уже много лет предлагает
+												широкий выбор продуктов на рынке аксессуаров для электромобилей. В
+												ассортимент продукции также входят компактные зарядные станции c
+												различной мощностью и скоростью зарядки. Кроме того, при подключении
+												зарядных станций к ABB Ability клиенты имеют широкие возможности
+												обслуживания.
+											</p>
+										</div>
+									</article>
+								</div>
+								<!-- pagination -->
+								<div class="slider-sm-pagination slider-pagination">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- info block -->
+				<div class="info-b">
+					<div class="container">
+						<div class="grid-col-2">
+							<!-- note -->
+							<article class="info-card">
+								<h4 class="info-card__title">
+									Вы заряжаете свой электромобиль дома?
+								</h4>
+								<div class="info-card__text">
+									<p>
+										С подходящей зарядной станцией из нашего интернет-магазина Вы забудете о
+										проблемах с
+										зарядкой электромобиля. Мы избавим Вас от страха перед дальней поездкой. Вы
+										быстро и
+										легко зарядите свой электромобиль на зарядной станции дома. Благодаря
+										многолетнему
+										сотрудничеству с такими производителями автомобилей, как BMW, Daimler, Renault &
+										Tesla, мы знаем характеристики зарядки всех распространенных электромобилей и
+										предлагаем Вам всестороннее обслуживание, включая установку зарядной станции.
+										Если у
+										вас есть вопросы по зарядке вашего BMW i3, Renault ZOE, Tesla Model 3, VW e-Golf
+										или
+										Hyundai Kona — или любого другого электромобиля — мы с удовольствием
+										проконсультируем вас и вместе с вами найдем подходящую зарядную станцию для
+										электромобиля, отвечающую вашим потребностям. В нашем интернет-магазине Вы
+										найдёте
+										зарядные станции от ведущих производителей ABL, KEBA, Webasto, ABB и другие.
+									</p>
+								</div>
+							</article>
+							<!-- note -->
+							<article class="info-card">
+								<h4 class="info-card__title">
+									Вы хотите быстро зарядить электромобиль?
+								</h4>
+								<div class="info-card__text">
+									<p>
+										Нет проблем c нашими зарядными станциями постоянного тока от ABB и Juice
+										Technology!
+									</p>
+								</div>
+							</article>
+							<!-- note -->
+							<article class="info-card">
+								<h4 class="info-card__title">
+									Вы часто бываете в дороге или хотели бы поехать в отпуск на электромобиле?
+								</h4>
+								<div class="info-card__text">
+									<p>
+										Тогда мы рекомендуем мобильную зарядную станцию марок JUICE BOOSTER и NRGkick. С
+										помощью соответствующих адаптеров вы можете быстро зарядить ваш электромобиль в
+										любой промышленной или бытовой розетке во время кофе-брейка. Если вы
+										осуществляете
+										зарядку на общественной зарядной станции, то в нашем интернет-магазине вы
+										найдете
+										подходящий зарядный кабель с подключением Type 1 или Type 2, подходящий для
+										вашего
+										электромобиля.
+									</p>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="footer__container container">
+				<!-- footer toop -->
+				<div class="footer__top">
+					<!-- logo -->
+					<a class="footer__logo logo" href="#">
+						<img src="./assets/img/logo@light.svg" alt="logo">
+					</a>
+					<!-- menu -->
+					<ul class="footer__menu menu">
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>База знаний</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#">
+								<span>Обзоры</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>О компании</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>Доставка и оплата</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>Контакты</span></a>
+						</li>
+					</ul>
+				</div>
+				<!-- footer middle -->
+				<div class="footer__middle">
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p>
+							УНП:1177847044132
+						</p>
+						<p>
+							Санкт-Петербург, Пискаревский проспект,
+						</p>
+						<p>д. 63б, офис 422</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p>
+							<a href="#">Зарядные станции</a>
+						</p>
+						<p>
+							<a href="#">Аксессуары</a>
+						</p>
+						<p>
+							<a href="#">Управление и учет зарядными станциями</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__delivery-parters">
+						<p>
+							Наши партнеры по доставке
+							<span class="b-row">
+								<a class="b-col" href="#" target="_blank">
+									<img src="./assets/img/components/delivery-partners/img-1.png" alt="">
+								</a>
+								<a class="b-col" href="#" target="_blank">
+									<img src="./assets/img/components/delivery-partners/img-2.png" alt="">
+								</a>
+							</span>
+						</p>
+						<p>
+							Стандартная доставка бесплатно
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p class="firm-info firm-info--clock">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+								</use>
+							</svg>
+							пн-пт 09:00 - 19:00
+						</p>
+						<p>
+							<a class="firm-info firm-info--phone" href="tel:+78125651163">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+									</use>
+								</svg>
+								+7&nbsp;(812)&nbsp;565-11-63</span>
+							</a>
+						</p>
+						<p>
+							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+									</use>
+								</svg>
+								info@avtocharge.ru
+							</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__sci sci">
+						<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+							</svg>
+						</a>
+						<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+							</svg>
+						</a>
+						<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+							</svg>
+						</a>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p class="footer__payment-systems">
+							<img src="./assets/img/components/payment-system/img-1.png" alt="">
+							<img src="./assets/img/components/payment-system/img-2.png" alt="">
+							<img src="./assets/img/components/payment-system/img-3.png" alt="">
+						</p>
+						<p style="font-weight: 500;">
+							Все цены указаны с учетом НДС и, <br>
+							возможно, плюс стоимость доставки
+						</p>
+					</div>
+				</div>
+				<!-- footer bottom -->
+				<div class="footer__bottom">
+					<a href="#">Политика конфеданциальности</a>
+					<a class="ArtBro" href="https://cweb.by/" target="_blank">
+						Разработка и продвижение cweb
+					</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="./assets/js/libraries/jquery.min.js"></script>
+	<!-- swiper js -->
+	<script src="./assets/js/libraries/swiper-bundle.min.js"></script>
+	<!-- swiper js -->
+	<script src="./assets/js/libraries/jquery.custom-select.js"></script>
+	<!-- fslightbox js -->
+	<script src="./assets/js/libraries/fslightbox.js"></script>
+	<!-- main js -->
+	<script src="./assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="ArtBro">
+	<title>Корзина</title>
+	<link rel="stylesheet" href="./assets/style/css/libraries/swiper-bundle.min.css">
+	<link rel="stylesheet" href="./assets/style/css/style.css">
+</head>
+
+<body>
+	<div class="page basket-pg">
+		<!-- HEADER -->
+		<header class="header">
+			<!-- header top -->
+			<div class="header__top">
+				<div class="header__top-container container">
+					<!-- header top left -->
+					<div class="header__top-left">
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Бесплатная доставка
+						</div>
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Монтаж
+						</div>
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Техническое обслуживание
+						</div>
+					</div>
+					<!-- header top right -->
+					<div class="header__top-right">
+						<div class="firm-info firm-info--clock">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+								</use>
+							</svg>
+							пн-пт 09:00 - 19:00
+						</div>
+						<!-- massangers -->
+						<div class="header__sci sci">
+							<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--phone" href="tel:+78125651163">
+								+7&nbsp;(812)&nbsp;565-11-63</span>
+							</a>
+						</div>
+						<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+								</use>
+							</svg>
+							info@avtocharge.ru
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="header__container container">
+				<!-- header middle -->
+				<div class="header__middle">
+					<!-- separable links -->
+					<div class="header__separable-links separable-links">
+						<a href="#">Для частного использования</a>
+						<a href="#">Решения для бизнеса</a>
+						<a href="#">Для гос предприятий</a>
+					</div>
+					<!-- search -->
+					<form class="header__search search" data-search-panel>
+						<div class="search__inner">
+							<input class="search__input" type="search" placeholder="Поиск">
+							<button class="search__submit" type="button" aria-label="Закрыть поиск"
+								data-search-close="">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+								</svg>
+							</button>
+							<button class="search__close" type="button" aria-label="Закрыть поиск" data-search-close="">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.97 47.97">
+									<path
+										d="M28.23,24,47.09,5.12A3,3,0,0,0,42.85.88L24,19.74,5.12.88A3,3,0,0,0,.88,5.12L19.74,24,.88,42.85A3,3,0,0,0,3,48a3,3,0,0,0,2.12-.88L24,28.23,42.85,47.09a3,3,0,0,0,4.24-4.24Z">
+									</path>
+								</svg>
+							</button>
+						</div>
+					</form>
+					<!-- button -->
+					<button class="header__callback btn-t btn-t--size_l" aria-label="Заказать звонок">Заказать
+						звонок</button>
+				</div>
+				<!-- header bottom -->
+				<div class="header__bottom">
+					<!-- logo -->
+					<a class="header__logo logo" href="#">
+						<img src="./assets/img/logo.svg" alt="logo">
+					</a>
+					<!-- hamburger -->
+					<button class="header__hamburger hamburger" type="button">
+						<span></span>
+						<b>Меню</b>
+					</button>
+					<!-- mobile tel -->
+					<a class="firm-info firm-info--phone" href="tel:+78125651163">
+						<svg class="firm-info__ic">
+							<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+							</use>
+						</svg>
+					</a>
+					<!-- burger -->
+					<div class="header__burger">
+						<div class="header__burger-inner">
+							<!-- separable links -->
+							<div class="separable-links">
+								<a href="#">Для частного использования</a>
+								<a href="#">Решения для бизнеса</a>
+								<a href="#">Для гос предприятий</a>
+							</div>
+							<!-- navigation -->
+							<nav class="header__nav">
+								<ul class="header__menu menu">
+									<li class="menu__item menu__item--drop">
+										<button class="menu__item-toggle hamburger" type="button"
+											aria-label="Открыть подменю">
+											<span></span>
+										</button>
+										<a class="menu__link" href="#"><span>Каталог</span></a>
+										<ul class="menu__submenu  js-tree-menu">
+											<li class="menu__item">
+												<a class="menu__link" href="#">
+													<span>Зарядные станции</span>
+													<span class="menu__arr">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</a>
+												<ul class="menu__submenu">
+													<li class="menu__item">
+														<a class="menu__link" href="#"><span>Зарядный кабель</span></a>
+													</li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Сервисное оборудование
+															</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Адаптеры</span></a></li>
+												</ul>
+											</li>
+											<li class="menu__item">
+												<a class="menu__link" href="#">
+													<span>Аксессуары</span>
+													<span class="menu__arr">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</a>
+												<ul class="menu__submenu">
+													<li class="menu__item">
+														<a class="menu__link" href="#"><span>Зарядный кабель</span></a>
+													</li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Сервисное оборудование
+															</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Адаптеры</span></a></li>
+													<li class="menu__item"><a class="menu__link" href="#"><span>Колонны
+																для
+																монтажа</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Запчасти</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Держатель кабеля</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Другое</span></a></li>
+												</ul>
+											</li>
+											<li class="menu__item">
+												<a class="menu__link" href="#">
+													<span>Управление и учет зарядными станциями</span>
+													<span class="menu__arr">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</a>
+												<ul class="menu__submenu">
+													<li class="menu__item"><a class="menu__link" href="#"><span>Колонны
+																для
+																монтажа</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Запчасти</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Держатель кабеля</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Другое</span></a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>База знаний</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">
+											<span>Обзоры</span>
+										</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>О компании</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Доставка и оплата</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Контакты</span></a>
+									</li>
+								</ul>
+							</nav>
+							<div class="firm-info firm-info--clock">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+									</use>
+								</svg>
+								пн-пт 09:00 - 19:00
+							</div>
+							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+									</use>
+								</svg>
+								info@avtocharge.ru
+							</a>
+							<!-- massangers -->
+							<div class="header__sci sci">
+								<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+									</svg>
+								</a>
+								<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+									</svg>
+								</a>
+								<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+									</svg>
+								</a>
+							</div>
+
+						</div>
+					</div>
+					<!-- row -->
+					<div class="header__bottom-row">
+						<!-- search toggle -->
+						<button class="header__search-toggle" button="button" aria-label="Показать поиск"
+							data-search-toggle="">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+							</svg>
+						</button>
+						<a class="icon-link icon-link--account" href="#">
+							<div class="icon-link__icon-wrap">
+								<svg class="icon-link__ic">
+									<use xlink:href="./assets/img/icons/sprite.svg#user"></use>
+								</svg>
+							</div>
+							<span class="icon-link__text">Кабинет</span>
+						</a>
+						<a class="icon-link icon-link--favourites" href="#">
+							<div class="icon-link__icon-wrap">
+								<svg class="icon-link__ic">
+									<use xlink:href="./assets/img/icons/sprite.svg#heart"></use>
+								</svg>
+								<strong>0</strong>
+							</div>
+
+							<span class="icon-link__text">Закладки</span>
+
+						</a>
+						<a class="icon-link icon-link--basket" href="#">
+							<div class="icon-link__icon-wrap">
+								<svg class="icon-link__ic">
+									<use xlink:href="./assets/img/icons/sprite.svg#basket"></use>
+								</svg>
+								<strong>0</strong>
+							</div>
+							<span class="icon-link__text">Корзина</span>
+
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- BREAD CRUMB -->
+		<div class="bread-crumb">
+			<div class="bread-crumb__container container">
+				<a href="#" class="bread-crumb__item">Главная</a>
+				<span class="bread-crumb__item">Корзина</span>
+			</div>
+		</div>
+		<div class="content-wrap">
+			<!-- MAIN -->
+			<main>
+				<div class="container">
+					<div class="b-select">
+						<select name="modal">
+							<option>Модель</option>
+							<option value="">Модель 1</option>
+							<option value="">Модель 2</option>
+							<option value="">Модель 3</option>
+						</select>
+						<svg>
+							<use xlink:href="./assets/img/icons/sprite.svg#arr-tr-down"></use>
+						</svg>
+					</div>
+					<h1 class="title-1 title--underline">
+						Корзина
+					</h1>
+					<div class="panel-b">
+						<div class="panel-b__inner">
+							<!-- content -->
+							<div class="panel-b__content">
+								<!-- table form -->
+								<form action="#" class="basket-f">
+									<!-- basket table -->
+									<div class="basket-table table-frame">
+										<!-- table head -->
+										<div class="basket-table__head  table-frame__head">
+											<div class="basket-table__row">
+												<div class="basket-table__td basket-table__td--name">
+													Наименование
+												</div>
+												<div class="basket-table__td">
+													Количество
+												</div>
+												<div class="basket-table__td">
+													Цена
+												</div>
+												<div class="basket-table__td"></div>
+											</div>
+										</div>
+										<!-- table body -->
+										<div class="basket-table__body table-frame__body">
+											<!-- row -->
+											<div class="basket-table__row">
+												<div class="basket-table__td basket-table__td--name">
+													<a href="#">
+														<img src="./assets/img/components/product-card/product-2.png"
+															alt="">
+													</a>
+													<p>
+														Зарядная станция ABL Waldsf sdlbox eMsdf sdH2 2W224sdfsdf0
+													</p>
+												</div>
+												<div class="basket-table__td table-frame__td--quantity">
+													<div class="number-slider">
+														<button class="number-slider__down js-number-slider-reduce"
+															type="button" aria-label="Увеличить на еденицу">-</button>
+														<input type="number" min="1" step="1" value="1"
+															class="number-slider__input js-number-slider-input">
+														<button class="number-slider__up js-number-slider-add"
+															type="button" aria-label="Уменьшить на еденицу">+</button>
+													</div>
+												</div>
+												<div class="basket-table__td basket-table__td--price">
+													321 000 ₽
+												</div>
+												<div class="basket-table__td">
+													<button class="btn-remove" type="button">
+														<svg>
+															<use xlink:href="./assets/img/icons/sprite.svg#delete-ic">
+															</use>
+														</svg>
+													</button>
+												</div>
+											</div>
+											<!-- row -->
+											<div class="basket-table__row">
+												<div class="basket-table__td basket-table__td--name">
+													<a href="#">
+														<img src="./assets/img/components/product-card/product-2.png"
+															alt="">
+													</a>
+													<p>
+														Зарядная станция ABL Wallbox eMH2 2W2240
+													</p>
+												</div>
+												<div class="basket-table__td table-frame__td--quantity">
+													<div class="number-slider">
+														<button class="number-slider__down js-number-slider-reduce"
+															type="button" aria-label="Увеличить на еденицу">-</button>
+														<input type="number" min="1" step="1" value="1"
+															class="number-slider__input js-number-slider-input">
+														<button class="number-slider__up js-number-slider-add"
+															type="button" aria-label="Уменьшить на еденицу">+</button>
+													</div>
+												</div>
+												<div class="basket-table__td table-frame__td--price">
+													321 000 ₽
+												</div>
+												<div class="basket-table__td">
+													<button class="btn-remove" type="button">
+														<svg>
+															<use xlink:href="./assets/img/icons/sprite.svg#delete-ic">
+															</use>
+														</svg>
+													</button>
+												</div>
+											</div>
+										</div>
+										<!-- table bottom -->
+										<div class="basket-table__bottom table-frame__bottom">
+											<div class="basket-table__row">
+												<div class="basket-table__td">ИТОГО</div>
+												<div class="basket-table__td basket-table_td--quantity">2 шт.</div>
+												<div class="basket-table__td basket-table__td--price">321 000 ₽</div>
+												<div class="basket-table__td"></div>
+											</div>
+										</div>
+									</div>
+									<!-- basket form bottom -->
+									<div class="basket-f__bottom">
+										<button class="btn btn--reset" type="submit">Очистить корзину</button>
+										<!-- promo input -->
+										<div class="basket-f__promo">
+											<div class="b-input">
+												<div class="b-input__input">
+													<input type="text" placeholder="Промо-код">
+												</div>
+												<button class="btn" type="button">Применить</button>
+											</div>
+											<p>
+												Скидка в корзине: <span>0 руб.</span>
+											</p>
+										</div>
+									</div>
+								</form>
+								<!-- order form -->
+								<form action="#" class="order-f">
+									<div class="order-f__inner">
+										<!-- data user -->
+										<div class="table-frame">
+											<div class="table-frame__head">
+												Данные получателя:
+											</div>
+											<div class="table-frame__body">
+												<div class="b-input">
+													<div class="b-input__title">E-mail</div>
+													<div class="b-input__input">
+														<input type="email" name="email" placeholder="E-mail">
+													</div>
+												</div>
+												<div class="b-input">
+													<div class="b-input__title">ФИО</div>
+													<div class="b-input__input">
+														<input type="text" name="username" placeholder="ФИО">
+													</div>
+												</div>
+												<div class="b-input">
+													<div class="b-input__title">Телефон</div>
+													<div class="b-input__input">
+														<input type="tel" name="tel" placeholder="Телефон">
+													</div>
+												</div>
+												<div class="b-input b-input--textarea">
+													<div class="b-input__title">Комментарий</div>
+													<div class="b-input__input">
+														<textarea name="msg" placeholder="Комментарий"></textarea>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- payment methods -->
+										<div class="table-frame">
+											<div class="table-frame__head">
+												Способы оплаты:
+
+											</div>
+											<div class="table-frame__body">
+												<div class="checkboxes">
+													<label class="b-radio">
+														<input class="b-radio__input" type="radio" name="payment"
+															value="nal">
+														<span class="b-radio__custom"></span>
+														<span class="b-radio__content">
+															Оплата наличными
+														</span>
+													</label>
+													<label class="b-radio">
+														<input class="b-radio__input" type="radio" name="payment"
+															value="beznal">
+														<span class="b-radio__custom"></span>
+														<span class="b-radio__content">
+															Безналичный картой
+														</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<!-- delivery options -->
+										<div class="table-frame">
+											<div class="table-frame__head">
+												Варианты доставки:
+											</div>
+											<div class="table-frame__body">
+												<div class="checkboxes">
+													<label class="b-radio">
+														<input class="b-radio__input" type="radio" name="delivery"
+															value="pickup">
+														<span class="b-radio__custom"></span>
+														<span class="b-radio__content">
+															Самовывоз
+														</span>
+													</label>
+													<label class="b-radio">
+														<input class="b-radio__input" type="radio" name="by-city"
+															value="non-cash-card">
+														<span class="b-radio__custom"></span>
+														<span class="b-radio__content">
+															Доставка по Санкт-Петербургу
+														</span>
+													</label>
+													<label class="b-radio">
+														<input class="b-radio__input" type="radio" name="delivery"
+															value="by-country">
+														<span class="b-radio__custom"></span>
+														<span class="b-radio__content">
+															Доставка по РФ
+														</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<!-- delivery options -->
+										<div class="table-frame">
+											<div class="table-frame__head">
+												Варианты доставки:
+											</div>
+											<div class="table-frame__body">
+												<div class="basket-data__content">
+													<label class="b-input">
+														<span class="b-input__title">Почтовый индекс</span>
+														<span class="b-input__input">
+															<input type="text" placeholder="Почтовый индекс">
+														</span>
+													</label>
+													<label class="b-input">
+														<span class="b-input__title">Область</span>
+														<span class="b-input__input">
+															<input type="text" placeholder="Область">
+														</span>
+													</label>
+													<label class="b-input">
+														<span class="b-input__title">Город</span>
+														<span class="b-input__input">
+															<input type="text" placeholder="Город">
+														</span>
+													</label>
+													<span class="b-input b-input--triple">
+														<span class="b-input__title">Улица</span>
+														<span class="b-input__input">
+															<input type="text" placeholder="Улица">
+															<input type="text" placeholder="Дом">
+															<input type="text" placeholder="Кв.">
+														</span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="order-f__bottom">
+										<button class="btn btn--reset" type="submit">Очистить корзину</button>
+									</div>
+								</form>
+							</div>
+							<!-- sidebar -->
+							<div class="panel-b__sidebar">
+								<!-- preview basket card -->
+								<div class="preview-basket-wrap fixblock">
+									<div class="preview-basket-card table-frame">
+										<div class="preview-basket-card__head table-frame__head">
+											Итого, с доставкой:
+										</div>
+										<div class="preview-basket-card__body table-frame__body">
+											<p>
+												Стоимость: <span>321 000 ₽</span>
+											</p>
+											<p>
+												Количество: <span>2</span>
+											</p>
+										</div>
+										<div class="preview-basket-card__bottom table-frame__bottom">
+											<span>Итого</span> <span class="preview-basket-card__total-cost">321 050
+												₽</span>
+										</div>
+									</div>
+									<button class="preview-basket-submit btn-t" type="button">Сделать заказ!</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="footer__container container">
+				<!-- footer toop -->
+				<div class="footer__top">
+					<!-- logo -->
+					<a class="footer__logo logo" href="#">
+						<img src="./assets/img/logo@light.svg" alt="logo">
+					</a>
+					<!-- menu -->
+					<ul class="footer__menu menu">
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>База знаний</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#">
+								<span>Обзоры</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>О компании</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>Доставка и оплата</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>Контакты</span></a>
+						</li>
+					</ul>
+				</div>
+				<!-- footer middle -->
+				<div class="footer__middle">
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p>
+							УНП:1177847044132
+						</p>
+						<p>
+							Санкт-Петербург, Пискаревский проспект,
+						</p>
+						<p>д. 63б, офис 422</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p>
+							<a href="#">Зарядные станции</a>
+						</p>
+						<p>
+							<a href="#">Аксессуары</a>
+						</p>
+						<p>
+							<a href="#">Управление и учет зарядными станциями</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__delivery-parters">
+						<p>
+							Наши партнеры по доставке
+							<span class="b-row">
+								<a class="b-col" href="#" target="_blank">
+									<img src="./assets/img/components/delivery-partners/img-1.png" alt="">
+								</a>
+								<a class="b-col" href="#" target="_blank">
+									<img src="./assets/img/components/delivery-partners/img-2.png" alt="">
+								</a>
+							</span>
+						</p>
+						<p>
+							Стандартная доставка бесплатно
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p class="firm-info firm-info--clock">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+								</use>
+							</svg>
+							пн-пт 09:00 - 19:00
+						</p>
+						<p>
+							<a class="firm-info firm-info--phone" href="tel:+78125651163">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+									</use>
+								</svg>
+								+7&nbsp;(812)&nbsp;565-11-63</span>
+							</a>
+						</p>
+						<p>
+							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+									</use>
+								</svg>
+								info@avtocharge.ru
+							</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__sci sci">
+						<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+							</svg>
+						</a>
+						<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+							</svg>
+						</a>
+						<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+							</svg>
+						</a>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p class="footer__payment-systems">
+							<img src="./assets/img/components/payment-system/img-1.png" alt="">
+							<img src="./assets/img/components/payment-system/img-2.png" alt="">
+							<img src="./assets/img/components/payment-system/img-3.png" alt="">
+						</p>
+						<p style="font-weight: 500;">
+							Все цены указаны с учетом НДС и, <br>
+							возможно, плюс стоимость доставки
+						</p>
+					</div>
+				</div>
+				<!-- footer bottom -->
+				<div class="footer__bottom">
+					<a href="#">Политика конфеданциальности</a>
+					<a class="ArtBro" href="https://cweb.by/" target="_blank">
+						Разработка и продвижение cweb
+					</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- swiper js -->
+	<script src="./assets/js/libraries/swiper-bundle.min.js"></script>
+	<!-- fslightbox js -->
+	<script src="./assets/js/libraries/fslightbox.js"></script>
+	<!-- main js -->
+	<script src="./assets/js/main.js"></script>
+</body>
+
+</html>
