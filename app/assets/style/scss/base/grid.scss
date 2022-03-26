@@ -1,25 +1,7 @@
 :root {
-	--column: 12;
+	--column: #{$grid-columns};
 	--air-l: 30px;
 	--air-b: 20px;
-}
-
-@mixin from($min_width) {
-	@media screen and (min-width: #{$min_width}px) {
-		@content;
-	}
-}
-
-@mixin to($max_width) {
-	@media screen and (max-width: #{$max_width}px) {
-		@content;
-	}
-}
-
-@mixin from-to($min_width, $max_width) {
-	@media screen and (min-width: #{$min_width}px) and (max-width: #{$max_width}px) {
-		@content;
-	}
 }
 
 @mixin row-flex {
@@ -37,6 +19,17 @@
 
 @mixin size($n) {
 	width: calc(100% / var(--column) * #{$n} - var(--air-l));
+}
+
+[class*="row-cols"] {
+	--air-l: 30px;
+	--air-b: 30px;
+
+	@include row-flex;
+
+	& > * {
+		@include col;
+	}
 }
 
 .b-cols {
@@ -57,48 +50,58 @@
 	@include col();
 }
 
-@for $i from 1 through 12 {
+@for $i from 1 through $grid-columns {
 	.b-col-#{$i} {
-		width: calc(100% / 12 * #{$i} - var(--air-l));
+		width: calc(100% / #{$grid-columns} * #{$i} - var(--air-l));
 	}
-}
 
-@include desctop-mid {
-	@for $i from 1 through 12 {
-		.b-col-xl-#{$i} {
-			width: calc(100% / 12 * #{$i} - var(--air-l));
+	.row-cols-#{$i} {
+		& > * {
+			width: calc(100% / #{$grid-columns} * #{$i} - var(--air-l));
 		}
 	}
 }
 
-@include desctop-min {
-	@for $i from 1 through 12 {
-		.b-col-lg-#{$i} {
-			width: calc(100% / 12 * #{$i} - var(--air-l));
+@for $i from 0 through 60 {
+	@if $i % 5 == 0 {
+		.gx-#{$i},
+		.g-#{$i} {
+			--air-l: #{$i}px !important;
+		}
+
+		.gy-#{$i},
+		.g-#{$i} {
+			--air-b: #{$i}px !important;
 		}
 	}
 }
 
-@include table {
-	@for $i from 1 through 12 {
-		.b-col-md-#{$i} {
-			width: calc(100% / 12 * #{$i} - var(--air-l));
-		}
-	}
-}
+@each $break, $value_break in $breakpoints {
+	@media (max-width: $value_break) {
+		@for $i from 0 through 60 {
+			@if $i % 5 == 0 {
+				.gx-#{$break}-#{$i},
+				.g-#{$break}-#{$i} {
+					--air-l: #{$i}px !important;
+				}
 
-@include mobile {
-	@for $i from 1 through 12 {
-		.b-col-sm-#{$i} {
-			width: calc(100% / 12 * #{$i} - var(--air-l));
+				.gy-#{$break}-#{$i},
+				.g-#{$break}-#{$i} {
+					--air-b: #{$i}px !important;
+				}
+			}
 		}
-	}
-}
 
-@include tel {
-	@for $i from 1 through 12 {
-		.b-col-xs-#{$i} {
-			width: calc(100% / 12 * #{$i} - var(--air-l));
+		@for $i from 1 through $grid-columns {
+			.row-cols-#{$break}-#{$i} {
+				& > * {
+					width: calc(100% / #{$grid-columns} * #{$i} - var(--air-l));
+				}
+			}
+
+			.b-col-#{$break}-#{$i} {
+				width: calc(100% / #{$grid-columns} * #{$i} - var(--air-l));
+			}
 		}
 	}
 }

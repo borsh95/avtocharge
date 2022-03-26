@@ -1,6 +1,7 @@
 /*==================== COMMON BUTTON ====================*/
 %baseBtn {
 	cursor: pointer;
+	position: relative;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -68,15 +69,26 @@
 .btn-t {
 	--colorTone: transparent;
 	--colorText: var(--color-text);
+
 	@extend %baseBtn;
 	@extend %baseView;
 
 	border: 2px solid var(--color-primary);
 	transition: all $duration;
-
 	&:hover {
 		--colorText: #fff;
 		--colorTone: var(--color-primary);
+	}
+
+	&--white {
+		--colorText: #fff;
+
+		border: 2px solid #fff;
+
+		&:hover {
+			--colorText: var(--color-primary);
+			background-color: #fff;
+		}
 	}
 }
 
@@ -91,7 +103,25 @@
 	border: solid #fff;
 	backdrop-filter: blur(25px);
 	box-shadow: 0px 0px 5px #ffffff;
+	overflow: hidden;
 	transition: all $duration;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		backdrop-filter: blur(25px);
+		transition: all $duration;
+	}
+
+	span {
+		position: relative;
+		z-index: 1;
+	}
 
 	&:hover {
 		--colorText: var(--color-primary);
@@ -145,6 +175,38 @@
 		color: red;
 		max-height: 100%;
 		transition: fill $duration;
+	}
+}
+
+.btn-link {
+	@extend %baseBtn;
+
+	font-size: 24px;
+	color: var(--color-primary);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: currentColor;
+		transition: opacity $duration;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 0;
+		}
+	}
+
+	@include desctop-mid {
+		font-size: 22px;
+	}
+
+	@include mobile {
+		font-size: 18px;
 	}
 }
 
@@ -321,5 +383,34 @@
 
 	@include mobile {
 		right: 20px;
+	}
+}
+
+/* fixed to element btn */
+.fixed-to-element-btn {
+	position: fixed;
+	left: 20px;
+	bottom: 0;
+	z-index: 1000;
+	padding: 0.4em getEm(42, 24);
+	font-size: 24px;
+	color: #fff;
+	background-color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	border-radius: 10px 10px 0 0;
+	border-bottom: 0;
+	transition: all $duration;
+
+	&:hover {
+		color: var(--color-primary);
+		background-color: #fff;
+	}
+
+	@include desctop-min {
+		font-size: 22px;
+	}
+
+	@include mobile {
+		font-size: 18px;
 	}
 }

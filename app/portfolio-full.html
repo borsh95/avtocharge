@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="ArtBro">
+	<title>Портфолио</title>
+	<link rel="stylesheet" href="./assets/style/css/libraries/swiper-bundle.min.css">
+	<link rel="stylesheet" href="./assets/style/css/style.css">
+</head>
+
+<body>
+	<div class="page portfolio-fl-pg">
+		<!-- HEADER -->
+		<header class="header">
+			<!-- header top -->
+			<div class="header__top">
+				<div class="header__top-container container">
+					<!-- header top left -->
+					<div class="header__top-left">
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Бесплатная доставка
+						</div>
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Монтаж
+						</div>
+						<div class="firm-info firm-info--color_blue">
+							<svg class="firm-info__ic">
+								<use xlink:href="assets/img/icons/sprite.svg#checked">
+								</use>
+							</svg>
+							Техническое обслуживание
+						</div>
+					</div>
+					<!-- header top right -->
+					<div class="header__top-right">
+						<div class="firm-info firm-info--clock">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+								</use>
+							</svg>
+							пн-пт 09:00 - 19:00
+						</div>
+						<!-- massangers -->
+						<div class="header__sci sci">
+							<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--phone" href="tel:+78125651163">
+								+7&nbsp;(812)&nbsp;565-11-63</span>
+							</a>
+						</div>
+						<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+								</use>
+							</svg>
+							info@avtocharge.ru
+						</a>
+						<!-- sci-link insta -->
+						<a class="sci-link sci-link--insta" target="_blank" href="#">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci_insta"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="header__container container">
+				<!-- header middle -->
+				<div class="header__middle">
+					<!-- separable links -->
+					<div class="header__separable-links separable-links">
+						<a href="#">Для частного использования</a>
+						<a href="#">Решения для бизнеса</a>
+						<a href="#">Для гос предприятий</a>
+					</div>
+					<!-- search -->
+					<form class="header__search search" data-search-panel>
+						<div class="search__inner">
+							<input class="search__input" type="search" placeholder="Поиск">
+							<button class="search__submit" type="button" aria-label="Закрыть поиск"
+								data-search-close="">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+								</svg>
+							</button>
+							<button class="search__close" type="button" aria-label="Закрыть поиск" data-search-close="">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.97 47.97">
+									<path
+										d="M28.23,24,47.09,5.12A3,3,0,0,0,42.85.88L24,19.74,5.12.88A3,3,0,0,0,.88,5.12L19.74,24,.88,42.85A3,3,0,0,0,3,48a3,3,0,0,0,2.12-.88L24,28.23,42.85,47.09a3,3,0,0,0,4.24-4.24Z">
+									</path>
+								</svg>
+							</button>
+						</div>
+					</form>
+					<!-- button -->
+					<button class="header__callback btn-t btn-t--size_l js-openModal" aria-label="Заказать звонок"
+						data-type-modal="application">Заказать
+						звонок</button>
+				</div>
+				<!-- header bottom -->
+				<div class="header__bottom">
+					<!-- logo -->
+					<a class="header__logo logo" href="#">
+						<img src="./assets/img/logo.svg" alt="logo">
+					</a>
+					<!-- hamburger -->
+					<button class="header__hamburger hamburger" type="button">
+						<span></span>
+						<b>Меню</b>
+					</button>
+					<!-- mobile tel -->
+					<a class="firm-info firm-info--phone" href="tel:+78125651163">
+						<svg class="firm-info__ic">
+							<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+							</use>
+						</svg>
+					</a>
+					<!-- burger -->
+					<div class="header__burger">
+						<div class="header__burger-inner">
+							<!-- separable links -->
+							<div class="separable-links">
+								<a href="#">Для частного использования</a>
+								<a href="#">Решения для бизнеса</a>
+								<a href="#">Для гос предприятий</a>
+							</div>
+							<!-- navigation -->
+							<nav class="header__nav">
+								<ul class="header__menu menu">
+									<li class="menu__item menu__item--drop">
+										<button class="menu__item-toggle hamburger" type="button"
+											aria-label="Открыть подменю">
+											<span></span>
+										</button>
+										<a class="menu__link" href="#"><span>Каталог</span></a>
+										<ul class="menu__submenu  js-tree-menu">
+											<li class="menu__item">
+												<div class="menu__item-head">
+													<span class="menu__link" href="#">
+														<span>Зарядные станции</span>
+													</span>
+													<span class="menu__arr js-tree-menu__btn">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</div>
+												<ul class="menu__submenu">
+													<li class="menu__item">
+														<a class="menu__link" href="#"><span>Зарядный кабель</span></a>
+													</li>
+													<li class="menu__item active">
+														<span class="menu__link">
+															<span>Сервисное оборудование
+															</span>
+														</span>
+													</li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Адаптеры</span></a></li>
+												</ul>
+											</li>
+											<li class="menu__item">
+												<div class="menu__item-head">
+													<a class="menu__link" href="#">
+														<span>Аксессуары</span>
+													</a>
+													<span class="menu__arr js-tree-menu__btn">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</div>
+												<ul class="menu__submenu">
+													<li class="menu__item">
+														<a class="menu__link" href="#"><span>Зарядный кабель</span></a>
+													</li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Сервисное оборудование
+															</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Адаптеры</span></a></li>
+													<li class="menu__item"><a class="menu__link" href="#"><span>Колонны
+																для
+																монтажа</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Запчасти</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Держатель кабеля</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Другое</span></a></li>
+												</ul>
+											</li>
+											<li class="menu__item">
+												<div class="menu__item-head">
+													<a class="menu__link" href="#">
+														<span>Управление и учет зарядными станциями</span>
+													</a>
+													<span class="menu__arr js-tree-menu__btn">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</div>
+												<ul class="menu__submenu">
+													<li class="menu__item"><a class="menu__link" href="#"><span>Колонны
+																для
+																монтажа</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Запчасти</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Держатель кабеля</span></a></li>
+													<li class="menu__item"><a class="menu__link"
+															href="#"><span>Другое</span></a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>База знаний</span></a>
+									</li>
+									<li class="menu__item active">
+										<span class="menu__link">
+											<span>Обзоры</span>
+										</span>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>О компании</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Доставка и оплата</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Контакты</span></a>
+									</li>
+								</ul>
+							</nav>
+							<div class="firm-info firm-info--clock">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+									</use>
+								</svg>
+								пн-пт 09:00 - 19:00
+							</div>
+							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+									</use>
+								</svg>
+								info@avtocharge.ru
+							</a>
+							<!-- massangers -->
+							<div class="header__sci sci">
+								<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+									</svg>
+								</a>
+								<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+									</svg>
+								</a>
+								<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+									<svg>
+										<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+									</svg>
+								</a>
+							</div>
+
+						</div>
+					</div>
+					<!-- row -->
+					<div class="header__bottom-row">
+						<!-- search toggle -->
+						<button class="header__search-toggle" button="button" aria-label="Показать поиск"
+							data-search-toggle="">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+							</svg>
+						</button>
+						<div class="icon-link-wrap icon-link-wrap--account">
+							<a class="icon-link" href="#">
+								<span class="icon-link__icon-wrap">
+									<svg class="icon-link__ic">
+										<use xlink:href="./assets/img/icons/sprite.svg#user"></use>
+									</svg>
+								</span>
+								<span class="icon-link__text">Кабинет</span>
+							</a>
+							<div class="icon-link-drop">
+								<a href="#">Авторизация</a>
+								<span href="#">Профиль</span>
+								<a href="#">История заказов</a>
+							</div>
+						</div>
+						<div class="icon-link-wrap icon-link-wrap--favourites">
+							<a class="icon-link" href="#">
+								<span class="icon-link__icon-wrap">
+									<svg class="icon-link__ic">
+										<use xlink:href="./assets/img/icons/sprite.svg#heart"></use>
+									</svg>
+									<strong>0</strong>
+								</span>
+
+								<span class="icon-link__text">Закладки</span>
+
+							</a>
+						</div>
+						<div class="icon-link-wrap icon-link-wrap--basket">
+							<a class="icon-link" href="#">
+								<span class="icon-link__icon-wrap">
+									<svg class="icon-link__ic">
+										<use xlink:href="./assets/img/icons/sprite.svg#basket"></use>
+									</svg>
+									<strong>0</strong>
+								</span>
+								<span class="icon-link__text">Корзина</span>
+
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!------- modal window - application --------->
+		<div class="v-modal" data-type-modal="application">
+			<div class="v-modal__inner">
+				<form class="v-modal__form application-f" action="#">
+					<div class="v-modal__form-inner">
+						<div class="v-modal__close js-closeModal"></div>
+						<div class="v-modal__title title-3 title--underline">
+							<span>Заказать обратный звонок</span>
+						</div>
+						<div class="v-modal__application">
+							<div class="b-input">
+								<div class="b-input__input">
+									<input type="text" name="username" placeholder="Имя">
+								</div>
+							</div>
+							<div class="b-input">
+								<div class="b-input__input">
+									<input type="email" name="email" placeholder="E-mail">
+								</div>
+							</div>
+							<div class="b-input">
+								<div class="b-input__input">
+									<input type="tel" name="tel" placeholder="Телефон">
+								</div>
+							</div>
+							<div class="b-input b-input--bg-color">
+								<div class="b-input__input">
+									<input type="text" name="promo" placeholder="Промокод">
+								</div>
+							</div>
+							<div class="b-input">
+								<div class="b-input__input">
+									<textarea name="message" placeholder="Комментарий"></textarea>
+								</div>
+							</div>
+							<p>
+								<label class="b-checkbox b-checkbox--type-2">
+									<input class=" b-checkbox__input" type="checkbox" name="personal-agreements"
+										value="true">
+									<span class="b-checkbox__custom"></span>
+									<span class="b-checkbox__content">
+										Я согласен на обработку персональных данных.
+									</span>
+								</label>
+							</p>
+							<button class="application-f__submit btn" type="submit" href="#">
+								Отправить
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- BREADCRUMBS -->
+		<div class="bread-crumb">
+			<div class="bread-crumb__container container">
+				<a href="#" class="bread-crumb__item">Главная</a>
+				<span class="bread-crumb__item">Оптовым покупателям</span>
+			</div>
+		</div>
+		<div class="content-wrap pb-0">
+			<!-- MAIN -->
+			<main>
+				<div class="main-banner">
+					<div class="main-banner__container container-l">
+						<!-- background image -->
+						<div class="main-banner__bg">
+							<img src="./assets/img/pages/review-note/wallbox/banner.png" alt="">
+						</div>
+						<!-- content -->
+						<div class="main-banner__content-wrap container">
+							<div class="main-banner__content">
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container mt-28" style="max-width: 1355px;">
+					<section class="section">
+						<h2 class="section__title title-2 title--underline">Установка Wallbox Pulsar в частном доме</h2>
+						<div class="row-cols-6 row-cols-sm-12 gx-60 text text--fz_l">
+							<div class="col">
+								<p class="title-3 color-primary mb-16 text-start">ЗАДАЧА</p>
+								<p class="mt-0">
+									Установка зарядной станции в частном доме. Настройка оборудования и подключение к
+									сети. На нашем складе постоянно поддерживается более 2000 наименований товаров в
+									наличии. Это гарантирует оперативную отгрузку товара и актуальную информацию о
+									наличии и стоимости на нашем сайте.
+								</p>
+							</div>
+							<div class="col">
+								<p class="title-3 color-primary mb-16 text-start">ЛОКАЦИЯ</p>
+								<p class="mt-0">
+									г. Москва, частный дом
+								</p>
+								<p class="title-3 color-primary mb-16 text-start">СРОК ИСПОЛНЕНИЯ ПРОЕКТА</p>
+								<p class="mt-0">
+									1 день
+								</p>
+							</div>
+						</div>
+					</section>
+					<div class="section">
+						<h3 class="title-3 mb-28 mb-sm-12 text-start color-primary">УСТРОЙСТВО</h3>
+						<a class="link-plate" href="#">
+							<span class="link-plate__img">
+								<img src="./assets/img/components/product-card/product-2.png" alt="">
+							</span>
+							<span class="link-plate__title">Зарядная станция Wallbox Pulsar</span>
+							<span class="link-plate__ic">
+								<svg class="icon-link__ic">
+									<use xlink:href="./assets/img/icons/sprite.svg#copy"></use>
+								</svg>
+							</span>
+						</a>
+					</div>
+					<section class="section">
+						<h2 class="section__title title-2 title--underline">Как проходили работы</h2>
+						<div class="text text--fz_l">
+							<p>
+								В зависимости от емкости аккумулятора и мощности зарядки, для каждой модели
+								электромобиля и гибрида установлена различная продолжительность зарядки. Вам, как
+								водителю, важно знать, сколько времени будет держаться заряд вашего электромобиля.
+							</p>
+							<p>
+								В нашей базе перечислены основные модели электромобилей, емкость их аккумулятора,
+								мощность зарядки и запас хода на одном заряде. Также вы сможете оценить, насколько
+								быстрее электромобиль будет заряжаться на зарядной станции.
+							</p>
+							<p>
+								В зависимости от емкости аккумулятора и мощности зарядки, для каждой модели
+								электромобиля и гибрида установлена различная продолжительность зарядки. Вам, как
+								водителю, важно знать, сколько времени будет держаться заряд вашего электромобиля.
+								В нашей базе перечислены основные модели электромобилей, емкость их аккумулятора,
+								мощность зарядки и запас хода на одном заряде. Также вы сможете оценить, насколько
+								быстрее электромобиль будет заряжаться на зарядной станции.
+							</p>
+							<div class="img-slider-wrap slider-wrap mt-72 mt-xl-56 mt-sm-32">
+								<!-- slider -->
+								<div class="img-slider swiper">
+									<div class="swiper-wrapper">
+										<!-- slide -->
+										<div class="img-slider__slide swiper-slide">
+											<picture>
+												<source srcset="./assets/img/pages/article-fl/bg-1.jpg"
+													type="image/webp">
+												<img class="fit-cover" src="./assets/img/pages/article-fl/bg-1.jpg"
+													alt="">
+											</picture>
+										</div>
+										<!-- slide -->
+										<div class="img-slider__slide swiper-slide">
+											<picture>
+												<source srcset="./assets/img/pages/article-fl/bg-1.jpg"
+													type="image/webp">
+												<img class="fit-cover" src="./assets/img/pages/article-fl/bg-1.jpg"
+													alt="">
+											</picture>
+										</div>
+										<!-- slide -->
+										<div class="img-slider__slide swiper-slide">
+											<picture>
+												<source srcset="./assets/img/pages/article-fl/bg-1.jpg"
+													type="image/webp">
+												<img class="fit-cover" src="./assets/img/pages/article-fl/bg-1.jpg"
+													alt="">
+											</picture>
+										</div>
+									</div>
+								</div>
+								<div class="img-slider-bottom">
+									<!-- pagination -->
+									<div class="img-slider-pagination slider-pagination"></div>
+									<!-- nav -->
+									<div class="img-slider-nav slider-nav">
+										<button class="slider-arr slider-arr--prev">
+											<svg>
+												<use xlink:href="./assets/img/icons/sprite.svg#arr-tr-right">
+												</use>
+											</svg>
+										</button>
+										<button class="slider-arr slider-arr--next">
+											<svg>
+												<use xlink:href="./assets/img/icons/sprite.svg#arr-tr-right">
+												</use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+				<div class="container container--sm">
+					<section class="section">
+						<h2 class="title-1 title--underline section__title">
+							Получите индивидуальное предложение <br> для вашего дома или бизнеса
+						</h2>
+						<!-- application -->
+						<div class="application-b">
+							<!-- mobile background img -->
+							<div class="d-none d-flex-sm jcc mt-84 mb-20">
+								<div class="application-b__img application-b__img--mob">
+									<img src="./assets/img/components/application/charging-bg.jpg">
+								</div>
+							</div>
+							<!-- text -->
+							<div class="applicatin-b__text text text--fz_s">
+								<p>
+									Если Вы являетесь представителем торговой или монтажной организации, либо компании,
+									которая регулярно осуществляет закупки оборудования зарядных станций для
+									электромобилей, дополнительного оборудования, зап. частей, кабельной продукции или
+									любой другой продукции из нашего ассортимента - позвоните в наш отдел развития и
+									дистрибуции или заполните заявку на сайте, и мы обязательно свяжемся с Вами, чтобы
+									сделать уникальное ценовое предложение.
+								</p>
+							</div>
+							<div class="row-cols-6 row-cols-sm-12 aic mt-88 mt-lg-60 mt-sm-36">
+								<div class="application-b__application-f-wrap">
+									<!-- form -->
+									<form class="application-f" action="#">
+										<p class="application-f__title title-3">
+											Форма обратной связи:
+										</p>
+										<div class="application-f__inputs">
+											<div class="b-input">
+												<div class="b-input__input">
+													<input type="text" name="username" placeholder="Имя">
+												</div>
+											</div>
+											<div class="b-input">
+												<div class="b-input__input">
+													<input type="email" name="email" placeholder="E-mail">
+												</div>
+											</div>
+											<div class="b-input">
+												<div class="b-input__input">
+													<input type="tel" name="tel" placeholder="Телефон">
+												</div>
+											</div>
+										</div>
+										<button class="application-f__submit btn" type="submit" href="#">
+											Отправить
+										</button>
+									</form>
+								</div>
+								<!-- background img -->
+								<div class="applicatin-b__img d-none-sm">
+									<picture>
+										<img src="./assets/img/components/application/charging-bg.jpg" alt="">
+									</picture>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+				<!-- there-questions-b -->
+				<div class="there-questions-b section mt-88 mt-sm-40"
+					style="background: url(./assets/img/components/there-questions-b/bg.png) 100% 100%/cover">
+					<div class="there-questions-b__container container">
+						<div class="title-1">Остались вопросы? Мы рады помочь вам!</div>
+						<button class="btn js-openModal" aria-label="Заказать звонок"
+							data-type-modal="application">Свяжитесь в нами!</button>
+					</div>
+				</div>
+			</main>
+		</div>
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="footer__container container">
+				<!-- footer toop -->
+				<div class="footer__top">
+					<!-- logo -->
+					<a class="footer__logo logo" href="#">
+						<img src="./assets/img/logo@light.svg" alt="logo">
+					</a>
+					<!-- menu -->
+					<ul class="footer__menu menu">
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>База знаний</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#">
+								<span>Обзоры</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>О компании</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>Доставка и оплата</span></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#"><span>Контакты</span></a>
+						</li>
+					</ul>
+				</div>
+				<!-- footer middle -->
+				<div class="footer__middle">
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p>
+							УНП:1177847044132
+						</p>
+						<p>
+							Санкт-Петербург, Пискаревский проспект,
+						</p>
+						<p>д. 63б, офис 422</p>
+						<p>
+							<!-- sci-link insta -->
+							<a class="sci-link sci-link--insta" target="_blank" href="#">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci_insta"></use>
+								</svg>
+							</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p>
+							<a href="#">Зарядные станции</a>
+						</p>
+						<p>
+							<a href="#">Аксессуары</a>
+						</p>
+						<p>
+							<a href="#">Управление и учет зарядными станциями</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__delivery-parters">
+						<p>
+							Наши партнеры по доставке
+							<span class="b-row">
+								<a class="b-col" href="#" target="_blank">
+									<img src="./assets/img/components/delivery-partners/img-1.png" alt="">
+								</a>
+								<a class="b-col" href="#" target="_blank">
+									<img src="./assets/img/components/delivery-partners/img-2.png" alt="">
+								</a>
+							</span>
+						</p>
+						<p>
+							Стандартная доставка бесплатно
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p class="firm-info firm-info--clock">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+								</use>
+							</svg>
+							пн-пт 09:00 - 19:00
+						</p>
+						<p>
+							<a class="firm-info firm-info--phone" href="tel:+78125651163">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+									</use>
+								</svg>
+								+7&nbsp;(812)&nbsp;565-11-63</span>
+							</a>
+						</p>
+						<p>
+							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+									</use>
+								</svg>
+								info@avtocharge.ru
+							</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__sci sci">
+						<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+							</svg>
+						</a>
+						<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+							</svg>
+						</a>
+						<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+							</svg>
+						</a>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p class="footer__payment-systems">
+							<img src="./assets/img/components/payment-system/img-1.png" alt="">
+							<img src="./assets/img/components/payment-system/img-2.png" alt="">
+							<img src="./assets/img/components/payment-system/img-3.png" alt="">
+						</p>
+						<p style="font-weight: 500;">
+							Все цены указаны с учетом НДС и, <br>
+							возможно, плюс стоимость доставки
+						</p>
+					</div>
+				</div>
+				<!-- footer bottom -->
+				<div class="footer__bottom">
+					<a href="#">Политика конфеданциальности</a>
+					<a class="ArtBro" href="https://cweb.by/" target="_blank">
+						Разработка и продвижение cweb
+					</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="./assets/js/libraries/jquery.min.js"></script>
+	<!-- swiper js -->
+	<script src="./assets/js/libraries/swiper-bundle.min.js"></script>
+	<!-- swiper js -->
+	<script src="./assets/js/libraries/jquery.custom-select.js"></script>
+	<!-- fslightbox js -->
+	<script src="./assets/js/libraries/fslightbox.js"></script>
+	<!-- main js -->
+	<script src="./assets/js/main.js"></script>
+</body>
+
+</html>

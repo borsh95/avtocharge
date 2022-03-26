@@ -1,0 +1,289 @@
+/* application form */
+.application-f {
+	display: flex;
+	flex-direction: column;
+
+	&__title {
+		margin-bottom: getEm(30, 24);
+	}
+
+	&__inputs {
+		display: flex;
+		flex-direction: column;
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__submit {
+		--fz: 16px;
+
+		margin: 38px auto 0;
+		padding-left: getEm(55, 16);
+		padding-right: getEm(55, 16);
+	}
+
+	@include mobile {
+		&__submit {
+			--fz: 16px;
+
+			margin: 38px auto 0;
+			padding-left: getEm(55, 16);
+			padding-right: getEm(55, 16);
+		}
+	}
+}
+
+/* warranty-item */
+.warranty-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	max-width: 290px;
+
+	&__title {
+		margin-top: getEm(38, 24);
+	}
+
+	&__text {
+		margin-top: getEm(12, 16);
+		font-size: 16px;
+		line-height: (30, 16);
+	}
+
+	@include desctop-min {
+		&__img {
+			height: 110px;
+		}
+	}
+
+	@include mobile {
+		&__img {
+			height: 90px;
+			max-width: 90%;
+		}
+
+		&__title {
+			margin-top: getEm(30, 18);
+		}
+
+		&__text {
+			margin-top: getEm(8, 16);
+		}
+	}
+}
+
+/* portfolio card */
+.portfolio-card {
+	$this: &;
+
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+
+	&:hover {
+		&::before,
+		#{$this}__content {
+			opacity: 1;
+		}
+	}
+
+	&::before,
+	&__img,
+	&__content {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		padding-bottom: 100%;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		background: rgba(45, 142, 255, 0.2);
+		backdrop-filter: blur(10px);
+		opacity: 0;
+		transition: opacity $duration;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 20px 20px 65px;
+		align-items: center;
+		color: #fff;
+		text-align: center;
+		opacity: 0;
+		transition: opacity $duration;
+	}
+
+	&__title {
+		font-size: 28px;
+		font-weight: 700;
+	}
+
+	&__text {
+		margin-top: getEm(15, 18);
+		font-size: 18px;
+		line-height: (30/18);
+	}
+
+	&__more {
+		position: absolute;
+		left: 50%;
+		bottom: 13%;
+		width: 203px;
+		transform: translateX(-50%);
+	}
+
+	&__img {
+		z-index: -1;
+	}
+
+	@include desctop-min {
+		&__title {
+			font-size: 24px;
+		}
+
+		&__text {
+			font-size: 16px;
+		}
+	}
+
+	@include table {
+		&__text {
+			display: none;
+		}
+
+		&::before,
+		&__content {
+			opacity: 1;
+		}
+	}
+
+	@include table {
+		&__title {
+			font-size: 20px;
+		}
+
+		&__more {
+			font-size: 14px;
+		}
+	}
+}
+
+/* link plate */
+.link-plate {
+	$this: &;
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 10px getPr(110, 1355) 20px 15px;
+	font: 600 30px var(--fm-1);
+	background-color: #fff;
+	border: 1px solid var(--color-primary);
+	border-radius: 10px;
+	transition: background-color $duration;
+
+	&:hover {
+		color: #fff;
+		background-color: var(--color-primary);
+		text-decoration: none !important;
+		svg {
+			fill: #fff;
+		}
+	}
+
+	&__img {
+		display: flex;
+		max-width: 115px;
+	}
+
+	&__title {
+		margin-left: getPr(60, 1355);
+		margin-right: 25px;
+		transition: color $duration;
+	}
+
+	&__ic {
+		position: absolute;
+		top: 50%;
+		right: getPr(60, 1355);
+		margin-left: auto;
+		transform: translateY(-50%);
+
+		svg {
+			max-height: 100%;
+			fill: var(--color-primary);
+			transition: fill $duration;
+		}
+	}
+
+	@include desctop-mid {
+		font-size: 24px;
+	}
+
+	@include mobile {
+		padding: 10px 50px 10px 10px;
+		font-size: 14px;
+
+		&__img {
+			max-width: 55px;
+		}
+
+		&__title {
+			margin-left: 23px;
+		}
+
+		&__ic {
+			right: 19px;
+			width: 17px;
+			height: 17px;
+		}
+	}
+}
+
+/* record control */
+.record-control {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	& > * {
+		margin-bottom: 16px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__more {
+		min-width: getEm(250, 18);
+	}
+
+	&__counter {
+		position: absolute;
+		top: 50%;
+		left: calc(50% + 170px);
+		transform: translateY(-50%);
+	}
+
+	@include desctop-min {
+		&__counter {
+			position: static;
+			transform: none;
+		}
+	}
+}

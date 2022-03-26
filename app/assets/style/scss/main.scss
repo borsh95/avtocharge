@@ -1,6 +1,7 @@
 @import "fonts";
 @import "./base/variables";
 @import "./mixsins/mixsins";
+@import "./base/spacing";
 @import "./base/nullstyle";
 @import "./base/settings";
 @import "./base/grid";
@@ -50,6 +51,10 @@ body {
 	padding-right: 30px;
 	width: 100%;
 	max-width: 1640px;
+
+	&--sm {
+		max-width: 1185px;
+	}
 
 	@include table {
 		padding-right: 20px;
@@ -173,6 +178,10 @@ body {
 		font-size: 20px;
 	}
 
+	&--fz_s {
+		font-size: 18px;
+	}
+
 	&--lh {
 		&_s {
 			line-height: (30/18);
@@ -197,9 +206,11 @@ body {
 		&--fz_l {
 			font-size: 18px;
 		}
+	}
 
-		&--fz_l {
-			font-size: 18px;
+	@include desctop-min {
+		&--fz_s {
+			font-size: 16px;
 		}
 	}
 
@@ -224,6 +235,7 @@ body {
 
 @import "./components/interface";
 @import "./components/btns";
+@import "./components/molecules";
 @import "./components/blocks";
 @import "./components/header";
 @import "./components/footer";
@@ -242,6 +254,5 @@ body {
 @import "./pages/common-pg";
 @import "./pages/product-card";
 @import "./pages/reviews-note";
-/* decoration */
-@import "./decor/new-years";
+@import "./pages/portfolio";
 /*--------------------------------Other--------------------------------*/

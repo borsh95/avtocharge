@@ -103,6 +103,10 @@
 			margin: getEm(38, 24) 0 getEm(30, 24);
 			font-weight: 700;
 			font-size: 24px;
+
+			&:first-child {
+				margin-top: 0;
+			}
 		}
 
 		p img {

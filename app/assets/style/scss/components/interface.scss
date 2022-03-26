@@ -613,6 +613,14 @@
 		padding-bottom: 60px;
 		max-width: 1152px;
 		border-bottom: 4px solid #eaf4ff;
+
+		a {
+			color: var(--color-primary);
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	&__pane {

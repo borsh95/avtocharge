@@ -36,12 +36,31 @@ if (isElem('.fixblock')) {
 
 }
 
-if ($ && typeof $.fn.customSelect === 'function') {
+if (window.$ && typeof window.$.fn.customSelect === 'function') {
 	$('select').customSelect();
 }
 
 // скрол страницы к нужной координате
 let scrollingWindow = scrollWindow();
+
+document.addEventListener('click', function (e) {
+	if (e.target.closest('.scroll-to[href*="#"]')) {
+		const link = e.target.closest('.scroll-to[href*="#"]');
+		const id = link.hash;
+		const $section = document.querySelector(id);
+
+		if (!$section) return;
+
+		e.preventDefault();
+
+		const $header = document.querySelector('.header') || document.querySelector('header');
+		let coordsSection = window.pageYOffset + $section.getBoundingClientRect().top;
+
+		coordsSection = coordsSection - $header.offsetHeight;
+
+		scrollingWindow.startAmimationScroll(coordsSection);
+	}
+})
 
 // 	main slider 
 if (isElem('.main-slider')) {
@@ -263,8 +282,8 @@ if (isElem('.content-img-slider')) {
 }
 
 // js-incomplete-list
-if (isElem('.compatibility-b .js-incomplete-list')) {
-	const listItems = document.querySelectorAll('.compatibility-b .js-incomplete-list');
+if (isElem('.compatibility-b__list.js-incomplete-list')) {
+	const listItems = document.querySelectorAll('.compatibility-b__list.js-incomplete-list');
 
 	for (const $item of listItems) {
 		incompleteList($item, {
@@ -465,6 +484,36 @@ if (isElem('.v-modal')) {
 	modalWindow();
 }
 
+// js-selection-scrollable
+(function () {
+	if (isElem('.js-selection-brand')) {
+
+		const select = document.querySelector('.js-selection-brand');
+		const btn = document.querySelector('.js-selection-action');
+		const tableBlockWrap = document.querySelector('.js-brand-tables');
+		const tableBlocks = tableBlockWrap.querySelectorAll('.js-brand-tables > *');
+
+		for (const block of tableBlocks) {
+			block.classList.add('hidden');
+		}
+
+		btn.addEventListener('click', function () {
+			if (select.value === '') return false;
+
+			const hash = '#' + select.value;
+			const section = tableBlockWrap.querySelector(hash);
+
+			for (const block of tableBlocks) {
+				block.classList.add('hidden');
+			}
+
+			if (!section) return;
+
+			section.classList.remove('hidden');
+		})
+	}
+}());
+
 // v-up кнопка вверх
 (function () {
 	document.querySelector('body').insertAdjacentHTML('afterbegin', `
@@ -618,16 +667,21 @@ function treeMenu(selector) {
 
 // анимация скрола окна браузера
 function scrollWindow() {
-	let scrollAnimationId;
+	if (scrollWindow.instance) {
+		return func.instance;
+	}
+
+	let scrollAnimationId = 0;
 	let currentScroll = window.pageYOffset;
 	let scrolls = false;
 
-	function startAmimationScroll(newScrollY) {
+	function _startAmimationScroll(newScrollY, callback) {
 		if (!scrolls) {
 			currentScroll = window.pageYOffset;
 			scrolls = true;
 		}
 
+		scrollAnimationId++;
 		const deltaScroll = (newScrollY - currentScroll);
 
 		currentScroll += deltaScroll * 0.15;
@@ -635,22 +689,30 @@ function scrollWindow() {
 
 		if (Math.abs(deltaScroll) > 5) {
 			scrollAnimationId = window.requestAnimationFrame(function () {
-				startAmimationScroll(newScrollY);
+				_startAmimationScroll(newScrollY);
 			})
 		} else {
 			window.scrollTo(0, newScrollY);
 			stopAnimationScroll();
-			scrolls = false;
+
+			if (typeof callback === 'function') callback();
 		}
 	}
 
 	function stopAnimationScroll() {
 		window.cancelAnimationFrame(scrollAnimationId);
 		scrollAnimationId = undefined;
+		scrolls = false;
 	}
 
-	return {
-		startAmimationScroll,
+	return scrollWindow.instance = {
+		get scrollAnimationId() {
+			return scrollAnimationId;
+		},
+		startAmimationScroll() {
+			stopAnimationScroll();
+			_startAmimationScroll.apply(this, arguments);
+		},
 		stopAnimationScroll,
 	}
 }
@@ -968,654 +1030,3 @@ function _throttle(func, ms = 100) {
 		}, ms)
 	}
 }
-
-
-var snowStorm = (function (window, document) {
-	let that = {},
-		features,
-		// UA sniffing and backCompat rendering mode checks for fixed position, etc.
-		isIE = navigator.userAgent.match(/msie/i),
-		isIE6 = navigator.userAgent.match(/msie 6/i),
-		isMobile = navigator.userAgent.match(/mobile|opera m(ob|in)/i),
-		isBackCompatIE = (isIE && document.compatMode === 'BackCompat'),
-		noFixed = (isBackCompatIE || isIE6),
-		screenX = null, screenX2 = null, screenY = null, scrollY = null, docHeight = null, vRndX = null, vRndY = null,
-		windOffset = 1,
-		windMultiplier = 2,
-		flakeTypes = 6,
-		fixedForEverything = false,
-		targetElementIsRelative = false,
-		opacitySupported = (function () {
-			try {
-				document.createElement('div').style.opacity = '0.5';
-			} catch (e) {
-				return false;
-			}
-			return true;
-		}()),
-		didInit = false,
-		docFrag = document.createDocumentFragment();
-	// --- common properties ---
-
-	that.autoStart = true;          // Whether the snow should start automatically or not.
-	that.excludeMobile = false;      // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) Enable at your own risk.
-	that.flakesMax = 128;           // Limit total amount of snow made (falling + sticking)
-	that.flakesMaxActive = 64;      // Limit amount of snow falling at once (less = lower CPU use)
-	that.animationInterval = 50;    // Theoretical "miliseconds per frame" measurement. 20 = fast + smooth, but high CPU use. 50 = more conservative, but slower
-	that.useGPU = true;             // Enable transform-based hardware acceleration, reduce CPU load.
-	that.className = 'snow';          // CSS class name for further customization on snow elements
-	that.excludeMobile = true;      // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) By default, be nice.
-	that.flakeBottom = null;        // Integer for Y axis snow limit, 0 or null for "full-screen" snow effect
-	that.followMouse = false;        // Snow movement can respond to the user's mouse
-	that.snowColor = '#fff';        // Don't eat (or use?) yellow snow.
-	that.snowCharacter = '&bull;';  // &bull; = bullet, &middot; is square on some systems etc.
-	that.snowStick = true;          // Whether or not snow should "stick" at the bottom. When off, will never collect.
-	that.targetElement = null;      // element which snow will be appended to (null = document.body) - can be an element ID eg. 'myDiv', or a DOM node reference
-	that.useMeltEffect = true;      // When recycling fallen snow (or rarely, when falling), have it "melt" and fade out if browser supports it
-	that.useTwinkleEffect = false;  // Allow snow to randomly "flicker" in and out of view while falling
-	that.usePositionFixed = false;  // true = snow does not shift vertically when scrolling. May increase CPU load, disabled by default - if enabled, used only where supported
-	that.usePixelPosition = false;  // Whether to use pixel values for snow top/left vs. percentages. Auto-enabled if body is position:relative or targetElement is specified.
-
-	// --- less-used bits ---
-
-	that.freezeOnBlur = true;       // Only snow when the window is in focus (foreground.) Saves CPU.
-	that.flakeLeftOffset = 0;       // Left margin/gutter space on edge of container (eg. browser window.) Bump up these values if seeing horizontal scrollbars.
-	that.flakeRightOffset = 0;      // Right margin/gutter space on edge of container
-	that.flakeWidth = 8;            // Max pixel width reserved for snow element
-	that.flakeHeight = 8;           // Max pixel height reserved for snow element
-	that.vMaxX = 5;                 // Maximum X velocity range for snow
-	that.vMaxY = 4;                 // Maximum Y velocity range for snow
-	that.zIndex = 0;                // CSS stacking order applied to each snowflake	
-
-	features = (function () {
-
-		var getAnimationFrame;
-
-		/**
-		 * hat tip: paul irish
-		 * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-		 * https://gist.github.com/838785
-		 */
-
-		function timeoutShim(callback) {
-			window.setTimeout(callback, 1000 / (that.animationInterval || 20));
-		}
-
-		var _animationFrame = (window.requestAnimationFrame ||
-			window.webkitRequestAnimationFrame ||
-			window.mozRequestAnimationFrame ||
-			window.oRequestAnimationFrame ||
-			window.msRequestAnimationFrame ||
-			timeoutShim);
-
-		// apply to window, avoid "illegal invocation" errors in Chrome
-		getAnimationFrame = _animationFrame ? function () {
-			return _animationFrame.apply(window, arguments);
-		} : null;
-
-		var testDiv;
-
-		testDiv = document.createElement('div');
-
-		function has(prop) {
-
-			// test for feature support
-			var result = testDiv.style[prop];
-			return (result !== undefined ? prop : null);
-
-		}
-
-		// note local scope.
-		var localFeatures = {
-
-			transform: {
-				ie: has('-ms-transform'),
-				moz: has('MozTransform'),
-				opera: has('OTransform'),
-				webkit: has('webkitTransform'),
-				w3: has('transform'),
-				prop: null // the normalized property value
-			},
-
-			getAnimationFrame: getAnimationFrame
-
-		};
-
-		localFeatures.transform.prop = (
-			localFeatures.transform.w3 ||
-			localFeatures.transform.moz ||
-			localFeatures.transform.webkit ||
-			localFeatures.transform.ie ||
-			localFeatures.transform.opera
-		);
-
-		testDiv = null;
-
-		return localFeatures;
-
-	}());
-
-	that.timer = null;
-	that.flakes = [];
-	that.disabled = false;
-	that.active = false;
-	that.meltFrameCount = 20;
-	that.meltFrames = [];
-
-	that.setXY = function (o, x, y) {
-
-		if (!o) {
-			return false;
-		}
-
-		if (that.usePixelPosition || targetElementIsRelative) {
-
-			o.style.left = (x - that.flakeWidth) + 'px';
-			o.style.top = (y - that.flakeHeight) + 'px';
-
-		} else if (noFixed) {
-
-			o.style.right = (100 - (x / screenX * 100)) + '%';
-			// avoid creating vertical scrollbars
-			o.style.top = (Math.min(y, docHeight - that.flakeHeight)) + 'px';
-
-		} else {
-
-			if (!that.flakeBottom) {
-
-				// if not using a fixed bottom coordinate...
-				o.style.right = (100 - (x / screenX * 100)) + '%';
-				o.style.bottom = (100 - (y / screenY * 100)) + '%';
-
-			} else {
-
-				// absolute top.
-				o.style.right = (100 - (x / screenX * 100)) + '%';
-				o.style.top = (Math.min(y, docHeight - that.flakeHeight)) + 'px';
-
-			}
-
-		}
-
-	};
-
-	that.events = (function () {
-
-		var old = (!window.addEventListener && window.attachEvent), slice = Array.prototype.slice,
-			evt = {
-				add: (old ? 'attachEvent' : 'addEventListener'),
-				remove: (old ? 'detachEvent' : 'removeEventListener')
-			};
-
-		function getArgs(oArgs) {
-			var args = slice.call(oArgs), len = args.length;
-			if (old) {
-				args[1] = 'on' + args[1]; // prefix
-				if (len > 3) {
-					args.pop(); // no capture
-				}
-			} else if (len === 3) {
-				args.push(false);
-			}
-			return args;
-		}
-
-		function apply(args, sType) {
-			var element = args.shift(),
-				method = [evt[sType]];
-			if (old) {
-				element[method](args[0], args[1]);
-			} else {
-				element[method].apply(element, args);
-			}
-		}
-
-		function addEvent() {
-			apply(getArgs(arguments), 'add');
-		}
-
-		function removeEvent() {
-			apply(getArgs(arguments), 'remove');
-		}
-
-		return {
-			add: addEvent,
-			remove: removeEvent
-		};
-
-	}());
-
-	function rnd(n, min) {
-		if (isNaN(min)) {
-			min = 0;
-		}
-		return (Math.random() * n) + min;
-	}
-
-	function plusMinus(n) {
-		return (parseInt(rnd(2), 10) === 1 ? n * -1 : n);
-	}
-
-	that.randomizeWind = function () {
-		var i;
-		vRndX = plusMinus(rnd(that.vMaxX, 0.2));
-		vRndY = rnd(that.vMaxY, 0.2);
-		if (this.flakes) {
-			for (i = 0; i < this.flakes.length; i++) {
-				if (this.flakes[i].active) {
-					this.flakes[i].setVelocities();
-				}
-			}
-		}
-	};
-
-	that.scrollHandler = function () {
-		var i;
-		// "attach" snowflakes to bottom of window if no absolute bottom value was given
-		scrollY = (that.flakeBottom ? 0 : parseInt(window.scrollY || document.documentElement.scrollTop || (noFixed ? document.body.scrollTop : 0), 10));
-		if (isNaN(scrollY)) {
-			scrollY = 0; // Netscape 6 scroll fix
-		}
-		if (!fixedForEverything && !that.flakeBottom && that.flakes) {
-			for (i = 0; i < that.flakes.length; i++) {
-				if (that.flakes[i].active === 0) {
-					that.flakes[i].stick();
-				}
-			}
-		}
-	};
-
-	that.resizeHandler = function () {
-		if (window.innerWidth || window.innerHeight) {
-			screenX = window.innerWidth - 16 - that.flakeRightOffset;
-			screenY = (that.flakeBottom || window.innerHeight);
-		} else {
-			screenX = (document.documentElement.clientWidth || document.body.clientWidth || document.body.scrollWidth) - (!isIE ? 8 : 0) - that.flakeRightOffset;
-			screenY = that.flakeBottom || document.documentElement.clientHeight || document.body.clientHeight || document.body.scrollHeight;
-		}
-		docHeight = document.body.offsetHeight;
-		screenX2 = parseInt(screenX / 2, 10);
-	};
-
-	that.resizeHandlerAlt = function () {
-		screenX = that.targetElement.offsetWidth - that.flakeRightOffset;
-		screenY = that.flakeBottom || that.targetElement.offsetHeight;
-		screenX2 = parseInt(screenX / 2, 10);
-		docHeight = document.body.offsetHeight;
-	};
-
-	that.freeze = function () {
-		// pause animation
-		if (!that.disabled) {
-			that.disabled = 1;
-		} else {
-			return false;
-		}
-		that.timer = null;
-	};
-
-	that.resume = function () {
-		if (that.disabled) {
-			that.disabled = 0;
-		} else {
-			return false;
-		}
-		that.timerInit();
-	};
-
-	that.toggleSnow = function () {
-		if (!that.flakes.length) {
-			// first run
-			that.start();
-		} else {
-			that.active = !that.active;
-			if (that.active) {
-				that.show();
-				that.resume();
-			} else {
-				that.stop();
-				that.freeze();
-			}
-		}
-	};
-
-	that.stop = function () {
-		var i;
-		this.freeze();
-		for (i = 0; i < this.flakes.length; i++) {
-			this.flakes[i].o.style.display = 'none';
-		}
-		that.events.remove(window, 'scroll', that.scrollHandler);
-		that.events.remove(window, 'resize', that.resizeHandler);
-		if (that.freezeOnBlur) {
-			if (isIE) {
-				that.events.remove(document, 'focusout', that.freeze);
-				that.events.remove(document, 'focusin', that.resume);
-			} else {
-				that.events.remove(window, 'blur', that.freeze);
-				that.events.remove(window, 'focus', that.resume);
-			}
-		}
-	};
-
-	that.show = function () {
-		var i;
-		for (i = 0; i < this.flakes.length; i++) {
-			this.flakes[i].o.style.display = 'block';
-		}
-	};
-
-	that.SnowFlake = function (type, x, y) {
-		var s = this;
-		this.type = type;
-		this.x = x || parseInt(rnd(screenX - 20), 10);
-		this.y = (!isNaN(y) ? y : -rnd(screenY) - 12);
-		this.vX = null;
-		this.vY = null;
-		this.vAmpTypes = [1, 1.2, 1.4, 1.6, 1.8]; // "amplification" for vX/vY (based on flake size/type)
-		this.vAmp = this.vAmpTypes[this.type] || 1;
-		this.melting = false;
-		this.meltFrameCount = that.meltFrameCount;
-		this.meltFrames = that.meltFrames;
-		this.meltFrame = 0;
-		this.twinkleFrame = 0;
-		this.active = 1;
-		this.fontSize = (10 + (this.type / 5) * 10);
-		this.o = document.createElement('div');
-		this.o.innerHTML = that.snowCharacter;
-		if (that.className) {
-			this.o.setAttribute('class', that.className);
-		}
-		this.o.style.color = that.snowColor;
-		this.o.style.position = (fixedForEverything ? 'fixed' : 'absolute');
-		if (that.useGPU && features.transform.prop) {
-			// GPU-accelerated snow.
-			this.o.style[features.transform.prop] = 'translate3d(0px, 0px, 0px)';
-		}
-		this.o.style.width = that.flakeWidth + 'px';
-		this.o.style.height = that.flakeHeight + 'px';
-		this.o.style.fontFamily = 'arial,verdana';
-		this.o.style.cursor = 'default';
-		this.o.style.overflow = 'hidden';
-		this.o.style.fontWeight = 'normal';
-		this.o.style.zIndex = that.zIndex;
-		docFrag.appendChild(this.o);
-
-		this.refresh = function () {
-			if (isNaN(s.x) || isNaN(s.y)) {
-				// safety check
-				return false;
-			}
-			that.setXY(s.o, s.x, s.y);
-		};
-
-		this.stick = function () {
-			if (noFixed || (that.targetElement !== document.documentElement && that.targetElement !== document.body)) {
-				s.o.style.top = (screenY + scrollY - that.flakeHeight) + 'px';
-			} else if (that.flakeBottom) {
-				s.o.style.top = that.flakeBottom + 'px';
-			} else {
-				s.o.style.display = 'none';
-				s.o.style.bottom = '0%';
-				s.o.style.position = 'fixed';
-				s.o.style.display = 'block';
-			}
-		};
-
-		this.vCheck = function () {
-			if (s.vX >= 0 && s.vX < 0.2) {
-				s.vX = 0.2;
-			} else if (s.vX < 0 && s.vX > -0.2) {
-				s.vX = -0.2;
-			}
-			if (s.vY >= 0 && s.vY < 0.2) {
-				s.vY = 0.2;
-			}
-		};
-
-		this.move = function () {
-			var vX = s.vX * windOffset, yDiff;
-			s.x += vX;
-			s.y += (s.vY * s.vAmp);
-			if (s.x >= screenX || screenX - s.x < that.flakeWidth) { // X-axis scroll check
-				s.x = 0;
-			} else if (vX < 0 && s.x - that.flakeLeftOffset < -that.flakeWidth) {
-				s.x = screenX - that.flakeWidth - 1; // flakeWidth;
-			}
-			s.refresh();
-			yDiff = screenY + scrollY - s.y + that.flakeHeight;
-			if (yDiff < that.flakeHeight) {
-				s.active = 0;
-				if (that.snowStick) {
-					s.stick();
-				} else {
-					s.recycle();
-				}
-			} else {
-				if (that.useMeltEffect && s.active && s.type < 3 && !s.melting && Math.random() > 0.998) {
-					// ~1/1000 chance of melting mid-air, with each frame
-					s.melting = true;
-					s.melt();
-					// only incrementally melt one frame
-					// s.melting = false;
-				}
-				if (that.useTwinkleEffect) {
-					if (s.twinkleFrame < 0) {
-						if (Math.random() > 0.97) {
-							s.twinkleFrame = parseInt(Math.random() * 8, 10);
-						}
-					} else {
-						s.twinkleFrame--;
-						if (!opacitySupported) {
-							s.o.style.visibility = (s.twinkleFrame && s.twinkleFrame % 2 === 0 ? 'hidden' : 'visible');
-						} else {
-							s.o.style.opacity = (s.twinkleFrame && s.twinkleFrame % 2 === 0 ? 0 : 1);
-						}
-					}
-				}
-			}
-		};
-
-		this.animate = function () {
-			// main animation loop
-			// move, check status, die etc.
-			s.move();
-		};
-
-		this.setVelocities = function () {
-			s.vX = vRndX + rnd(that.vMaxX * 0.12, 0.1);
-			s.vY = vRndY + rnd(that.vMaxY * 0.12, 0.1);
-		};
-
-		this.setOpacity = function (o, opacity) {
-			if (!opacitySupported) {
-				return false;
-			}
-			o.style.opacity = opacity;
-		};
-
-		this.melt = function () {
-			if (!that.useMeltEffect || !s.melting) {
-				s.recycle();
-			} else {
-				if (s.meltFrame < s.meltFrameCount) {
-					s.setOpacity(s.o, s.meltFrames[s.meltFrame]);
-					s.o.style.fontSize = s.fontSize - (s.fontSize * (s.meltFrame / s.meltFrameCount)) + 'px';
-					s.o.style.lineHeight = that.flakeHeight + 2 + (that.flakeHeight * 0.75 * (s.meltFrame / s.meltFrameCount)) + 'px';
-					s.meltFrame++;
-				} else {
-					s.recycle();
-				}
-			}
-		};
-
-		this.recycle = function () {
-			s.o.style.display = 'none';
-			s.o.style.position = (fixedForEverything ? 'fixed' : 'absolute');
-			s.o.style.bottom = 'auto';
-			s.setVelocities();
-			s.vCheck();
-			s.meltFrame = 0;
-			s.melting = false;
-			s.setOpacity(s.o, 1);
-			s.o.style.padding = '0px';
-			s.o.style.margin = '0px';
-			s.o.style.fontSize = s.fontSize + 'px';
-			s.o.style.lineHeight = (that.flakeHeight + 2) + 'px';
-			s.o.style.textAlign = 'center';
-			s.o.style.verticalAlign = 'baseline';
-			s.x = parseInt(rnd(screenX - that.flakeWidth - 20), 10);
-			s.y = parseInt(rnd(screenY) * -1, 10) - that.flakeHeight;
-			s.refresh();
-			s.o.style.display = 'block';
-			s.active = 1;
-		};
-
-		this.recycle(); // set up x/y coords etc.
-		this.refresh();
-
-	};
-
-	that.snow = function () {
-		var active = 0, flake = null, i, j;
-		for (i = 0, j = that.flakes.length; i < j; i++) {
-			if (that.flakes[i].active === 1) {
-				that.flakes[i].move();
-				active++;
-			}
-			if (that.flakes[i].melting) {
-				that.flakes[i].melt();
-			}
-		}
-		if (active < that.flakesMaxActive) {
-			flake = that.flakes[parseInt(rnd(that.flakes.length), 10)];
-			if (flake.active === 0) {
-				flake.melting = true;
-			}
-		}
-		if (that.timer) {
-			features.getAnimationFrame(that.snow);
-		}
-	};
-
-	that.mouseMove = function (e) {
-		if (!that.followMouse) {
-			return true;
-		}
-		var x = parseInt(e.clientX, 10);
-		if (x < screenX2) {
-			windOffset = -windMultiplier + (x / screenX2 * windMultiplier);
-		} else {
-			x -= screenX2;
-			windOffset = (x / screenX2) * windMultiplier;
-		}
-	};
-
-	that.createSnow = function (limit, allowInactive) {
-		var i;
-		for (i = 0; i < limit; i++) {
-			that.flakes[that.flakes.length] = new that.SnowFlake(parseInt(rnd(flakeTypes), 10));
-			if (allowInactive || i > that.flakesMaxActive) {
-				that.flakes[that.flakes.length - 1].active = -1;
-			}
-		}
-		that.targetElement.appendChild(docFrag);
-	};
-
-	that.timerInit = function () {
-		that.timer = true;
-		that.snow();
-	};
-
-	that.init = function () {
-		var i;
-		for (i = 0; i < that.meltFrameCount; i++) {
-			that.meltFrames.push(1 - (i / that.meltFrameCount));
-		}
-		that.randomizeWind();
-		that.createSnow(that.flakesMax); // create initial batch
-		that.events.add(window, 'resize', that.resizeHandler);
-		that.events.add(window, 'scroll', that.scrollHandler);
-		if (that.freezeOnBlur) {
-			if (isIE) {
-				that.events.add(document, 'focusout', that.freeze);
-				that.events.add(document, 'focusin', that.resume);
-			} else {
-				that.events.add(window, 'blur', that.freeze);
-				that.events.add(window, 'focus', that.resume);
-			}
-		}
-		that.resizeHandler();
-		that.scrollHandler();
-		if (that.followMouse) {
-			that.events.add(isIE ? document : window, 'mousemove', that.mouseMove);
-		}
-		that.animationInterval = Math.max(20, that.animationInterval);
-		that.timerInit();
-	};
-
-	that.start = function (bFromOnLoad) {
-		if (!didInit) {
-			didInit = true;
-		} else if (bFromOnLoad) {
-			// already loaded and running
-			return true;
-		}
-		if (typeof that.targetElement === 'string') {
-			var targetID = that.targetElement;
-			that.targetElement = document.getElementById(targetID);
-			if (!that.targetElement) {
-				throw new Error('Snowstorm: Unable to get targetElement "' + targetID + '"');
-			}
-		}
-		if (!that.targetElement) {
-			that.targetElement = (document.body || document.documentElement);
-		}
-		if (that.targetElement !== document.documentElement && that.targetElement !== document.body) {
-			// re-map handler to get element instead of screen dimensions
-			that.resizeHandler = that.resizeHandlerAlt;
-			//and force-enable pixel positioning
-			that.usePixelPosition = true;
-		}
-		that.resizeHandler(); // get bounding box elements
-		that.usePositionFixed = (that.usePositionFixed && !noFixed && !that.flakeBottom); // whether or not position:fixed is to be used
-		if (window.getComputedStyle) {
-			// attempt to determine if body or user-specified snow parent element is relatlively-positioned.
-			try {
-				targetElementIsRelative = (window.getComputedStyle(that.targetElement, null).getPropertyValue('position') === 'relative');
-			} catch (e) {
-				// oh well
-				targetElementIsRelative = false;
-			}
-		}
-		fixedForEverything = that.usePositionFixed;
-		if (screenX && screenY && !that.disabled) {
-			that.init();
-			that.active = true;
-		}
-	};
-
-	function doDelayedStart() {
-		window.setTimeout(function () {
-			that.start(true);
-		}, 20);
-		// event cleanup
-		that.events.remove(isIE ? document : window, 'mousemove', doDelayedStart);
-	}
-
-	function doStart() {
-		if (!that.excludeMobile || !isMobile) {
-			doDelayedStart();
-		}
-		// event cleanup
-		that.events.remove(window, 'load', doStart);
-	}
-
-	// hooks for starting the snow
-	if (that.autoStart) {
-		that.events.add(window, 'load', doStart, false);
-	}
-
-	return that;
-
-}(window, document));

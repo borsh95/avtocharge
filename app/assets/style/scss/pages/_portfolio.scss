@@ -1,0 +1,15 @@
+.portfolio-fl-pg {
+	.main-banner {
+		min-height: 500px;
+	}
+
+	@include mobile {
+		.main-banner {
+			min-height: 424px;
+
+			&__bg::before {
+				display: none;
+			}
+		}
+	}
+}
