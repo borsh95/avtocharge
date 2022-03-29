@@ -183,6 +183,7 @@
 	@include from(1451) {
 		&__menu {
 			$this: ".menu";
+
 			flex-wrap: nowrap;
 			font-size: 18px;
 
@@ -194,24 +195,6 @@
 					padding: 10px 15px 33px;
 				}
 
-				& > ul {
-					box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1), inset 0px 30px 30px -30px rgba(0, 0, 0, 0.1);
-
-					&::before {
-						content: "";
-						position: absolute;
-						right: -10px;
-						bottom: 100%;
-						left: -10px;
-						z-index: 1;
-						display: block;
-						height: 13px;
-						background-color: #fff;
-					}
-				}
-			}
-
-			& > #{$this}__item {
 				& > #{$this}__link span {
 					position: relative;
 
@@ -229,12 +212,19 @@
 						transition: opacity 0s $duration, width $duration;
 					}
 				}
+
 				& > span#{$this}__link span::before,
 				& > #{$this}__link:hover span::before {
 					opacity: 1;
 					width: 100%;
 					transition: opacity 0s 0s, width $duration;
 				}
+			}
+
+			.lvl-2,
+			.menu__submenu--mega {
+				box-shadow: 0 30px 30px -30px rgba(0, 0, 0, 0.1), 30px 0px 30px -30px rgba(0, 0, 0, 0.1),
+					-30px 0px 30px -30px rgba(0, 0, 0, 0.1), inset 0px 30px 30px -30px rgba(0, 0, 0, 0.1);
 			}
 		}
 	}
@@ -287,18 +277,18 @@
 		&__burger {
 			position: absolute;
 			top: 100%;
-			left: 250px;
+			left: 0;
 			z-index: 90;
 			padding: 15px 0 0;
-			width: 355px;
+			width: 100%;
 			max-width: 100%;
 			opacity: 0;
 			pointer-events: none;
 			background: var(--basick-white);
-			border-radius: 0 0 10px 10px;
 			transform: translateX(30px);
 			overflow-y: auto;
-			box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1), inset 0px 30px 30px -30px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 30px 30px -30px rgba(0, 0, 0, 0.1), 30px 0px 30px -30px rgba(0, 0, 0, 0.1),
+				-30px 0px 30px -30px rgba(0, 0, 0, 0.1), inset 0px 30px 30px -30px rgba(0, 0, 0, 0.1);
 			transition: transform $duration, opacity $duration;
 
 			&.open {
@@ -331,46 +321,41 @@
 			& > .menu__item {
 				margin: 0;
 				width: 100%;
+				border-bottom: 1px solid #f2f2f2;
 
 				.menu__link {
-					padding: getEm(10, 16) getEm(10, 16) getEm(10, 16) getEm(30, 16);
-				}
-
-				.menu__submenu {
-					font-size: inherit;
+					padding: getEm(10, 16) getEm(10, 16) getEm(10, 16) getEm(10, 16);
 				}
 			}
 
+			.menu__arr {
+				transform: rotate(90deg);
+			}
+
 			.menu__item--drop {
+				display: flex;
+				align-items: center;
 				flex-wrap: wrap;
 
 				.menu__item-toggle {
+					display: none;
 					margin-top: -#{getEm(5, 16)};
-				}
-
-				& > .menu__submenu {
-					padding: 0;
-					height: 0;
-					overflow: hidden;
-					opacity: 0;
-					transition: none;
 				}
 
 				& > .menu__link {
 					width: auto;
 					flex: 1;
+					min-width: 80%;
 				}
 
-				&.active > .menu__submenu {
-					opacity: 1;
-					height: auto;
-					overflow: hidden;
-					transition: opacity $duration;
+				.menu__submenu {
+					width: 100%;
 				}
 			}
 
-			.menu__link {
-				padding: getEm(10, 16) getEm(10, 16) getEm(10, 16) getEm(30, 16);
+			.menu__link,
+			.menu__item-head > span:first-child {
+				padding: getEm(10, 16) getEm(10, 16) getEm(10, 16) getEm(31, 16);
 				width: 100%;
 			}
 
@@ -527,8 +512,6 @@
 		}
 
 		&__burger {
-			left: 9vw;
-
 			&-inner {
 				display: grid;
 				row-gap: 8px;

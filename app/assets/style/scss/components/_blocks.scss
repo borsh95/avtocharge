@@ -176,6 +176,33 @@
 	}
 }
 
+.available {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+
+	&.aa {
+		&::before {
+			background-image: url(../../img/icons/availability/yes.png);
+		}
+	}
+	&.shelt {
+		&::before {
+			background-image: url(../../img/icons/availability/order.png);
+		}
+	}
+
+	&::before {
+		content: "";
+		display: inline-block;
+		margin-right: getEm(9, 12);
+		width: getEm(9, 12);
+		height: getEm(9, 12);
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
 .answers-cards-b {
 	&__list {
 		--air-l: 0px;
@@ -2774,6 +2801,7 @@
 /*menu*/
 .menu {
 	$this: &;
+
 	position: relative;
 	z-index: 1;
 	display: flex;
@@ -2809,12 +2837,6 @@
 			}
 		}
 
-		& > #{$this}__submenu {
-			font-size: 16px;
-			visibility: hidden;
-			transition: opacity $duration, visibility 0s $duration;
-		}
-
 		&:hover,
 		&.active {
 			& > .menu__link {
@@ -2828,88 +2850,11 @@
 	}
 	/***********************************/
 
-	/*Все вложенные списки в меню, скрытые, вертикальные*/
-	ul {
-		position: absolute;
-		z-index: 2;
-		min-width: 310px;
-		max-width: 340px;
-		background-color: #fff;
-		opacity: 0;
-		pointer-events: none;
-
-		ul {
-			position: relative;
-		}
-	}
-
-	li {
-		position: relative;
-	}
-
-	/*Позиционирование 2-го уровень меню*/
-	& > li > ul {
-		top: 100%;
-		left: 0;
-	}
-
-	/*Позиционирование 3+-го уровень меню*/
-	ul ul {
-		padding: 0;
-		opacity: 1;
-		pointer-events: all;
-		color: #5c5c5c;
-
-		#{$this}__link {
-			padding-left: getEm(55, 16);
-		}
-	}
-
-	/*ссылки со 2-го уровня меню*/
-	ul {
-		#{$this}__link {
-			display: flex;
-			justify-content: space-between;
-			padding: 9px 16px 9px 20px;
-			width: 100%;
-		}
-
-		a#{$this}__link:hover {
-			color: #fff;
-			background-color: var(--color-primary);
-		}
-
-		span#{$this}__link {
-			color: #afafaf;
-		}
-	}
-
-	/*Элементы со 2-го уровня меню(наведение)*/
-	ul li:not(.active) {
-		& > a:hover,
-		& > span {
-			background-color: var(--color-primary);
-			color: var(--basick-white);
-
-			#{$this}__arr svg {
-				--border-color: #fff;
-				--arr-color: #fff;
-				fill: var(--color-primary);
-			}
-		}
-	}
-
 	/*Вложенное меню в 1-ом уровне*/
 	&__item--drop {
-		display: flex;
-		align-items: center;
 		padding-left: 0;
 
-		& > #{$this}__link {
-			padding-left: 2px !important;
-		}
-
-		&.active > ul {
+		&.active > .menu__submenu {
 			opacity: 1;
 			visibility: visible !important;
 			pointer-events: all;
@@ -2953,23 +2898,25 @@
 	&__item-head {
 		display: flex;
 
-		&:hover {
-			color: #fff;
-			background-color: var(--color-primary);
+		a,
+		span:first-child {
+			flex-grow: 1;
 		}
 
-		#{$this}__arr {
-			padding: 0 0.8em 0;
+		&:hover {
+			background-color: rgba(45, 142, 255, 0.1);
 		}
 	}
 
 	&__arr {
 		--arr-color: var(--color-primary);
 		--border-color: var(--color-primary);
+
 		cursor: pointer;
 		flex-shrink: 0;
-		display: flex;
+		display: inline-flex;
 		align-items: center;
+		padding: 0 0.8em 0;
 
 		&.active {
 			&:hover {
@@ -2989,7 +2936,181 @@
 		}
 	}
 
+	&__item--drop {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__submenu--mega {
+		.menu__link {
+			position: relative;
+			display: inline-block;
+			padding: getEm(4, 14) 0;
+
+			&:hover {
+				&::before {
+					transform: scaleX(1);
+				}
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: getEm(28, 14);
+				height: 1px;
+				background-color: var(--color-primary);
+				transform-origin: left center;
+				transform: scaleX(0);
+				transition: transform $duration;
+			}
+		}
+
+		.menu__item.active .menu__link {
+			opacity: 0.8;
+			&::before {
+				transform: scaleX(1);
+			}
+		}
+	}
+
 	.js-tree-menu__item--open {
+		& > .menu__item-head {
+			color: #fff;
+			background-color: var(--color-primary);
+
+			a {
+				color: inherit;
+			}
+		}
+	}
+
+	@include from(1451) {
+		& > .menu__item > #{$this}__submenu {
+			max-width: 350px;
+			font-size: 16px;
+			visibility: hidden;
+			transition: opacity $duration, visibility 0s $duration;
+		}
+
+		.menu__item--drop {
+			& > .menu__arr {
+				display: none;
+			}
+
+			& > .menu__link {
+				padding-left: 0 !important;
+			}
+		}
+
+		/*Позиционирование 2-го  и 3 уровень меню*/
+		&__submenu.lvl-2,
+		&__submenu--mega {
+			position: absolute;
+			opacity: 0;
+			background-color: #fff;
+			border-radius: 0 0 10px 10px;
+			box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+		}
+
+		/*Позиционирование 2-го*/
+		&__submenu.lvl-2 {
+			top: 100%;
+			left: 0;
+			width: 310px;
+
+			& > li:last-child,
+			& > li:last-child .menu__item-head {
+				border-radius: 0 0 10px 10px;
+			}
+		}
+
+		/*Позиционирование 2-го  и 3 уровень меню*/
+		&__submenu--mega {
+			top: 0;
+			left: 100%;
+			display: flex;
+			padding: 12px 65px 20px 32px;
+			min-width: 300px;
+			max-height: calc(100vh - 220px);
+			font-size: 14px;
+			background-color: #ffffff;
+			box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+			border-radius: 0px 0px 10px 10px;
+			overflow: auto !important;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity $duration;
+
+			.js-tree-menu__item--open > & {
+				opacity: 1;
+				pointer-events: all;
+			}
+
+			& > * {
+				margin-right: 45px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+
+			.menu__item-head {
+				background-color: transparent;
+			}
+
+			li .menu__item {
+				margin-bottom: getEm(12, 14);
+				width: max-content;
+				max-width: 100px;
+
+				&-head {
+					display: inline-block;
+					margin-bottom: getEm(18, 14);
+					font-weight: 600;
+				}
+			}
+
+			.menu__arr {
+				display: none;
+			}
+		}
+
+		/*ссылки со 2-го уровня меню*/
+		&__submenu > .menu__item > .menu__item-head &__link {
+			display: flex;
+			justify-content: space-between;
+			padding: 13px 16px 12px 28px;
+			width: 100%;
+		}
+
+		@at-root .js-tree-menu {
+			ul {
+				min-height: auto;
+				height: auto;
+				overflow: visible;
+			}
+
+			.menu__submenu--mega {
+				transition: opacity $duration !important;
+			}
+		}
+	}
+
+	@include to(1451) {
+		&__submenu--mega {
+			padding-left: 27px;
+		}
+
+		&__submenu.lvl-4 {
+			font-size: 12px;
+
+			.menu__link {
+				padding-left: 0 !important;
+			}
+		}
 	}
 }
 

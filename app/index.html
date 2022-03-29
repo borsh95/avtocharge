@@ -144,6 +144,42 @@
 					<!-- burger -->
 					<div class="header__burger">
 						<div class="header__burger-inner">
+							<div class="d-flex align-items">
+								<div>
+									<div class="firm-info firm-info--clock mb-8">
+										<svg class="firm-info__ic">
+											<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+											</use>
+										</svg>
+										пн-пт 09:00 - 19:00
+									</div>
+									<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+										<svg class="firm-info__ic">
+											<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+											</use>
+										</svg>
+										info@avtocharge.ru
+									</a>
+								</div>
+								<!-- massangers -->
+								<div class="ml-auto header__sci sci">
+									<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+										<svg>
+											<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+										</svg>
+									</a>
+									<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+										<svg>
+											<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+										</svg>
+									</a>
+									<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+										<svg>
+											<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
 							<!-- separable links -->
 							<div class="separable-links">
 								<a href="#">Для частного использования</a>
@@ -152,19 +188,25 @@
 							</div>
 							<!-- navigation -->
 							<nav class="header__nav">
-								<ul class="header__menu menu">
+								<ul class="header__menu menu js-tree-menu lvl-1" data-type-menu="accordion">
 									<li class="menu__item menu__item--drop">
 										<button class="menu__item-toggle hamburger" type="button"
 											aria-label="Открыть подменю">
 											<span></span>
 										</button>
 										<a class="menu__link" href="#"><span>Каталог</span></a>
-										<ul class="menu__submenu  js-tree-menu">
+										<span class="menu__arr js-tree-menu__btn">
+											<svg>
+												<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+												</use>
+											</svg>
+										</span>
+										<ul class="menu__submenu lvl-2">
 											<li class="menu__item">
 												<div class="menu__item-head">
-													<span class="menu__link" href="#">
+													<a class="menu__link" href="#">
 														<span>Зарядные станции</span>
-													</span>
+													</a>
 													<span class="menu__arr js-tree-menu__btn">
 														<svg>
 															<use
@@ -173,18 +215,136 @@
 														</svg>
 													</span>
 												</div>
-												<ul class="menu__submenu">
+												<!-- MEGA MENU -->
+												<ul class="menu__submenu menu__submenu--mega lvl-3">
 													<li class="menu__item">
-														<a class="menu__link" href="#"><span>Зарядный кабель</span></a>
-													</li>
-													<li class="menu__item active">
-														<span class="menu__link">
-															<span>Сервисное оборудование
+														<div class="menu__item-head">
+															<span>Тип</span>
+															<span class="menu__arr js-tree-menu__btn">
+																<svg>
+																	<use
+																		xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+																	</use>
+																</svg>
 															</span>
-														</span>
+														</div>
+														<ul class="menu__submenu lvl-4">
+															<li class="menu__item">
+																<a class="menu__link" href="#">Настенные</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Быстрые</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Переносные</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Напольные</a>
+															</li>
+														</ul>
 													</li>
-													<li class="menu__item"><a class="menu__link"
-															href="#"><span>Адаптеры</span></a></li>
+													<li class="menu__item">
+														<div class="menu__item-head">
+															<span>Бренд</span>
+															<span class="menu__arr js-tree-menu__btn">
+																<svg>
+																	<use
+																		xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+																	</use>
+																</svg>
+															</span>
+														</div>
+														<ul class="menu__submenu lvl-4">
+															<li class="menu__item">
+																<a class="menu__link" href="#">ABB</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">ABL</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Juice booster</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Keba</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Kostad</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Mercedes</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Schneider electric</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Setec power</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Wallbox</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Webasto</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Парус электро</a>
+															</li>
+														</ul>
+													</li>
+													<li class="menu__item">
+														<div class="menu__item-head">
+															<span>Мощность</span>
+															<span class="menu__arr js-tree-menu__btn">
+																<svg>
+																	<use
+																		xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+																	</use>
+																</svg>
+															</span>
+														</div>
+														<ul class="menu__submenu lvl-4">
+															<li class="menu__item">
+																<a class="menu__link" href="#">11 кВт</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">22 кВт</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">150 кВт</a>
+															</li>
+														</ul>
+													</li>
+													<li class="menu__item">
+														<div class="menu__item-head">
+															<span>Марка авто</span>
+															<span class="menu__arr js-tree-menu__btn">
+																<svg>
+																	<use
+																		xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+																	</use>
+																</svg>
+															</span>
+														</div>
+														<ul class="menu__submenu lvl-4">
+															<li class="menu__item">
+																<a class="menu__link" href="#">Tesla</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">BMW i3</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Audi e-tron</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Nissan Leaf</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Jaguar Pace</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Porsche</a>
+															</li>
+														</ul>
+													</li>
 												</ul>
 											</li>
 											<li class="menu__item">
@@ -200,49 +360,34 @@
 														</svg>
 													</span>
 												</div>
-												<ul class="menu__submenu">
+												<!-- MEGA MENU -->
+												<ul class="menu__submenu menu__submenu--mega lvl-3">
 													<li class="menu__item">
-														<a class="menu__link" href="#"><span>Зарядный кабель</span></a>
+														<div class="menu__item-head">
+															<span>Мощность</span>
+															<span class="menu__arr js-tree-menu__btn">
+																<svg>
+																	<use
+																		xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+																	</use>
+																</svg>
+															</span>
+														</div>
+														<ul class="menu__submenu lvl-4">
+															<li class="menu__item">
+																<a class="menu__link" href="#">Настенные</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Быстрые</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Переносные</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Напольные</a>
+															</li>
+														</ul>
 													</li>
-													<li class="menu__item"><a class="menu__link"
-															href="#"><span>Сервисное оборудование
-															</span></a></li>
-													<li class="menu__item"><a class="menu__link"
-															href="#"><span>Адаптеры</span></a></li>
-													<li class="menu__item"><a class="menu__link" href="#"><span>Колонны
-																для
-																монтажа</span></a></li>
-													<li class="menu__item"><a class="menu__link"
-															href="#"><span>Запчасти</span></a></li>
-													<li class="menu__item"><a class="menu__link"
-															href="#"><span>Держатель кабеля</span></a></li>
-													<li class="menu__item"><a class="menu__link"
-															href="#"><span>Другое</span></a></li>
-												</ul>
-											</li>
-											<li class="menu__item">
-												<div class="menu__item-head">
-													<a class="menu__link" href="#">
-														<span>Управление и учет зарядными станциями</span>
-													</a>
-													<span class="menu__arr js-tree-menu__btn">
-														<svg>
-															<use
-																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
-															</use>
-														</svg>
-													</span>
-												</div>
-												<ul class="menu__submenu">
-													<li class="menu__item"><a class="menu__link" href="#"><span>Колонны
-																для
-																монтажа</span></a></li>
-													<li class="menu__item"><a class="menu__link"
-															href="#"><span>Запчасти</span></a></li>
-													<li class="menu__item"><a class="menu__link"
-															href="#"><span>Держатель кабеля</span></a></li>
-													<li class="menu__item"><a class="menu__link"
-															href="#"><span>Другое</span></a></li>
 												</ul>
 											</li>
 										</ul>
@@ -266,39 +411,6 @@
 									</li>
 								</ul>
 							</nav>
-							<div class="firm-info firm-info--clock">
-								<svg class="firm-info__ic">
-									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
-									</use>
-								</svg>
-								пн-пт 09:00 - 19:00
-							</div>
-							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
-								<svg class="firm-info__ic">
-									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
-									</use>
-								</svg>
-								info@avtocharge.ru
-							</a>
-							<!-- massangers -->
-							<div class="header__sci sci">
-								<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
-									<svg>
-										<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
-									</svg>
-								</a>
-								<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
-									<svg>
-										<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
-									</svg>
-								</a>
-								<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
-									<svg>
-										<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
-									</svg>
-								</a>
-							</div>
-
 						</div>
 					</div>
 					<!-- row -->
@@ -354,7 +466,7 @@
 				</div>
 			</div>
 		</header>
-		<!------- modal window - application --------->
+		<!-- modal window - application -->
 		<div class="v-modal" data-type-modal="application">
 			<div class="v-modal__inner">
 				<form class="v-modal__form application-f" action="#">

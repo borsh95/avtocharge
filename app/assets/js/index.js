@@ -461,14 +461,6 @@ if (isElem('.menu__item--drop')) {
 	})
 }
 
-if (isElem('.js-tree-menu')) {
-	const $treeMenuEls = document.querySelectorAll('.js-tree-menu');
-
-	for (const $menu of $treeMenuEls) {
-		treeMenu($menu);
-	}
-}
-
 // bTabs
 if (isElem('.b-tabs')) {
 	const tabs = document.querySelectorAll('.b-tabs');
@@ -641,8 +633,9 @@ function modalWindow() {
 
 // Меню дерево, применятся непосредственно 
 // на DOM эелементе ul
-function treeMenu(selector) {
+function treeeMenu(selector) {
 	const $el = (typeof selector === 'string') ? document.querySelector(selector) : selector;
+	const isAccordionType = $el.dataset.typeMenu === 'accordion';
 	const openItemClass = 'js-tree-menu__item--open';
 
 	const setings = {
@@ -652,18 +645,112 @@ function treeMenu(selector) {
 
 	$el.onclick = function (e) {
 		const $btn = e.target.closest(setings.openSelector);
+
 		if (!$btn) return;
 
 		let $parentElement = $btn.closest('li');
 		let $childrenContainer = $parentElement.querySelector('ul');
 
 		if (!$childrenContainer) return;
-		const isOpenItem = $parentElement.classList.contains(setings.openItemClass);
-		$parentElement.classList[isOpenItem ? 'remove' : 'add'](setings.openItemClass);
-		$btn.classList[isOpenItem ? 'remove' : 'add']('active');
-		$childrenContainer.style.minHeight = !isOpenItem ? $childrenContainer.scrollHeight + "px" : "";
+
+		const isOpenCurrentItem = $parentElement.classList.contains(setings.openItemClass);
+
+		if (!isOpenCurrentItem && $el.querySelector('.js-tree-menu__item--open')) {
+			$el.querySelector('.js-tree-menu__item--open').classList.remove('js-tree-menu__item--open');
+			$el.querySelector('.js-tree-menu__btn.active').classList.remove('active');
+		}
+
+		$parentElement.classList[isOpenCurrentItem ? 'remove' : 'add'](setings.openItemClass);
+		$btn.classList[isOpenCurrentItem ? 'remove' : 'add']('active');
+		$childrenContainer.style.minHeight = !isOpenCurrentItem ? $childrenContainer.scrollHeight + "px" : "";
 	}
 }
+
+let treeMenu = (function () {
+	let $menus = document.querySelectorAll('.js-tree-menu');
+	const mediaQuery = window.matchMedia(`(max-width: ${breakPoint.table}px)`);
+
+	for (let i = 0; i < $menus.length; i++) {
+		setupTreeMenu($menus[i]);
+	}
+
+	function setupTreeMenu(selector, options = {}) {
+		const $el = (typeof selector === 'string') ? document.querySelector(selector) : selector;
+		let opens = false;
+		const isAccordionType = $el.dataset.typeMenu === 'accordion';
+
+		const setings = {
+			openItemClass: 'js-tree-menu__item--open',
+			openSelector: '.js-tree-menu__btn'
+		}
+
+		let $mobileCloseItem = $el.querySelectorAll('.js-tree-menu__item--mobile-close');
+
+		for (let openItem of document.getElementsByClassName(setings.openItemClass)) {
+			const $childrenUl = openItem.querySelector('ul');
+			$childrenUl.style.height = 'auto';
+			$childrenUl.style.minHeight = 'auto';
+		}
+
+		$el.addEventListener('click', function (e) {
+			const $btn = e.target.closest(setings.openSelector);
+			if (!$btn || opens) return;
+
+			let $parentElement = $btn.closest('li');
+			let $childrenContainer = $parentElement.querySelector('ul');
+
+			if (!$childrenContainer) return;
+
+			opens = true;
+			const isOpenItem = $parentElement.classList.contains(setings.openItemClass);
+
+			if (isAccordionType) {
+				let activeThisLevelEl = $parentElement.parentElement.querySelector('.js-tree-menu__item--open');
+				console.log(activeThisLevelEl);
+				if (activeThisLevelEl) {
+					activeThisLevelEl.classList.remove('js-tree-menu__item--open');
+				}
+			}
+
+			// if (!isAccordionType && $el.querySelector('.js-tree-menu__item--open')) {
+			// 	$el.querySelector('.js-tree-menu__item--open').classList.remove('js-tree-menu__item--open');
+			// 	$el.querySelector('.js-tree-menu__btn.active').classList.remove('active');
+			// }
+
+			$parentElement.classList[isOpenItem ? 'remove' : 'add'](setings.openItemClass);
+			$childrenContainer.style.minHeight = isOpenItem ? $childrenContainer.scrollHeight + "px" : "";
+			setTimeout(function () {
+				$childrenContainer.style.minHeight = !isOpenItem ? $childrenContainer.scrollHeight + "px" : "";
+			}, 10)
+
+			if (isOpenItem) {
+				$childrenContainer.style.height = '';
+				opens = false;
+			} else {
+				setTimeout(() => {
+					$childrenContainer.style.height = 'auto';
+					$childrenContainer.style.minHeight = 'auto';
+					opens = false;
+				}, 500)
+			}
+		})
+
+		mobileCloseItem();
+
+		function mobileCloseItem() {
+			if ($mobileCloseItem.length && mediaQuery.matches) {
+				_utils.forEach($mobileCloseItem, $item => {
+					if (!$item.classList.contains(setings.openItemClass)) return;
+
+					const childUl = $item.querySelector('ul');
+					$item.classList.remove(setings.openItemClass);
+					childUl.style.minHeight = '';
+					childUl.style.height = '';
+				});
+			}
+		}
+	}
+}());
 
 // анимация скрола окна браузера
 function scrollWindow() {
