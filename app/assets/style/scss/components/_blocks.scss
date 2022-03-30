@@ -176,6 +176,33 @@
 	}
 }
 
+.available {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+
+	&.aa {
+		&::before {
+			background-image: url(../../img/icons/availability/yes.png);
+		}
+	}
+	&.shelt {
+		&::before {
+			background-image: url(../../img/icons/availability/order.png);
+		}
+	}
+
+	&::before {
+		content: "";
+		display: inline-block;
+		margin-right: getEm(9, 12);
+		width: getEm(9, 12);
+		height: getEm(9, 12);
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
 .answers-cards-b {
 	&__list {
 		--air-l: 0px;
