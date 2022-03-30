@@ -633,42 +633,41 @@ function modalWindow() {
 
 // Меню дерево, применятся непосредственно 
 // на DOM эелементе ul
-function treeeMenu(selector) {
-	const $el = (typeof selector === 'string') ? document.querySelector(selector) : selector;
-	const isAccordionType = $el.dataset.typeMenu === 'accordion';
-	const openItemClass = 'js-tree-menu__item--open';
+// function treeeMenu(selector) {
+// 	const $el = (typeof selector === 'string') ? document.querySelector(selector) : selector;
+// 	const isAccordionType = $el.dataset.typeMenu === 'accordion';
+// 	const openItemClass = 'js-tree-menu__item--open';
 
-	const setings = {
-		openItemClass: 'js-tree-menu__item--open',
-		openSelector: '.js-tree-menu__btn'
-	}
+// 	const setings = {
+// 		openItemClass: 'js-tree-menu__item--open',
+// 		openSelector: '.js-tree-menu__btn'
+// 	}
 
-	$el.onclick = function (e) {
-		const $btn = e.target.closest(setings.openSelector);
+// 	$el.onclick = function (e) {
+// 		const $btn = e.target.closest(setings.openSelector);
 
-		if (!$btn) return;
+// 		if (!$btn) return;
 
-		let $parentElement = $btn.closest('li');
-		let $childrenContainer = $parentElement.querySelector('ul');
+// 		let $parentElement = $btn.closest('li');
+// 		let $childrenContainer = $parentElement.querySelector('ul');
 
-		if (!$childrenContainer) return;
+// 		if (!$childrenContainer) return;
 
-		const isOpenCurrentItem = $parentElement.classList.contains(setings.openItemClass);
+// 		const isOpenCurrentItem = $parentElement.classList.contains(setings.openItemClass);
 
-		if (!isOpenCurrentItem && $el.querySelector('.js-tree-menu__item--open')) {
-			$el.querySelector('.js-tree-menu__item--open').classList.remove('js-tree-menu__item--open');
-			$el.querySelector('.js-tree-menu__btn.active').classList.remove('active');
-		}
+// 		if (!isOpenCurrentItem && $el.querySelector('.js-tree-menu__item--open')) {
+// 			$el.querySelector('.js-tree-menu__item--open').classList.remove('js-tree-menu__item--open');
+// 			$el.querySelector('.js-tree-menu__btn.active').classList.remove('active');
+// 		}
 
-		$parentElement.classList[isOpenCurrentItem ? 'remove' : 'add'](setings.openItemClass);
-		$btn.classList[isOpenCurrentItem ? 'remove' : 'add']('active');
-		$childrenContainer.style.minHeight = !isOpenCurrentItem ? $childrenContainer.scrollHeight + "px" : "";
-	}
-}
+// 		$parentElement.classList[isOpenCurrentItem ? 'remove' : 'add'](setings.openItemClass);
+// 		$btn.classList[isOpenCurrentItem ? 'remove' : 'add']('active');
+// 		$childrenContainer.style.minHeight = !isOpenCurrentItem ? $childrenContainer.scrollHeight + "px" : "";
+// 	}
+// }
 
 let treeMenu = (function () {
 	let $menus = document.querySelectorAll('.js-tree-menu');
-	const mediaQuery = window.matchMedia(`(max-width: ${breakPoint.table}px)`);
 
 	for (let i = 0; i < $menus.length; i++) {
 		setupTreeMenu($menus[i]);
@@ -704,11 +703,14 @@ let treeMenu = (function () {
 			opens = true;
 			const isOpenItem = $parentElement.classList.contains(setings.openItemClass);
 
-			if (isAccordionType) {
+			if (isAccordionType && window.matchMedia(`(min-width: 1450px)`).matches) {
 				let activeThisLevelEl = $parentElement.parentElement.querySelector('.js-tree-menu__item--open');
-				console.log(activeThisLevelEl);
+
 				if (activeThisLevelEl) {
+					const childrenUl = activeThisLevelEl.querySelector('ul');
 					activeThisLevelEl.classList.remove('js-tree-menu__item--open');
+
+					childrenUl.style.height = '';
 				}
 			}
 
@@ -734,21 +736,6 @@ let treeMenu = (function () {
 				}, 500)
 			}
 		})
-
-		mobileCloseItem();
-
-		function mobileCloseItem() {
-			if ($mobileCloseItem.length && mediaQuery.matches) {
-				_utils.forEach($mobileCloseItem, $item => {
-					if (!$item.classList.contains(setings.openItemClass)) return;
-
-					const childUl = $item.querySelector('ul');
-					$item.classList.remove(setings.openItemClass);
-					childUl.style.minHeight = '';
-					childUl.style.height = '';
-				});
-			}
-		}
 	}
 }());
 

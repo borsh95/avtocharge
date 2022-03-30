@@ -2902,10 +2902,6 @@
 		span:first-child {
 			flex-grow: 1;
 		}
-
-		&:hover {
-			background-color: rgba(45, 142, 255, 0.1);
-		}
 	}
 
 	&__arr {
@@ -2917,6 +2913,7 @@
 		display: inline-flex;
 		align-items: center;
 		padding: 0 0.8em 0;
+		transition: all $duration;
 
 		&.active {
 			&:hover {
@@ -2968,31 +2965,55 @@
 			}
 		}
 
+		span.menu__link::before {
+			display: none;
+		}
+
 		.menu__item.active .menu__link {
 			opacity: 0.8;
 			&::before {
 				transform: scaleX(1);
 			}
 		}
-	}
 
-	.js-tree-menu__item--open {
-		& > .menu__item-head {
-			color: #fff;
-			background-color: var(--color-primary);
-
-			a {
-				color: inherit;
-			}
+		li .menu__item-head > span {
+			font-weight: 600;
 		}
 	}
 
 	@include from(1451) {
+		.lvl-2 > .first > ul {
+			display: flex;
+
+			& > * {
+				margin-right: 45px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+
+		.lvl-2 > .first > ul li {
+			width: max-content;
+			max-width: 110px;
+		}
+
+		.lvl-2 > .first > ul > li {
+			margin-bottom: 0;
+		}
+
 		& > .menu__item > #{$this}__submenu {
 			max-width: 350px;
 			font-size: 16px;
 			visibility: hidden;
 			transition: opacity $duration, visibility 0s $duration;
+		}
+
+		&__item-head {
+			&:hover {
+				background-color: rgba(45, 142, 255, 0.1);
+			}
 		}
 
 		.menu__item--drop {
@@ -3031,7 +3052,6 @@
 		&__submenu--mega {
 			top: 0;
 			left: 100%;
-			display: flex;
 			padding: 12px 65px 20px 32px;
 			min-width: 300px;
 			max-height: calc(100vh - 220px);
@@ -3049,28 +3069,22 @@
 				pointer-events: all;
 			}
 
-			& > * {
-				margin-right: 45px;
-
-				&:last-child {
-					margin-right: 0;
-				}
-			}
-
 			.menu__item-head {
 				background-color: transparent;
 			}
 
-			li .menu__item {
+			.menu__item {
 				margin-bottom: getEm(12, 14);
-				width: max-content;
-				max-width: 100px;
 
-				&-head {
+				.menu__item-head {
 					display: inline-block;
 					margin-bottom: getEm(18, 14);
 					font-weight: 600;
 				}
+			}
+
+			.menu__item:last-child {
+				margin-bottom: 0;
 			}
 
 			.menu__arr {
@@ -3079,14 +3093,14 @@
 		}
 
 		/*ссылки со 2-го уровня меню*/
-		&__submenu > .menu__item > .menu__item-head &__link {
+		&__submenu.lvl-2 > .menu__item > .menu__item-head &__link {
 			display: flex;
 			justify-content: space-between;
 			padding: 13px 16px 12px 28px;
 			width: 100%;
 		}
 
-		@at-root .js-tree-menu {
+		&.js-tree-menu {
 			ul {
 				min-height: auto;
 				height: auto;
@@ -3097,18 +3111,129 @@
 				transition: opacity $duration !important;
 			}
 		}
+
+		.js-tree-menu__item--open {
+			& > .menu__item-head {
+				color: #fff;
+				background-color: var(--color-primary);
+
+				a {
+					color: inherit;
+				}
+			}
+		}
 	}
 
 	@include to(1451) {
+		flex-direction: column;
+
+		& > &__item {
+			margin: 0;
+			width: 100%;
+
+			& > .menu__link {
+				position: relative;
+				padding: getEm(11, 12) getEm(10, 16) getEm(11, 12) getEm(10, 16);
+
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					border-bottom: 1px solid #f2f2f2;
+				}
+			}
+
+			&.first > .menu__link::before {
+				right: -2.85em;
+			}
+		}
+
+		&__item--drop {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+
+			.menu__item-toggle {
+				display: none;
+				margin-top: -#{getEm(5, 16)};
+			}
+
+			& > .menu__link {
+				width: auto;
+				flex: 1;
+				min-width: 80%;
+			}
+
+			.menu__submenu {
+				width: 100%;
+			}
+		}
+
+		&__item-head {
+			transition: all 0.2s;
+
+			.menu__link {
+				transition: all 0.2s;
+			}
+		}
+
+		&__link,
+		&_item-head > span:first-child {
+			padding: getEm(11, 16) getEm(10, 16) getEm(10, 16) getEm(31, 16);
+			width: 100%;
+		}
+
+		&__submenu {
+			position: static;
+			.menu__link {
+				padding-left: getEm(35, 16);
+			}
+		}
+
+		.lvl-2 > .js-tree-menu__item--open > .menu__item-head {
+			background-color: var(--color-primary);
+
+			.menu__link {
+				color: #fff;
+			}
+		}
+
+		.lvl-3 {
+			padding-left: 3.5em;
+
+			.menu__submenu {
+				padding-left: 1em;
+			}
+
+			.menu__item {
+				margin-bottom: 0.6em;
+			}
+
+			.menu__link {
+				padding: getEm(6, 10) 10px getEm(6, 10) 0;
+			}
+		}
+
+		@at-root .js-tree-menu__item--open {
+			& > .menu__arr,
+			& > .menu__item-head .menu__arr {
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	@include mobile {
 		&__submenu--mega {
 			padding-left: 27px;
 		}
 
 		&__submenu.lvl-4 {
-			font-size: 12px;
-
+			padding-left: 35px;
+			font-size: 10px;
 			.menu__link {
-				padding-left: 0 !important;
+				padding: getEm(7, 10) 0;
 			}
 		}
 	}
