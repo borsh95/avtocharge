@@ -149,6 +149,15 @@
 		}
 
 		.separable-links {
+			flex-wrap: wrap;
+			margin-top: getEm(7, 12);
+			margin-bottom: calc(-1 * #{getEm(15, 21)});
+			font-size: getEm(10, 12);
+
+			a {
+				margin: 0 getEm(21, 10) getEm(15, 12) 0;
+			}
+
 			a::after {
 				display: none;
 			}
@@ -157,10 +166,10 @@
 		.sci {
 			margin-top: 9px;
 			&__link {
-				margin-right: 6px;
+				margin-right: 7px;
 				svg {
-					width: 25px;
-					height: 25px;
+					width: 30px;
+					height: 30px;
 				}
 			}
 		}
@@ -180,9 +189,10 @@
 		}
 	}
 
-	@include from(1451) {
+	@include from(1450) {
 		&__menu {
 			$this: ".menu";
+
 			flex-wrap: nowrap;
 			font-size: 18px;
 
@@ -194,24 +204,6 @@
 					padding: 10px 15px 33px;
 				}
 
-				& > ul {
-					box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1), inset 0px 30px 30px -30px rgba(0, 0, 0, 0.1);
-
-					&::before {
-						content: "";
-						position: absolute;
-						right: -10px;
-						bottom: 100%;
-						left: -10px;
-						z-index: 1;
-						display: block;
-						height: 13px;
-						background-color: #fff;
-					}
-				}
-			}
-
-			& > #{$this}__item {
 				& > #{$this}__link span {
 					position: relative;
 
@@ -229,12 +221,19 @@
 						transition: opacity 0s $duration, width $duration;
 					}
 				}
+
 				& > span#{$this}__link span::before,
 				& > #{$this}__link:hover span::before {
 					opacity: 1;
 					width: 100%;
 					transition: opacity 0s 0s, width $duration;
 				}
+			}
+
+			.lvl-2,
+			.menu__submenu--mega {
+				box-shadow: 0 30px 30px -30px rgba(0, 0, 0, 0.1), 30px 0px 30px -30px rgba(0, 0, 0, 0.1),
+					-30px 0px 30px -30px rgba(0, 0, 0, 0.1), inset 0px 30px 30px -30px rgba(0, 0, 0, 0.1);
 			}
 		}
 	}
@@ -287,24 +286,22 @@
 		&__burger {
 			position: absolute;
 			top: 100%;
-			left: 250px;
+			left: 0;
 			z-index: 90;
-			padding: 15px 0 0;
-			width: 355px;
+			padding: 25px 0 0;
+			width: 100%;
 			max-width: 100%;
 			opacity: 0;
 			pointer-events: none;
 			background: var(--basick-white);
-			border-radius: 0 0 10px 10px;
-			transform: translateX(30px);
 			overflow-y: auto;
-			box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1), inset 0px 30px 30px -30px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 30px 30px -30px rgba(0, 0, 0, 0.1), 30px 0px 30px -30px rgba(0, 0, 0, 0.1),
+				-30px 0px 30px -30px rgba(0, 0, 0, 0.1), inset 0px 30px 30px -30px rgba(0, 0, 0, 0.1);
 			transition: transform $duration, opacity $duration;
 
 			&.open {
 				pointer-events: all;
 				opacity: 1;
-				transform: translateX(0px);
 			}
 
 			&::before {
@@ -322,72 +319,14 @@
 			&-inner {
 				padding: 0 23px 33px;
 				height: 100%;
-			}
-		}
 
-		&__menu {
-			flex-direction: column;
+				& > * {
+					margin-bottom: getEm(14, 16);
 
-			& > .menu__item {
-				margin: 0;
-				width: 100%;
-
-				.menu__link {
-					padding: getEm(10, 16) getEm(10, 16) getEm(10, 16) getEm(30, 16);
-				}
-
-				.menu__submenu {
-					font-size: inherit;
-				}
-			}
-
-			.menu__item--drop {
-				flex-wrap: wrap;
-
-				.menu__item-toggle {
-					margin-top: -#{getEm(5, 16)};
-				}
-
-				& > .menu__submenu {
-					padding: 0;
-					height: 0;
-					overflow: hidden;
-					opacity: 0;
-					transition: none;
-				}
-
-				& > .menu__link {
-					width: auto;
-					flex: 1;
-				}
-
-				&.active > .menu__submenu {
-					opacity: 1;
-					height: auto;
-					overflow: hidden;
-					transition: opacity $duration;
-				}
-			}
-
-			.menu__link {
-				padding: getEm(10, 16) getEm(10, 16) getEm(10, 16) getEm(30, 16);
-				width: 100%;
-			}
-
-			.menu__submenu {
-				.menu__link {
-					padding-left: getEm(40, 16);
-				}
-
-				.menu__submenu {
-					.menu__link {
-						padding-left: getEm(50, 16);
+					&:last-child {
+						margin-bottom: 0;
 					}
 				}
-			}
-
-			ul {
-				position: static;
 			}
 		}
 	}
@@ -527,8 +466,6 @@
 		}
 
 		&__burger {
-			left: 9vw;
-
 			&-inner {
 				display: grid;
 				row-gap: 8px;
@@ -539,25 +476,15 @@
 			.separable-links {
 				display: flex;
 			}
-
-			.separable-links {
-				flex-direction: column;
-
-				a {
-					margin-bottom: 7px;
-
-					&:last-child {
-						margin-bottom: 0;
-					}
-				}
-			}
 		}
 	}
 
 	@include mobile {
 		&__burger {
-			left: 20px;
-			transform: translateX(0);
+			font-size: 12px;
+		}
+		&__menu {
+			font-size: 12px;
 		}
 	}
 

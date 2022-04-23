@@ -451,6 +451,11 @@ if (isElem('.menu__item--drop')) {
 		menuDrop.classList.toggle('active');
 	});
 
+	linkbtn.addEventListener('click', function () {
+		toggle.classList.toggle('active');
+		menuDrop.classList.toggle('active');
+	});
+
 	document.addEventListener('click', function (ev) {
 		if (!ev.target.closest('.menu__item--drop')) {
 			if (menuDrop.classList.contains('active')) {
@@ -459,14 +464,6 @@ if (isElem('.menu__item--drop')) {
 			}
 		}
 	})
-}
-
-if (isElem('.js-tree-menu')) {
-	const $treeMenuEls = document.querySelectorAll('.js-tree-menu');
-
-	for (const $menu of $treeMenuEls) {
-		treeMenu($menu);
-	}
 }
 
 // bTabs
@@ -641,29 +638,111 @@ function modalWindow() {
 
 // Меню дерево, применятся непосредственно 
 // на DOM эелементе ul
-function treeMenu(selector) {
-	const $el = (typeof selector === 'string') ? document.querySelector(selector) : selector;
-	const openItemClass = 'js-tree-menu__item--open';
+// function treeeMenu(selector) {
+// 	const $el = (typeof selector === 'string') ? document.querySelector(selector) : selector;
+// 	const isAccordionType = $el.dataset.typeMenu === 'accordion';
+// 	const openItemClass = 'js-tree-menu__item--open';
 
-	const setings = {
-		openItemClass: 'js-tree-menu__item--open',
-		openSelector: '.js-tree-menu__btn'
+// 	const setings = {
+// 		openItemClass: 'js-tree-menu__item--open',
+// 		openSelector: '.js-tree-menu__btn'
+// 	}
+
+// 	$el.onclick = function (e) {
+// 		const $btn = e.target.closest(setings.openSelector);
+
+// 		if (!$btn) return;
+
+// 		let $parentElement = $btn.closest('li');
+// 		let $childrenContainer = $parentElement.querySelector('ul');
+
+// 		if (!$childrenContainer) return;
+
+// 		const isOpenCurrentItem = $parentElement.classList.contains(setings.openItemClass);
+
+// 		if (!isOpenCurrentItem && $el.querySelector('.js-tree-menu__item--open')) {
+// 			$el.querySelector('.js-tree-menu__item--open').classList.remove('js-tree-menu__item--open');
+// 			$el.querySelector('.js-tree-menu__btn.active').classList.remove('active');
+// 		}
+
+// 		$parentElement.classList[isOpenCurrentItem ? 'remove' : 'add'](setings.openItemClass);
+// 		$btn.classList[isOpenCurrentItem ? 'remove' : 'add']('active');
+// 		$childrenContainer.style.minHeight = !isOpenCurrentItem ? $childrenContainer.scrollHeight + "px" : "";
+// 	}
+// }
+
+let treeMenu = (function () {
+	let $menus = document.querySelectorAll('.js-tree-menu');
+
+	for (let i = 0; i < $menus.length; i++) {
+		setupTreeMenu($menus[i]);
 	}
 
-	$el.onclick = function (e) {
-		const $btn = e.target.closest(setings.openSelector);
-		if (!$btn) return;
+	function setupTreeMenu(selector, options = {}) {
+		const $el = (typeof selector === 'string') ? document.querySelector(selector) : selector;
+		let opens = false;
+		const isAccordionType = $el.dataset.typeMenu === 'accordion';
 
-		let $parentElement = $btn.closest('li');
-		let $childrenContainer = $parentElement.querySelector('ul');
+		const setings = {
+			openItemClass: 'js-tree-menu__item--open',
+			openSelector: '.js-tree-menu__btn'
+		}
 
-		if (!$childrenContainer) return;
-		const isOpenItem = $parentElement.classList.contains(setings.openItemClass);
-		$parentElement.classList[isOpenItem ? 'remove' : 'add'](setings.openItemClass);
-		$btn.classList[isOpenItem ? 'remove' : 'add']('active');
-		$childrenContainer.style.minHeight = !isOpenItem ? $childrenContainer.scrollHeight + "px" : "";
+		let $mobileCloseItem = $el.querySelectorAll('.js-tree-menu__item--mobile-close');
+
+		for (let openItem of document.getElementsByClassName(setings.openItemClass)) {
+			const $childrenUl = openItem.querySelector('ul');
+			$childrenUl.style.height = 'auto';
+			$childrenUl.style.minHeight = 'auto';
+		}
+
+		$el.addEventListener('click', function (e) {
+			const $btn = e.target.closest(setings.openSelector);
+			if (!$btn || opens) return;
+
+			let $parentElement = $btn.closest('li');
+			let $childrenContainer = $parentElement.querySelector('ul');
+
+			if (!$childrenContainer) return;
+
+			opens = true;
+			const isOpenItem = $parentElement.classList.contains(setings.openItemClass);
+
+			if (isAccordionType && window.matchMedia(`(min-width: 1450px)`).matches) {
+				let activeThisLevelEl = $parentElement.parentElement.querySelector('.js-tree-menu__item--open');
+
+				if (activeThisLevelEl) {
+					const childrenUl = activeThisLevelEl.querySelector('ul');
+					activeThisLevelEl.classList.remove('js-tree-menu__item--open');
+
+					childrenUl.style.height = '';
+				}
+			}
+
+			// if (!isAccordionType && $el.querySelector('.js-tree-menu__item--open')) {
+			// 	$el.querySelector('.js-tree-menu__item--open').classList.remove('js-tree-menu__item--open');
+			// 	$el.querySelector('.js-tree-menu__btn.active').classList.remove('active');
+			// }
+
+			$parentElement.classList[isOpenItem ? 'remove' : 'add'](setings.openItemClass);
+			$childrenContainer.style.minHeight = isOpenItem ? $childrenContainer.scrollHeight + "px" : "";
+			setTimeout(function () {
+				$childrenContainer.style.minHeight = !isOpenItem ? $childrenContainer.scrollHeight + "px" : "";
+			}, 10)
+
+			if (isOpenItem) {
+				$childrenContainer.style.height = '';
+				opens = false;
+			} else {
+				setTimeout(() => {
+					$childrenContainer.style.height = 'auto';
+					$childrenContainer.style.minHeight = 'auto';
+					opens = false;
+				}, 500)
+			}
+		})
 	}
-}
+}());
 
 // анимация скрола окна браузера
 function scrollWindow() {
