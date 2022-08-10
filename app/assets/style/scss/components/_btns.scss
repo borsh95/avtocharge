@@ -382,6 +382,7 @@
 	}
 
 	@include mobile {
+		display: none;
 		right: 20px;
 	}
 }

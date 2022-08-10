@@ -143,6 +143,8 @@ if (isElem('.hiding-slider')) {
 	const $sliderNodes = document.querySelectorAll('.hiding-slider');
 
 	for (let $sliderNode of $sliderNodes) {
+		const count = $sliderNode.closest('.index-pg') ? 4 : 3;
+
 		const swiper = new Swiper($sliderNode, {
 			loopAdditionalSlides: 1,
 			noSwipingClass: 'btn-go',
@@ -161,11 +163,11 @@ if (isElem('.hiding-slider')) {
 				},
 				[breakPoint.desctopMin + 1]: {
 					grabCursor: false,
-					slidesPerView: 3,
+					slidesPerView: count,
 					spaceBetween: 30,
 				},
 				[breakPoint.desctopMid + 1]: {
-					slidesPerView: 3,
+					slidesPerView: count,
 					spaceBetween: 43,
 				}
 			},

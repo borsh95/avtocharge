@@ -393,8 +393,14 @@
 											</li>
 										</ul>
 									</li>
-									<li class="menu__item">
+									<li class="menu__item menu__item--drop">
 										<a class="menu__link" href="#"><span>База знаний</span></a>
+										<span class="menu__arr js-tree-menu__btn">
+											<svg>
+												<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+												</use>
+											</svg>
+										</span>
 									</li>
 									<li class="menu__item active">
 										<span class="menu__link">
@@ -530,6 +536,30 @@
 							<!-- slider -->
 							<div class="main-slider swiper">
 								<div class="swiper-wrapper">
+									<!-- slide -->
+									<div class="main-slider__slide swiper-slide">
+										<!-- Контейнер для фона -->
+										<div class="main-slider__slide-bg main-slider__slide-bg--table-shadow">
+											<picture>
+												<source srcset="./assets/img/pages/main-slider/orbis-viaris@mob.jpg"
+													media="(max-width: 768px)">
+												<img src="./assets/img/pages/main-slider/orbis-viaris.jpg" alt="">
+											</picture>
+										</div>
+										<!-- Текс контейнер  -->
+										<div class="main-slider__slide-textBox">
+											<div class="container">
+												<div class="h1">ORBIS VIARIS</div>
+												<p>
+													Встречайте новую линейку <br>
+													от испанского производителя
+												</p>
+												<a class="btn-mate" href="/zaryadnyie-stanczii-orbis-dlya-elektromobilej/">
+													<span>В каталог</span>
+												</a>
+											</div>
+										</div>
+									</div>
 									<!-- slide -->
 									<div class="main-slider__slide swiper-slide">
 										<!-- Контейнер для фона -->
@@ -1448,34 +1478,81 @@
 											</div>
 										</div>
 									</article>
-									<article
-										class="news-note hiding-slider__slide swiper-slide swiper-slide-visible swiper-slide-next"
-										role="group" aria-label="2 / 3" style="width: 497.667px; margin-right: 43px;">
-										<div class="news-note__img">
-											<picture>
-												<img src="/doc/images/Audi/bmw-ix-flow-mit-e-ink0.jpeg"
-													alt="BMW представила электрокроссовер с&nbsp;функцией смены цвета кузова">
-											</picture>
-										</div>
+									<!-- slider -->
+									<article class="news-note hiding-slider__slide swiper-slide">
+										<a class="news-note__link" href="#">
+											<div class="news-note__img">
+												<picture>
+													<source srcset="./assets/img/components/news-notes/img-1.webp"
+														type="image/webp">
+													<img src="./assets/img/components/news-notes/img-1.jpg" alt="">
+												</picture>
+											</div>
+											<h4 class="news-note__title">
+												Сеть электрозаправочных станций от Audi
+											</h4>
+										</a>
 										<div class="news-note__textBox">
-											<a href="bmw-predstavila-elektrokrossover-s-funkcziej-smenyi-czveta-kuzova/"
-												class="news-note__title">BMW представила электрокроссовер
-												с&nbsp;функцией смены цвета кузова</a>
 											<div class="news-note__text">
-												<p>Компания продемонстрировала концепт-версию модели iX под названием
-													Flow. Кроссовер впечатлил всех технологией изменения цвета
-													экстерьера в реальном времени. Достаточно лишь нажать на кнопку.</p>
+												<p>Компания Audi разрабатывает концепцию электрозаправочных станций
+													быстрой
+													зарядки для электромобилей собственной марки.</p>
 											</div>
 											<div class="news-note__bottom">
 												<div class="note-meta">
 													<div class="note-meta__item note-metadata__item--date">
 														<svg>
-															<use xlink:href="assets/img/icons/sprite.svg#clock_fill">
+															<use xlink:href="./assets/img/icons/sprite.svg#clock_fill">
 															</use>
 														</svg>
-														14/01/2022
+														29/08/2021
 													</div>
 												</div>
+												<a class="news-note__more btn-go" href="#">
+													<svg>
+														<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+														</use>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</article>
+									<!-- slider -->
+									<article class="news-note hiding-slider__slide swiper-slide">
+										<a class="news-note__link" href="#">
+											<div class="news-note__img">
+												<picture>
+													<source srcset="./assets/img/components/news-notes/img-1.webp"
+														type="image/webp">
+													<img src="./assets/img/components/news-notes/img-1.jpg" alt="">
+												</picture>
+											</div>
+											<h4 class="news-note__title">
+												Сеть электрозаправочных станций от Audi
+											</h4>
+										</a>
+										<div class="news-note__textBox">
+											<div class="news-note__text">
+												<p>Компания Audi разрабатывает концепцию электрозаправочных станций
+													быстрой
+													зарядки для электромобилей собственной марки.</p>
+											</div>
+											<div class="news-note__bottom">
+												<div class="note-meta">
+													<div class="note-meta__item note-metadata__item--date">
+														<svg>
+															<use xlink:href="./assets/img/icons/sprite.svg#clock_fill">
+															</use>
+														</svg>
+														29/08/2021
+													</div>
+												</div>
+												<a class="news-note__more btn-go" href="#">
+													<svg>
+														<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+														</use>
+													</svg>
+												</a>
 											</div>
 										</div>
 									</article>
@@ -1489,103 +1566,40 @@
 		<!-- FOOTER -->
 		<footer class="footer">
 			<div class="footer__container container">
-				<!-- footer toop -->
+				<!-- footer top -->
 				<div class="footer__top">
 					<!-- logo -->
 					<a class="footer__logo logo" href="#">
-						<div class="logo__img">
-							<img src="./assets/img/logo@light.svg" alt="logo">
-						</div>
-						<div class="logo__text">Онлайн-гипермаркет зарядных станций</div>
+						<img src="./assets/img/logo@light.svg" alt="logo">
 					</a>
-					<!-- menu -->
-					<ul class="footer__menu menu">
-						</li>
-						<li class="menu__item">
-							<a class="menu__link" href="#"><span>База знаний</span></a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__link" href="#">
-								<span>Обзоры</span>
+					<div class="footer__partners">
+						<p style="margin-bottom: 0.8em;">Наши партнеры по доставке</p>
+						<span class="b-row">
+							<a class="b-col" href="#" target="_blank">
+								<img src="./assets/img/components/delivery-partners/img-1.png" alt="">
 							</a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__link" href="#"><span>О компании</span></a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__link" href="#"><span>Доставка и оплата</span></a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__link" href="#"><span>Контакты</span></a>
-						</li>
-					</ul>
+							<a class="b-col" href="#" target="_blank">
+								<img src="./assets/img/components/delivery-partners/img-2.png" alt="">
+							</a>
+						</span>
+					</div>
 				</div>
 				<!-- footer middle -->
 				<div class="footer__middle">
 					<!-- col -->
 					<div class="footer__middle-col">
 						<p>
-							УНП:1177847044132
+							ООО “Элемент”
 						</p>
 						<p>
-							Санкт-Петербург, Пискаревский проспект,
+							ИНН: 1177847044132
 						</p>
-						<p>д. 63б, офис 422</p>
-						<p>
-							<!-- sci-link insta -->
-							<a class="sci-link sci-link--insta" target="_blank" href="#">
-								<svg>
-									<use xlink:href="./assets/img/icons/sprite.svg#sci_insta"></use>
-								</svg>
-							</a>
-						</p>
-					</div>
-					<!-- col -->
-					<div class="footer__middle-col">
-						<p>
-							<a href="#">Зарядные станции</a>
-						</p>
-						<p>
-							<a href="#">Аксессуары</a>
-						</p>
-						<p>
-							<a href="#">Управление и учет зарядными станциями</a>
-						</p>
-					</div>
-					<!-- col -->
-					<div class="footer__middle-col footer__delivery-parters">
-						<p>
-							Наши партнеры по доставке
-							<span class="b-row">
-								<a class="b-col" href="#" target="_blank">
-									<img src="./assets/img/components/delivery-partners/img-1.png" alt="">
-								</a>
-								<a class="b-col" href="#" target="_blank">
-									<img src="./assets/img/components/delivery-partners/img-2.png" alt="">
-								</a>
-							</span>
-						</p>
-						<p>
-							Стандартная доставка бесплатно
-						</p>
-					</div>
-					<!-- col -->
-					<div class="footer__middle-col">
 						<p class="firm-info firm-info--clock">
 							<svg class="firm-info__ic">
 								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
 								</use>
 							</svg>
 							пн-пт 09:00 - 19:00
-						</p>
-						<p>
-							<a class="firm-info firm-info--phone" href="tel:+78125651163">
-								<svg class="firm-info__ic">
-									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
-									</use>
-								</svg>
-								+7&nbsp;(812)&nbsp;565-11-63</span>
-							</a>
 						</p>
 						<p>
 							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
@@ -1598,23 +1612,75 @@
 						</p>
 					</div>
 					<!-- col -->
+					<div class="footer__middle-col footer__catalog">
+						<p>
+							<a href="#">Зарядные станции</a>
+						</p>
+						<p>
+							<a href="#">Аксессуары</a>
+						</p>
+						<p>
+							<a href="#">Управление и учет зарядными станциями</a>
+						</p>
+						<p>
+							<a href="#">Политика конфеданциальности</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__delivery-parters">
+						<p>
+							Мы в Санкт-Петербурге:
+						</p>
+						<p>
+							Пискаревский проспект, д. 63б, офис 422
+						</p>
+						<p>
+							<a class="firm-info firm-info--phone" href="tel:+78125651163">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+									</use>
+								</svg>
+								+7&nbsp;(812)&nbsp;565-11-63
+							</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__delivery-parters">
+						<p>
+							Мы в Москве:
+						</p>
+						<p>
+							Пискаревский проспект, д. 63б, офис 422
+						</p>
+						<p>
+							<a class="firm-info firm-info--phone" href="tel:+78125651163">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+									</use>
+								</svg>
+								+7&nbsp;(812)&nbsp;565-11-63
+							</a>
+						</p>
+					</div>
+
 					<div class="footer__middle-col footer__sci sci">
 						<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
 							<svg>
-								<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+								<use xlink:href="assets/templates/avto/img/icons/sprite.svg#sci__viber"></use>
 							</svg>
 						</a>
 						<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
 							<svg>
-								<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+								<use xlink:href="assets/templates/avto/img/icons/sprite.svg#sci__wp"></use>
 							</svg>
 						</a>
 						<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
 							<svg>
-								<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+								<use xlink:href="assets/templates/avto/img/icons/sprite.svg#sci__tg"></use>
 							</svg>
 						</a>
 					</div>
+
 					<!-- col -->
 					<div class="footer__middle-col">
 						<p class="footer__payment-systems">
@@ -1622,18 +1688,26 @@
 							<img src="./assets/img/components/payment-system/img-2.png" alt="">
 							<img src="./assets/img/components/payment-system/img-3.png" alt="">
 						</p>
-						<p style="font-weight: 500;">
+						<p>
 							Все цены указаны с учетом НДС и, <br>
 							возможно, плюс стоимость доставки
 						</p>
+						<p class="artBro">
+							<a class="artBro" href="https://cweb.by/" target="_blank">Создание и продвижение cweb.by</a>
+							<br>
+							&copy; Copyright
+							<script>
+								var currentTime = new Date();
+								var yearoffoundation = 2017;
+								var currentyear = currentTime.getFullYear();
+								if (yearoffoundation !== currentyear) {
+									document.write(yearoffoundation + " - " + currentyear);
+								} else {
+									document.write(currentyear);
+								}
+							</script>
+						</p>
 					</div>
-				</div>
-				<!-- footer bottom -->
-				<div class="footer__bottom">
-					<a href="#">Политика конфеданциальности</a>
-					<a class="ArtBro" href="https://cweb.by/" target="_blank">
-						Разработка и продвижение cweb
-					</a>
 				</div>
 			</div>
 		</footer>

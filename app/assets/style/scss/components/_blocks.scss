@@ -2855,6 +2855,7 @@
 	&__item--drop {
 		padding-left: 0;
 
+		&:hover > .menu__submenu,
 		&.active > .menu__submenu {
 			opacity: 1;
 			visibility: visible !important;
@@ -2937,7 +2938,6 @@
 	&__item--drop {
 		display: flex;
 		align-items: center;
-		flex-wrap: wrap;
 	}
 
 	&__submenu--mega {
@@ -3025,8 +3025,23 @@
 		}
 
 		.menu__item--drop {
-			& > .menu__arr {
+			&:first-child > .menu__arr {
 				display: none;
+			}
+
+			& > .menu__arr {
+				--border-color: transparent;
+				margin-top: -1.3em;
+				margin-left: -0.6em;
+				padding: 0;
+				
+				svg {
+					transform: rotate(90deg);
+				}
+			}
+
+			&:hover > .menu__arr {
+				transform: rotate(180deg);
 			}
 
 			& > .menu__link {
@@ -3120,6 +3135,10 @@
 			}
 		}
 
+		.js-tree-menu__btn {
+			pointer-events: none;
+		}
+
 		.js-tree-menu__item--open {
 			& > .menu__item-head {
 				color: #fff;
@@ -3129,6 +3148,11 @@
 					color: inherit;
 				}
 			}
+		}
+
+		&__item:hover > &__submenu {
+			opacity: 1;
+			pointer-events: all;
 		}
 	}
 
@@ -3487,6 +3511,20 @@
 				height: 100%;
 				object-fit: cover;
 				object-position: center;
+			}
+
+			@include table {
+				&--table-shadow {
+					&::after {
+						content: "";
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 100%;
+						height: 100%;
+						background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 31.66%, rgba(0, 0, 0, 0) 66.07%);
+					}
+				}
 			}
 		}
 
@@ -4856,6 +4894,10 @@
 		}
 	}
 
+	.actions-secondary {
+		flex-shrink: 0;
+	}
+
 	@include desctop-mid {
 		font-size: 18px;
 	}
@@ -4903,6 +4945,7 @@
 			transition: box-shadow $duration;
 
 			&:hover {
+				z-index: 1;
 				box-shadow: 0 0 15px rgba($color-primary, 0.18);
 			}
 		}
@@ -4991,15 +5034,24 @@
 		&__list {
 			--air-l: 30px;
 			--air-b: 27px;
-			justify-content: center;
 		}
 	}
 
 	@include to(600) {
 		&__list {
+			--air-l: 0px;
+
+			.product-card {
+				max-width: 350px;
+			}
+		}
+	}
+
+	@include to(390) {
+		&__list {
+			justify-content: center;
 			.product-card {
 				@include size(12);
-				max-width: 350px;
 			}
 		}
 	}

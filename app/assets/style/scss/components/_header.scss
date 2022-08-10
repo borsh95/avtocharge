@@ -194,10 +194,11 @@
 			$this: ".menu";
 
 			flex-wrap: nowrap;
-			font-size: 18px;
+			font-size: 16px;
 
 			& > #{$this}__item {
 				display: flex;
+				margin-right: 8px;
 
 				& > a,
 				& > #{$this}__link {
