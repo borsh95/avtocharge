@@ -118,6 +118,14 @@ $utilities: (
 			right: right,
 		),
 	),
+	"background-color": (
+		property: "background-color",
+		responsive: false,
+		class: bg,
+		values: (
+			primary: var(--color-primary)
+		)
+	),
 	"border-radius": (
 		property: "border-radius",
 		responsive: false,

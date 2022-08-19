@@ -1,3 +1,13 @@
+[data-theme="dark"] {
+	color: #fff;
+
+	.firm-info {
+		&__ic {
+			fill: #fff;
+		}
+	}
+}
+
 // custom select
 .custom-select {
 	$this: &;

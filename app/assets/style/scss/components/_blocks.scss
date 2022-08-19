@@ -2603,6 +2603,7 @@
 	position: absolute;
 	top: 97%;
 	right: 0;
+	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	padding: 5px 0;
@@ -2987,7 +2988,7 @@
 		}
 	}
 
-	@include from(1451) {
+	@include from(1450) {
 		.lvl-2 > .first > ul {
 			display: flex;
 
@@ -3044,7 +3045,7 @@
 				transform: rotate(180deg);
 			}
 
-			& > .menu__link {
+			&:first-child > .menu__link {
 				padding-left: 0 !important;
 			}
 		}
@@ -3156,7 +3157,7 @@
 		}
 	}
 
-	@include to(1451) {
+	@include to(1450) {
 		flex-direction: column;
 
 		& > &__item {

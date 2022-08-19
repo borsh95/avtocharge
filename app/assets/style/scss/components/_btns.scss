@@ -61,8 +61,8 @@
 .btn-t,
 .btn-mate {
 	&--size_l {
+		--height: 50px;
 		padding: 0 24px;
-		height: 50px;
 	}
 }
 
@@ -75,6 +75,7 @@
 
 	border: 2px solid var(--color-primary);
 	transition: all $duration;
+
 	&:hover {
 		--colorText: #fff;
 		--colorTone: var(--color-primary);

@@ -17,6 +17,10 @@ body {
 	scrollbar-width: thin; /* толщина */
 }
 
+html {
+	scrollbar-gutter: stable;
+}
+
 ::-webkit-scrollbar {
 	width: 0.8rem;
 	background-color: var(--scroll-bar-color);
