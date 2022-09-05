@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ac2c917e-4468-413d-a7c7-f12ef7eea068" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/card-fast.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/card-floor-standing.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/card-portable.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/card-wall.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/new-card__auto.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/new-card__design.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/new-card__glass.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/new-card__house.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/new-card__service.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/new-card__tool.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/slide-cv1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/slide-cv2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/slide-cv3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/slide-cv4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/img/components/category-cards/slide-cv5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/style/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/style/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/style/scss/components/_blocks.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/style/scss/components/_blocks.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2DaS3j8N04Hig8raVLtoQrvTbzP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flowers_layout" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\avtocharge\app\assets\img\components\category-cards" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac2c917e-4468-413d-a7c7-f12ef7eea068" name="Default Changelist" comment="" />
+      <created>1660935505315</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660935505315</updated>
+      <workItem from="1660935506360" duration="10553000" />
+      <workItem from="1660986371829" duration="13421000" />
+      <workItem from="1661061422639" duration="624000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1661151188693">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1661151188693" />
+    <state x="470" y="183" width="579" height="534" key="find.popup" timestamp="1660999558345">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="470" y="183" width="579" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1660999558345" />
+  </component>
+</project>
