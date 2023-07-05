@@ -330,7 +330,7 @@
                                                         </li>
                                                     </ul>
                                                 </li>
-                                                <li class="menu__item">
+                                                <li class="menu__item menu__item--cols_2">
                                                     <div class="menu__item-head">
                                                         <span class="menu__link">Марка авто</span>
                                                         <span class="menu__arr js-tree-menu__btn">
@@ -346,6 +346,39 @@
                                                             <a class="menu__link" href="#">Tesla</a>
                                                         </li>
                                                         <li class="menu__item">
+                                                            <a class="menu__link" href="#">BMW i3</a>
+                                                        </li>
+                                                        <li class="menu__item">
+                                                            <a class="menu__link" href="#">Audi e-tron</a>
+                                                        </li>
+                                                        <li class="menu__item">
+                                                            <a class="menu__link" href="#">Nissan Leaf</a>
+                                                        </li>
+                                                        <li class="menu__item">
+                                                            <a class="menu__link" href="#">Jaguar Pace</a>
+                                                        </li>
+                                                        <li class="menu__item">
+                                                            <a class="menu__link" href="#">Porsche</a>
+                                                        </li>
+														<li class="menu__item">
+                                                            <a class="menu__link" href="#">Tesla</a>
+                                                        </li>
+                                                        <li class="menu__item">
+                                                            <a class="menu__link" href="#">BMW i3</a>
+                                                        </li>
+                                                        <li class="menu__item">
+                                                            <a class="menu__link" href="#">Audi e-tron</a>
+                                                        </li>
+                                                        <li class="menu__item">
+                                                            <a class="menu__link" href="#">Nissan Leaf</a>
+                                                        </li>
+                                                        <li class="menu__item">
+                                                            <a class="menu__link" href="#">Jaguar Pace</a>
+                                                        </li>
+                                                        <li class="menu__item">
+                                                            <a class="menu__link" href="#">Porsche</a>
+                                                        </li>
+														<li class="menu__item">
                                                             <a class="menu__link" href="#">BMW i3</a>
                                                         </li>
                                                         <li class="menu__item">
@@ -439,25 +472,108 @@
                         </nav>
                     </div>
                 </div>
-                <!-- search -->
-                <form class="header__search search" data-search-panel>
-                    <div class="search__inner">
-                        <input class="search__input" type="search" placeholder="Поиск">
-                        <button class="search__submit" type="button" aria-label="Закрыть поиск"
-                                data-search-close="">
-                            <svg>
-                                <use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
-                            </svg>
-                        </button>
-                        <button class="search__close" type="button" aria-label="Закрыть поиск" data-search-close="">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.97 47.97">
-                                <path
-                                        d="M28.23,24,47.09,5.12A3,3,0,0,0,42.85.88L24,19.74,5.12.88A3,3,0,0,0,.88,5.12L19.74,24,.88,42.85A3,3,0,0,0,3,48a3,3,0,0,0,2.12-.88L24,28.23,42.85,47.09a3,3,0,0,0,4.24-4.24Z">
-                                </path>
-                            </svg>
-                        </button>
-                    </div>
-                </form>
+				<!-- search -->
+				<form class="header__search search" data-search-panel data-tabs="search, 0">
+					<div class="search__inner">
+						<div class="search__toggler">
+							<div class="search__toggler-head">
+								<span class="search__toggler-value">По сайту</span>
+								<span class="search__toggler-icon">
+									<svg style="transform: rotate(90deg);">
+										<use xlink:href="./assets/img/icons/sprite.svg#arr-tr-right"></use>
+									</svg>
+								</span>
+							</div>
+							<div class="search__toggler-dropdown">
+								<button class="search__toggler-btn active" type="button" data-tab>По сайту</button>
+								<button class="search__toggler-btn" type="button" data-tab>В каталоге</button>
+								<button class="search__toggler-btn" type="button" data-tab>В блоге</button>
+							</div>
+						</div>
+						<input class="search__input" type="search" placeholder="Поиск по всему сайту">
+						<button class="search__submit" type="button" aria-label="Закрыть поиск"
+								data-search-close="">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+							</svg>
+						</button>
+						<button class="search__close" type="button" aria-label="Закрыть поиск" data-search-close="">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.97 47.97">
+								<path
+										d="M28.23,24,47.09,5.12A3,3,0,0,0,42.85.88L24,19.74,5.12.88A3,3,0,0,0,.88,5.12L19.74,24,.88,42.85A3,3,0,0,0,3,48a3,3,0,0,0,2.12-.88L24,28.23,42.85,47.09a3,3,0,0,0,4.24-4.24Z">
+								</path>
+							</svg>
+						</button>
+					</div>
+				</form>
+				<!-- search -->
+				<form class="header__search search" data-search-panel data-tabs="search, 1" hidden>
+					<div class="search__inner">
+						<div class="search__toggler">
+							<div class="search__toggler-head">
+								<span class="search__toggler-value">По сайту</span>
+								<span class="search__toggler-icon">
+									<svg style="transform: rotate(90deg);">
+										<use xlink:href="./assets/img/icons/sprite.svg#arr-tr-right"></use>
+									</svg>
+								</span>
+							</div>
+							<div class="search__toggler-dropdown">
+								<button class="search__toggler-btn active" type="button" data-tab>По сайту</button>
+								<button class="search__toggler-btn" type="button" data-tab>В каталоге</button>
+								<button class="search__toggler-btn" type="button" data-tab>В блоге</button>
+							</div>
+						</div>
+						<input class="search__input" type="search" placeholder="Поиск по каталогу">
+						<button class="search__submit" type="button" aria-label="Закрыть поиск"
+								data-search-close="">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+							</svg>
+						</button>
+						<button class="search__close" type="button" aria-label="Закрыть поиск" data-search-close="">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.97 47.97">
+								<path
+										d="M28.23,24,47.09,5.12A3,3,0,0,0,42.85.88L24,19.74,5.12.88A3,3,0,0,0,.88,5.12L19.74,24,.88,42.85A3,3,0,0,0,3,48a3,3,0,0,0,2.12-.88L24,28.23,42.85,47.09a3,3,0,0,0,4.24-4.24Z">
+								</path>
+							</svg>
+						</button>
+					</div>
+				</form>
+				<!-- search -->
+				<form class="header__search search" data-search-panel data-tabs="search, 2" hidden>
+					<div class="search__inner">
+						<div class="search__toggler">
+							<div class="search__toggler-head">
+								<span class="search__toggler-value">По сайту</span>
+								<span class="search__toggler-icon">
+									<svg style="transform: rotate(90deg);">
+										<use xlink:href="./assets/img/icons/sprite.svg#arr-tr-right"></use>
+									</svg>
+								</span>
+							</div>
+							<div class="search__toggler-dropdown">
+								<button class="search__toggler-btn active" type="button" data-tab>По сайту</button>
+								<button class="search__toggler-btn" type="button" data-tab>В каталоге</button>
+								<button class="search__toggler-btn" type="button" data-tab>В блоге</button>
+							</div>
+						</div>
+						<input class="search__input" type="search" placeholder="Поиск по блогу">
+						<button class="search__submit" type="button" aria-label="Закрыть поиск"
+								data-search-close="">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+							</svg>
+						</button>
+						<button class="search__close" type="button" aria-label="Закрыть поиск" data-search-close="">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.97 47.97">
+								<path
+										d="M28.23,24,47.09,5.12A3,3,0,0,0,42.85.88L24,19.74,5.12.88A3,3,0,0,0,.88,5.12L19.74,24,.88,42.85A3,3,0,0,0,3,48a3,3,0,0,0,2.12-.88L24,28.23,42.85,47.09a3,3,0,0,0,4.24-4.24Z">
+								</path>
+							</svg>
+						</button>
+					</div>
+				</form>
                 <!-- row -->
                 <div class="d-none d-md-flex header__btns">
                     <!-- search toggle -->

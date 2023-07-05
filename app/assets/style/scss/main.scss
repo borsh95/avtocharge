@@ -19,6 +19,11 @@ body {
 
 html {
 	scrollbar-gutter: stable;
+	scroll-padding-top: var(--header-height);
+	
+	@include mobile {
+		font-size: 14px;
+	}
 }
 
 ::-webkit-scrollbar {
@@ -56,8 +61,21 @@ html {
 	width: 100%;
 	max-width: 1640px;
 
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 	&--sm {
-		max-width: 1185px;
+		max-width: 1200px;
+
+		.container & {
+			max-width: 1170px;
+		}
+
+		.section__title {
+			margin-bottom: 40px;
+		}
 	}
 
 	@include table {
@@ -87,7 +105,7 @@ html {
 
 	&--underline {
 		position: relative;
-		padding-bottom: getEm(19, 30);
+		padding-bottom: getEm(19, 28);
 
 		&::before {
 			content: "";
@@ -105,6 +123,17 @@ html {
 	&--color {
 		text-transform: uppercase;
 		color: var(--color-primary);
+	}
+
+	&--position {
+		&_left {
+			text-align: left;
+
+			&::before {
+				left: 0;
+				transform: none;
+			}
+		}
 	}
 }
 
@@ -170,7 +199,7 @@ html {
 		}
 	}
 
-	a {
+	a:not(.btn) {
 		color: var(--color-primary);
 
 		&:hover {
@@ -201,6 +230,14 @@ html {
 		ul,
 		ol {
 			margin-top: 0;
+		}
+	}
+
+	.list-custom {
+		line-height: (22/18);
+
+		li {
+			margin-bottom: getEm(20, 18);
 		}
 	}
 

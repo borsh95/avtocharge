@@ -849,9 +849,10 @@
 
 	&__label {
 		position: relative;
+		flex-grow: 1;
 		display: flex;
 		align-items: center;
-		margin-right: getEm(42, 16);
+		margin-right: getEm(24, 16);
 		width: 107px;
 
 		&:last-child {
@@ -1100,7 +1101,9 @@
 	}
 }
 
-#ui-id-1.ui-widget {
+#ui-id-1.ui-widget,
+#ui-id-2.ui-widget,
+#ui-id-3.ui-widget {
 	position: fixed;
 	left: 50% !important;
 	width: 95vw !important;

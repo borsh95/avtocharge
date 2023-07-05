@@ -47,6 +47,13 @@ $utilities: (
 		property: "flex-grow",
 		values: 0 1,
 	),
+	"width": (
+		property: "width",
+		class: w,
+		values: (
+			100p: "100%",
+		),
+	),
 	"height": (
 		property: "height",
 		class: h,

@@ -1,4 +1,53 @@
 /*==================== COMMON BUTTON ====================*/
+/* btns */
+.btns {
+	$this: &;
+	
+	display: flex;
+	justify-content: initial;
+	align-items: center;
+
+	&__list {
+		--air-l: 20px;
+		--air-b: 20px;
+		
+		@include row-flex;
+		flex-grow: 1;
+		justify-content: inherit;
+
+		> * {
+			@include col;
+		}
+	}
+
+	&--filling {
+		&_full {
+			.btns__list {
+				flex-grow: 1;
+
+				> * {
+					flex-grow: 1;
+				}
+			}
+		}
+	}
+
+	&--direction {
+		&_col {
+			.btns__list {
+				align-items: initial;
+				flex-direction: column;
+			}
+		}
+	}
+
+	&--no-wrap {
+		#{$this}__list {
+			flex-wrap: nowrap;
+		}
+	}
+}
+
 %baseBtn {
 	cursor: pointer;
 	position: relative;
@@ -9,7 +58,7 @@
 }
 
 %baseView {
-	--padding: 8px 16px;
+	--padding: #{getEm(8, 18)} #{getEm(32, 18)};
 	--height: 45px;
 	--fz: 18px;
 	--border-width: 2px;
@@ -28,7 +77,7 @@
 .btn {
 	@extend %baseBtn;
 	@extend %baseView;
-	border: solid var(--color-primary);
+	border: var(--border-width) solid var(--color-primary);
 	transition: all $duration;
 
 	&:hover {

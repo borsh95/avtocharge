@@ -109,6 +109,15 @@
 	&__specifications {
 		--air-l: #{getEm(35, 18)};
 		margin-top: getEm(38, 18);
+
+		[href] {
+			color: var(--color-primary);
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
 	&__propertys {

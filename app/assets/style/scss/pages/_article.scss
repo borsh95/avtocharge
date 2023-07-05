@@ -4,7 +4,7 @@
 
 .article-fl {
 	.container {
-		max-width: 975px;
+		max-width: 1230px;
 
 		&::after {
 			content: "";
@@ -16,8 +16,8 @@
 	&__head {
 		display: flex;
 		flex-direction: column;
-		min-height: 600px;
-		font-size: 25px;
+		min-height: 500px;
+		font-size: 22px;
 		color: #fff;
 
 		&-container {
@@ -43,24 +43,32 @@
 				content: "";
 				background-color: rgba(0, 0, 0, 0.2);
 			}
+
+			&--blackout {
+				&::before {
+					content: "";
+					background-color: rgba(0, 0, 0, 0.3);
+					backdrop-filter: blur(5px);
+				}
+			}
 		}
 
 		&-textBox {
 			margin-top: auto;
-			padding: 40px 0 getPr(135, 1920);
+			padding: 40px 0 45px;
 			width: 100%;
 
 			h1,
 			h2 {
 				margin: 0;
-				font-weight: 700;
-				font-size: getEm(45, 25);
+				font-weight: 900;
+				font-size: getEm(40, 22);
 				line-height: (54, 45);
 			}
 
 			p {
-				margin-top: getEm(17, 25);
-				line-height: (35/25);
+				margin-top: getEm(15, 22);
+				line-height: 1.44;
 			}
 		}
 
@@ -133,8 +141,8 @@
 
 	@include desctop-mid {
 		&__head {
-			min-height: 500px;
-			font-size: 22px;
+			min-height: 450px;
+			font-size: 20px;
 		}
 
 		&__body {
@@ -148,7 +156,7 @@
 	@include table {
 		&__head {
 			min-height: 400px;
-			font-size: 20px;
+			font-size: 18px;
 		}
 
 		&__body {
@@ -164,17 +172,18 @@
 	}
 	@include mobile {
 		&__head {
-			min-height: 440px;
-			font-size: 20px;
+			min-height: 420px;
+			font-size: 16px;
+			border-radius: 0px 0px 20px 20px;
+			overflow: hidden;
 
 			&-textBox {
-				margin: auto 0;
 				padding-bottom: 40px;
 			}
 
 			h1,
 			h2 {
-				font-size: getEm(24, 18);
+				font-size: 22px;
 			}
 		}
 		&__body {

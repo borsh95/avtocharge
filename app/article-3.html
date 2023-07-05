@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta id="viewport" content="width=device-width, initial-scale=1.0">
+	<meta id="author" content="ArtBro">
+	<title>Статья</title>
+	<link rel="stylesheet" href="./assets/style/css/libraries/swiper-bundle.min.css">
+	<link rel="stylesheet" href="./assets/style/css/style.css">
+</head>
+
+<body>
+	<div class="page article-pg">
+		<a class="fixed-to-element-btn scroll-to" href="#selection_charger">Подбор зарядки</a>
+		<!-- HEADER -->
+		<header class="header">
+			<!-- header top -->
+			<div class="header__top">
+				<div class="header__top-container container">
+					<!-- header top left -->
+					<div class="header__top-left">
+						<!-- massangers -->
+						<div class="header__sci sci">
+							<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--phone" href="tel:+78125651163">
+								+7&nbsp;(812)&nbsp;565-11-63</span>
+							</a>&ensp;|
+							<a class="sci__link sci__link--phone" href="tel:+74991109962">
+								+7&nbsp;(499)&nbsp;110-99-62</span>
+							</a>
+						</div>
+						<div class="firm-info firm-info--clock">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+								</use>
+							</svg>
+							пн-пт 09:00 - 19:00
+						</div>
+						<a class="d-lg-none firm-info firm-info--mail" href="info@avtocharge.ru">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+								</use>
+							</svg>
+							info@avtocharge.ru
+						</a>
+					</div>
+					<!-- header top right -->
+					<div class="header__top-right">
+						<div class="header__sci sci">
+							<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+								</svg>
+							</a>
+							<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+								</svg>
+							</a>
+						</div>
+						<!-- button -->
+						<button class="header__callback btn-t btn-t--size_l js-openModal" aria-label="Заказать звонок"
+							data-type-modal="application">Заказать
+							звонок
+						</button>
+						<!-- row -->
+						<div class="header__btns">
+							<!-- search toggle -->
+							<button class="header__search-toggle" button="button" aria-label="Показать поиск"
+								data-search-toggle="">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+								</svg>
+							</button>
+							<div class="icon-link-wrap icon-link-wrap--account">
+								<a class="icon-link" href="#">
+									<span class="icon-link__icon-wrap">
+										<svg class="icon-link__ic">
+											<use xlink:href="./assets/img/icons/sprite.svg#user"></use>
+										</svg>
+									</span>
+								</a>
+								<div class="icon-link-drop">
+									<a href="#">Авторизация</a>
+									<span href="#">Профиль</span>
+									<a href="#">История заказов</a>
+								</div>
+							</div>
+							<div class="icon-link-wrap icon-link-wrap--favourites">
+								<a class="icon-link" href="#">
+									<span class="icon-link__icon-wrap">
+										<svg class="icon-link__ic">
+											<use xlink:href="./assets/img/icons/sprite.svg#heart"></use>
+										</svg>
+										<strong>0</strong>
+									</span>
+								</a>
+							</div>
+							<div class="icon-link-wrap icon-link-wrap--basket">
+								<a class="icon-link" href="#">
+									<span class="icon-link__icon-wrap">
+										<svg class="icon-link__ic">
+											<use xlink:href="./assets/img/icons/sprite.svg#basket"></use>
+										</svg>
+										<strong>0</strong>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header__container container">
+				<!-- header bottom -->
+				<div class="header__bottom">
+					<!-- logo -->
+					<a class="header__logo logo" href="#">
+						<div class="logo__img">
+							<img src="./assets/img/logo.svg" alt="logo">
+						</div>
+						<div class="logo__text">Онлайн-гипермаркет зарядных станций</div>
+					</a>
+					<!-- hamburger -->
+					<button class="header__hamburger hamburger" type="button">
+						<span></span>
+						<b>Меню</b>
+					</button>
+					<!-- mobile tel -->
+					<a class="firm-info firm-info--phone" href="tel:+78125651163">
+						<svg class="firm-info__ic">
+							<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+							</use>
+						</svg>
+					</a>
+					<!-- burger -->
+					<div class="header__burger">
+						<div class="header__burger-inner">
+							<div class="d-none d-md-flex align-items">
+								<div>
+									<div class="firm-info firm-info--clock mb-8">
+										<svg class="firm-info__ic">
+											<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+											</use>
+										</svg>
+										пн-пт 09:00 - 19:00
+									</div>
+									<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+										<svg class="firm-info__ic">
+											<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+											</use>
+										</svg>
+										info@avtocharge.ru
+									</a>
+								</div>
+								<!-- massangers -->
+								<div class="ml-auto header__sci sci">
+									<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+										<svg>
+											<use xlink:href="./assets/img/icons/sprite.svg#sci__viber"></use>
+										</svg>
+									</a>
+									<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+										<svg>
+											<use xlink:href="./assets/img/icons/sprite.svg#sci__wp"></use>
+										</svg>
+									</a>
+									<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+										<svg>
+											<use xlink:href="./assets/img/icons/sprite.svg#sci__tg"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
+							<!-- separable links -->
+							<div class="separable-links d-none d-md-flex">
+								<a href="#">Для частного использования</a>
+								<a href="#">Решения для бизнеса</a>
+								<a href="#">Для гос предприятий</a>
+								<a href="#">Для оптовых покупателей</a>
+							</div>
+							<!-- navigation -->
+							<nav class="header__nav">
+								<ul class="header__menu menu js-tree-menu lvl-1" data-type-menu="accordion">
+									<li class="menu__item menu__item--drop first">
+										<button class="menu__item-toggle hamburger" type="button"
+											aria-label="Открыть подменю">
+											<span></span>
+										</button>
+										<a class="menu__link" href="#"><span>Каталог</span></a>
+										<span class="menu__arr js-tree-menu__btn">
+											<svg>
+												<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+												</use>
+											</svg>
+										</span>
+										<ul class="menu__submenu lvl-2">
+											<li class="menu__item first">
+												<div class="menu__item-head">
+													<a class="menu__link" href="#">
+														<span>Зарядные станции</span>
+													</a>
+													<span class="menu__arr js-tree-menu__btn">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</div>
+												<!-- MEGA MENU -->
+												<ul class="menu__submenu menu__submenu--mega lvl-3">
+													<li class="menu__item">
+														<div class="menu__item-head">
+															<span class="menu__link">Тип</span>
+															<span class="menu__arr js-tree-menu__btn">
+																<svg>
+																	<use
+																		xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+																	</use>
+																</svg>
+															</span>
+														</div>
+														<ul class="menu__submenu lvl-4">
+															<li class="menu__item">
+																<a class="menu__link" href="#">Настенные</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Быстрые</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Переносные</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Напольные</a>
+															</li>
+														</ul>
+													</li>
+													<li class="menu__item">
+														<div class="menu__item-head">
+															<span class="menu__link">Бренд</span>
+															<span class="menu__arr js-tree-menu__btn">
+																<svg>
+																	<use
+																		xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+																	</use>
+																</svg>
+															</span>
+														</div>
+														<ul class="menu__submenu lvl-4">
+															<li class="menu__item">
+																<a class="menu__link" href="#">ABB</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">ABL</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Juice booster</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Keba</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Kostad</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Mercedes</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Schneider electric</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Setec power</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Wallbox</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Webasto</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Парус электро</a>
+															</li>
+														</ul>
+													</li>
+													<li class="menu__item">
+														<div class="menu__item-head">
+															<span class="menu__link">Мощность</span>
+															<span class="menu__arr js-tree-menu__btn">
+																<svg>
+																	<use
+																		xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+																	</use>
+																</svg>
+															</span>
+														</div>
+														<ul class="menu__submenu lvl-4">
+															<li class="menu__item">
+																<a class="menu__link" href="#">11 кВт</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">22 кВт</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">150 кВт</a>
+															</li>
+														</ul>
+													</li>
+													<li class="menu__item menu__item--cols_2">
+														<div class="menu__item-head">
+															<span class="menu__link">Марка авто</span>
+															<span class="menu__arr js-tree-menu__btn">
+																<svg>
+																	<use
+																		xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+																	</use>
+																</svg>
+															</span>
+														</div>
+														<ul class="menu__submenu lvl-4">
+															<li class="menu__item">
+																<a class="menu__link" href="#">Tesla</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">BMW i3</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Audi e-tron</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Nissan Leaf</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Jaguar Pace</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Porsche</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Tesla</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">BMW i3</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Audi e-tron</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Nissan Leaf</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Jaguar Pace</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Porsche</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">BMW i3</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Audi e-tron</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Nissan Leaf</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Jaguar Pace</a>
+															</li>
+															<li class="menu__item">
+																<a class="menu__link" href="#">Porsche</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li class="menu__item">
+												<div class="menu__item-head">
+													<a class="menu__link" href="#">
+														<span>Комплектующие</span>
+													</a>
+													<span class="menu__arr js-tree-menu__btn">
+														<svg>
+															<use
+																xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+															</use>
+														</svg>
+													</span>
+												</div>
+												<!-- MEGA MENU -->
+												<ul class="menu__submenu menu__submenu--mega lvl-3">
+													<li class="menu__item">
+														<a class="menu__link" href="#">Зарядные кабели</a>
+													</li>
+													<li class="menu__item">
+														<a class="menu__link" href="#">Переходники (адаптеры)</a>
+													</li>
+													<li class="menu__item">
+														<a class="menu__link" href="#">Стойки (колонны) для монтажа</a>
+													</li>
+													<li class="menu__item">
+														<a class="menu__link" href="#">Держатели для зарядного
+															кабеля</a>
+													</li>
+													<li class="menu__item">
+														<a class="menu__link" href="#">Шкафы (блоки) управления</a>
+													</li>
+													<li class="menu__item">
+														<a class="menu__link" href="#">Наборы комплектующих</a>
+													</li>
+													<li class="menu__item">
+														<a class="menu__link" href="#">Контроллеры для зарядных
+															станций</a>
+													</li>
+													<li class="menu__item">
+														<a class="menu__link" href="#">Тестеры для зарядных станций</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Сотрудничество</span></a>
+									</li>
+									<li class="menu__item menu__item--drop">
+										<a class="menu__link" href="#"><span>База знаний</span></a>
+										<span class="menu__arr js-tree-menu__btn">
+											<svg>
+												<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+												</use>
+											</svg>
+										</span>
+									</li>
+									<li class="menu__item active">
+										<span class="menu__link">
+											<span>О нас</span>
+										</span>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Доставка и оплата</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Портфолио</span></a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#"><span>Контакты</span></a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- search -->
+					<form class="header__search search" data-search-panel>
+						<div class="search__inner">
+							<input class="search__input" type="search" placeholder="Поиск">
+							<button class="search__submit" type="button" aria-label="Закрыть поиск"
+								data-search-close="">
+								<svg>
+									<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+								</svg>
+							</button>
+							<button class="search__close" type="button" aria-label="Закрыть поиск" data-search-close="">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.97 47.97">
+									<path
+										d="M28.23,24,47.09,5.12A3,3,0,0,0,42.85.88L24,19.74,5.12.88A3,3,0,0,0,.88,5.12L19.74,24,.88,42.85A3,3,0,0,0,3,48a3,3,0,0,0,2.12-.88L24,28.23,42.85,47.09a3,3,0,0,0,4.24-4.24Z">
+									</path>
+								</svg>
+							</button>
+						</div>
+					</form>
+					<!-- row -->
+					<div class="d-none d-md-flex header__btns">
+						<!-- search toggle -->
+						<button class="header__search-toggle" button="button" aria-label="Показать поиск"
+							data-search-toggle="">
+							<svg>
+								<use xlink:href="./assets/img/icons/sprite.svg#loupe"></use>
+							</svg>
+						</button>
+						<div class="icon-link-wrap icon-link-wrap--account">
+							<a class="icon-link" href="#">
+								<span class="icon-link__icon-wrap">
+									<svg class="icon-link__ic">
+										<use xlink:href="./assets/img/icons/sprite.svg#user"></use>
+									</svg>
+								</span>
+							</a>
+							<div class="icon-link-drop">
+								<a href="#">Авторизация</a>
+								<span href="#">Профиль</span>
+								<a href="#">История заказов</a>
+							</div>
+						</div>
+						<div class="icon-link-wrap icon-link-wrap--favourites">
+							<a class="icon-link" href="#">
+								<span class="icon-link__icon-wrap">
+									<svg class="icon-link__ic">
+										<use xlink:href="./assets/img/icons/sprite.svg#heart"></use>
+									</svg>
+									<strong>0</strong>
+								</span>
+							</a>
+						</div>
+						<div class="icon-link-wrap icon-link-wrap--basket">
+							<a class="icon-link" href="#">
+								<span class="icon-link__icon-wrap">
+									<svg class="icon-link__ic">
+										<use xlink:href="./assets/img/icons/sprite.svg#basket"></use>
+									</svg>
+									<strong>0</strong>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- BREAD CRUMB -->
+		<div class="bread-crumb">
+			<div class="bread-crumb__container container">
+				<a href="#" class="bread-crumb__item">Главная</a>
+				<span class="bread-crumb__item">База знаний</span>
+			</div>
+		</div>
+		<div class="content-wrap">
+			<!-- MAIN -->
+			<main>
+				<div class="article-fl">
+					<!-- article head -->
+					<div class="article-fl__head">
+						<div class="article-fl__head-container container-l">
+							<!-- bg -->
+							<div class="article-fl__head-bg article-fl__head-bg--blackout">
+								<img class="fit-cover" src="./assets/img/pages/article-fl/bg-2.png" alt="">
+							</div>
+							<!-- content -->
+							<div class="article-fl__head-textBox">
+								<div class="container">
+									<h1>
+										Советы по установке зарядной станции в паркинге
+									</h1>
+									<p>
+										Самое главное правило при установке собственной зарядной станции — максимальная
+										осторожность. Только профессиональная установка и ввод станции в эксплуатацию
+										обеспечит защиту домашней электросети от перегрузки. В статье мы расскажем, на
+										какие моменты нужно обратить внимание, планируя монтаж собственной зарядной
+										станции, и ответим на вопросы: Почему выгодно установить собственную зарядную
+										станцию?
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- article body -->
+					<div class="article-fl__body text text--lh_s">
+						<div class="container">
+							<div class="title-1 text-start" data-toggle="refs" style="cursor: pointer;">
+								<span>Содержание:</span>
+								<span class="d-none d-sm-inline-block ml-2e icon icon--active_turn icon--size_16"
+									style="vertical-align: middle;">
+									<svg width="16" height="16" viewBox="0 0 30 18" xmlns="http://www.w3.org/2000/svg">
+										<g>
+											<path
+												d="M16.0708 16.8206L29.5571 3.32971C30.1476 2.73774 30.1476 1.77865 29.5571 1.18519C28.9667 0.593218 28.0076 0.593218 27.4171 1.18519L15.0008 13.606L2.58451 1.18668C1.99403 0.594712 1.03495 0.594712 0.442979 1.18668C-0.147496 1.77865 -0.147496 2.73923 0.442979 3.3312L13.9294 16.8221C14.5137 17.4051 15.4879 17.4051 16.0708 16.8206Z"
+												fill="inherit" />
+										</g>
+
+									</svg>
+								</span>
+							</div>
+							<style>
+								@media (max-width: 768px) {
+									.refs-list {
+										display: none;
+									}
+								}
+							</style>
+							<ul class="refs-list" data-content="refs">
+								<li>
+									<a href="#1">Частный дом</a>
+								</li>
+								<li>
+									<a class="scroll-to"
+										href="top-zaryadnyix-stanczij-dlya-zeekr-001/#Kakuyu-stanciyu-vybraty-dlya-zaryadki-Zeekr-001?">Многоквартирный
+										дом. Станция будет находиться на прилегающей территории</a>
+								</li>
+								<li>
+									<a href="#">Многоквартирный дом. ЭЗС будет находиться на подземном паркинге</a>
+								</li>
+								<li><a href="#">Требования к установке ЭЗС на подземных паркингах</a></li>
+								<li><a href="#">Требования к зарядным станциям</a></li>
+							</ul>
+
+							<div class="mt-76 mt-lg-56 fz-18" id="1">
+								<p>
+									В зависимости от емкости аккумулятора и мощности зарядки, для каждой модели
+									электромобиля и гибрида установлена различная продолжительность зарядки. Вам, как
+									водителю, важно знать, сколько времени будет держаться заряд вашего электромобиля.
+								</p>
+								<p>
+									В нашей базе перечислены основные модели электромобилей, емкость их аккумулятора,
+									мощность зарядки и запас хода на одном заряде. Также вы сможете оценить, насколько
+									быстрее электромобиль будет заряжаться на зарядной станции.
+								</p>
+							</div>
+
+							<div class="table-wrap">
+								<table class="table w-100p">
+								<colgroup>
+									<col width="49" />
+									<col width="48" />
+									<col width="61" />
+									<col width="49" />
+									<col width="61" />
+									<col width="49" />
+									<col width="48" />
+									<col width="61" />
+									<col width="48" />
+									<col width="61" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th class="text-center" colspan="5">
+											<p dir="ltr"><span>Медные жилы проводов и кабелей</span></p>
+										</th>
+										<th class="text-center" colspan="5">
+											<p dir="ltr"><span>Алюминиевые жилы проводов и кабелей</span></p>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td rowspan="2">
+											<p dir="ltr">
+												<span>Сечение жил, мм<sup>2</sup></span>
+											</p>
+										</td>
+										<td colspan="2">
+											<p dir="ltr"><span>Напряжение 220 В</span></p>
+										</td>
+										<td colspan="2">
+											<p dir="ltr"><span>Напряжение 380 В</span></p>
+										</td>
+										<td rowspan="2">
+											<p dir="ltr"><span>Сечение жил, мм<sup>2</sup></span></p>
+										</td>
+										<td colspan="2">
+											<p dir="ltr"><span>Напряжение 220 В</span></p>
+										</td>
+										<td colspan="2">
+											<p dir="ltr"><span>Напряжение 380 В</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>Ток, В</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>Мощность, кВт</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>Ток, В</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>Мощность, кВт</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>Ток, В</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>Мощность, кВт</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>Ток, В</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>Мощность, кВт</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>1,5</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>19</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>4,1</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>16</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>10,5</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>2,5</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>22</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>4,4</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>19</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>12,5</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>2,5</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>27</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>5,9</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>25</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>16,5</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>4</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>28</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>6,1</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>23</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>15,1</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>4</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>38</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>8,3</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>30</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>19,8</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>6</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>36</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>7,9</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>30</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>19,8</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>6</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>46</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>10,1</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>40</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>26,4</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>10</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>50</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>11</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>39</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>25,7</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>10</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>70</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>15,4</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>50</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>33</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>16</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>60</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>13,2</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>55</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>36,3</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>16</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>85</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>18,7</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>75</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>49,5</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>25</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>85</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>18,7</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>70</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>46,2</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>25</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>115</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>25,3</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>90</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>59,4</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>35</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>100</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>22</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>85</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>56,1</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>35</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>135</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>29,7</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>115</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>75,9</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>50</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>135</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>29,7</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>110</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>72,6</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>50</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>175</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>38,5</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>145</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>95,7</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>70</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>165</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>36,3</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>140</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>92,4</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>70</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>215</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>47,3</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>180</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>118,8</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>95</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>200</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>44</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>170</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>112,2</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>95</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>260</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>57,2</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>220</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>145,2</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>120</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>230</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>50,6</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>200</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>132</span></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p dir="ltr"><span>120</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>300</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>66</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>260</span></p>
+										</td>
+										<td>
+											<p dir="ltr"><span>171,6</span></p>
+										</td>
+										<td class="text-center" colspan="5">&mdash;</td>
+									</tr>
+								</tbody>
+								</table>
+							</div>
+						</div>
+						<!--
+					<div class="container" style="max-width: 1640px">
+						<div class="section">
+							<h2 class="title-2 section__title">
+								Выберите марку электромобиля для расчета времени зарядки:
+							</h2>
+							<div class="selection-scrollable-wrap">
+								<div class="selection-scrollable__row">
+									<div class="selection-scrollable__select select-custom">
+										<select class="js-selection-brand" style="display: none;">
+											<option value="null">Марка вашего автомобиля</option>
+											<option value="AixamPro">Aixam Pro</option>
+											<option value="Audi">Audi</option>
+											<option value="Bentley">Bentley</option>
+											<option value="BMW">BMW</option>
+											<option value="BYD">BYD</option>
+											<option value="Chevrolet">Chevrolet</option>
+											<option value="CITROEN">CITROËN</option>
+											<option value="DS">DS</option>
+											<option value="eGo">e.Go</option>
+											<option value="Ferrari">Ferrari</option>
+											<option value="Fiat">Fiat</option>
+											<option value="Fisker">Fisker</option>
+											<option value="Ford">Ford</option>
+											<option value="Honda">Honda</option>
+											<option value="Hyundai">Hyundai</option>
+											<option value="Iveco">Iveco</option>
+											<option value="Jaguar">Jaguar</option>
+											<option value="Jeep">Jeep</option>
+											<option value="Kia">Kia</option>
+											<option value="LandRover">Land Rover</option>
+											<option value="Lexus">Lexus</option>
+											<option value="Maxus">Maxus</option>
+											<option value="MercedesBenz">Mercedes-Benz</option>
+											<option value="MicroMobilitySystems">Micro Mobility Systems</option>
+											<option value="Mini">Mini</option>
+											<option value="Mitsubishi">Mitsubishi</option>
+											<option value="NISSAN">NISSAN</option>
+											<option value="Opel">Opel</option>
+											<option value="Peugeot">Peugeot</option>
+											<option value="Polestar">Polestar</option>
+											<option value="Porsche">Porsche</option>
+											<option value="Renault">Renault</option>
+											<option value="Rimac">Rimac</option>
+											<option value="Seat">Seat</option>
+											<option value="Skoda">Skoda</option>
+											<option value="smart">smart</option>
+											<option value="SonoMotors">Sono Motors</option>
+											<option value="StreetScooter">StreetScooter</option>
+											<option value="Tazzari">Tazzari</option>
+											<option value="Tesla">Tesla</option>
+											<option value="Toyota">Toyota</option>
+											<option value="Volkswagen">Volkswagen</option>
+											<option value="Volvo">Volvo</option>
+										</select>
+									</div>
+									<button class="selection-scrollable__action btn js-selection-action" type="button">
+										Выбрать
+									</button>
+								</div>
+								<div class="selection-scrollable__bg">
+									<img src="./assets/img/other/energy-circle.svg" alt="">
+									<img src="./assets/img/other/stopwatch.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>-->
+					</div>
+				</div>
+				<!-- news -->
+				<section class="news-b section">
+					<div class="news-b__container container">
+						<h2 class="title-1 title--underline section__title">Похожие новости</h2>
+					</div>
+					<!-- slider wrap -->
+					<div class="hiding-slider-wrap slider-wrap">
+						<div class="container">
+							<!-- slider -->
+							<div class="hiding-slider swiper">
+								<div class="swiper-wrapper">
+									<!-- slider -->
+									<article class="news-note hiding-slider__slide swiper-slide">
+										<div class="news-note__img">
+											<picture>
+												<source srcset="./assets/img/components/news-notes/img-1.webp"
+													type="image/webp">
+												<img src="./assets/img/components/news-notes/img-1.jpg" alt="">
+											</picture>
+										</div>
+										<div class="news-note__textBox">
+											<h4 class="news-note__title">Сеть электрозаправочных станций от Audi</h4>
+											<div class="news-note__text">
+												<p>Компания Audi разрабатывает концепцию электрозаправочных станций
+													быстрой
+													зарядки для электромобилей собственной марки.</p>
+											</div>
+											<div class="news-note__bottom">
+												<div class="note-meta">
+													<div class="note-meta__item note-metadata__item--date">
+														<svg>
+															<use xlink:href="./assets/img/icons/sprite.svg#clock_fill">
+															</use>
+														</svg>
+														29/08/2021
+													</div>
+												</div>
+												<a class="news-note__more btn-go" href="#">
+													<svg>
+														<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+														</use>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</article>
+									<!-- slider -->
+									<article class="news-note hiding-slider__slide swiper-slide">
+										<div class="news-note__img">
+											<picture>
+												<source srcset="./assets/img/components/news-notes/img-1.webp"
+													type="image/webp">
+												<img src="./assets/img/components/news-notes/img-1.jpg" alt="">
+											</picture>
+										</div>
+										<div class="news-note__textBox">
+											<h4 class="news-note__title">Сеть электрозаправочных станций от Audi</h4>
+											<div class="news-note__text">
+												<p>Компания Audi разрабатывает концепцию электрозаправочных станций
+													быстрой
+													зарядки для электромобилей собственной марки.</p>
+											</div>
+											<div class="news-note__bottom">
+												<div class="note-meta">
+													<div class="note-meta__item note-metadata__item--date">
+														<svg>
+															<use xlink:href="./assets/img/icons/sprite.svg#clock_fill">
+															</use>
+														</svg>
+														29/08/2021
+													</div>
+												</div>
+												<a class="news-note__more btn-go" href="#">
+													<svg>
+														<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+														</use>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</article>
+									<!-- slider -->
+									<article class="news-note hiding-slider__slide swiper-slide">
+										<div class="news-note__img">
+											<picture>
+												<source srcset="./assets/img/components/news-notes/img-1.webp"
+													type="image/webp">
+												<img src="./assets/img/components/news-notes/img-1.jpg" alt="">
+											</picture>
+										</div>
+										<div class="news-note__textBox">
+											<h4 class="news-note__title">Сеть электрозаправочных станций от Audi</h4>
+											<div class="news-note__text">
+												<p>Компания Audi разрабатывает концепцию электрозаправочных станций
+													быстрой
+													зарядки для электромобилей собственной марки.</p>
+											</div>
+											<div class="news-note__bottom">
+												<div class="note-meta">
+													<div class="note-meta__item note-metadata__item--date">
+														<svg>
+															<use xlink:href="./assets/img/icons/sprite.svg#clock_fill">
+															</use>
+														</svg>
+														29/08/2021
+													</div>
+												</div>
+												<a class="news-note__more btn-go" href="#">
+													<svg>
+														<use xlink:href="./assets/img/icons/sprite.svg#arr-circ_right">
+														</use>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="footer__container container">
+				<!-- footer top -->
+				<div class="footer__top">
+					<!-- logo -->
+					<a class="footer__logo logo" href="#">
+						<img src="./assets/img/logo@light.svg" alt="logo">
+					</a>
+					<div class="footer__partners">
+						<p style="margin-bottom: 0.8em;">Наши партнеры по доставке</p>
+						<span class="b-row">
+							<a class="b-col" href="#" target="_blank">
+								<img src="./assets/img/components/delivery-partners/img-1.png" alt="">
+							</a>
+							<a class="b-col" href="#" target="_blank">
+								<img src="./assets/img/components/delivery-partners/img-2.png" alt="">
+							</a>
+						</span>
+					</div>
+				</div>
+				<!-- footer middle -->
+				<div class="footer__middle">
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p>
+							ООО “Элемент”
+						</p>
+						<p>
+							ИНН: 1177847044132
+						</p>
+						<p class="firm-info firm-info--clock">
+							<svg class="firm-info__ic">
+								<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__clock">
+								</use>
+							</svg>
+							пн-пт 09:00 - 19:00
+						</p>
+						<p>
+							<a class="firm-info firm-info--mail" href="info@avtocharge.ru">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__mail">
+									</use>
+								</svg>
+								info@avtocharge.ru
+							</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__catalog">
+						<p>
+							<a href="#">Зарядные станции</a>
+						</p>
+						<p>
+							<a href="#">Аксессуары</a>
+						</p>
+						<p>
+							<a href="#">Управление и учет зарядными станциями</a>
+						</p>
+						<p>
+							<a href="#">Политика конфеданциальности</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__delivery-parters">
+						<p>
+							Мы в Санкт-Петербурге:
+						</p>
+						<p>
+							Пискаревский проспект, д. 63б, офис 422
+						</p>
+						<p>
+							<a class="firm-info firm-info--phone" href="tel:+78125651163">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+									</use>
+								</svg>
+								+7&nbsp;(812)&nbsp;565-11-63
+							</a>
+						</p>
+					</div>
+					<!-- col -->
+					<div class="footer__middle-col footer__delivery-parters">
+						<p>
+							Мы в Москве:
+						</p>
+						<p>
+							Пискаревский проспект, д. 63б, офис 422
+						</p>
+						<p>
+							<a class="firm-info firm-info--phone" href="tel:+78125651163">
+								<svg class="firm-info__ic">
+									<use xlink:href="./assets/img/icons/firm-info/sprite.svg#firm-info__tel">
+									</use>
+								</svg>
+								+7&nbsp;(812)&nbsp;565-11-63
+							</a>
+						</p>
+					</div>
+
+					<div class="footer__middle-col footer__sci sci">
+						<a class="sci__link sci__link--viber" href="https://msngr.link/vi/78125651163">
+							<svg>
+								<use xlink:href="assets/templates/avto/img/icons/sprite.svg#sci__viber"></use>
+							</svg>
+						</a>
+						<a class="sci__link sci__link--wp" href="https://msngr.link/wa/78125651163">
+							<svg>
+								<use xlink:href="assets/templates/avto/img/icons/sprite.svg#sci__wp"></use>
+							</svg>
+						</a>
+						<a class="sci__link sci__link--tg" href="https://msngr.link/tg/78125651163">
+							<svg>
+								<use xlink:href="assets/templates/avto/img/icons/sprite.svg#sci__tg"></use>
+							</svg>
+						</a>
+					</div>
+
+					<!-- col -->
+					<div class="footer__middle-col">
+						<p class="footer__payment-systems">
+							<img src="./assets/img/components/payment-system/img-1.png" alt="">
+							<img src="./assets/img/components/payment-system/img-2.png" alt="">
+							<img src="./assets/img/components/payment-system/img-3.png" alt="">
+						</p>
+						<p>
+							Все цены указаны с учетом НДС и, <br>
+							возможно, плюс стоимость доставки
+						</p>
+						<p class="artBro">
+							<a class="artBro" href="https://cweb.by/" target="_blank">Создание и продвижение cweb.by</a>
+							<br>
+							&copy; Copyright
+							<script>
+								var currentTime = new Date();
+								var yearoffoundation = 2017;
+								var currentyear = currentTime.getFullYear();
+								if (yearoffoundation !== currentyear) {
+									document.write(yearoffoundation + " - " + currentyear);
+								} else {
+									document.write(currentyear);
+								}
+							</script>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="./assets/js/libraries/jquery.min.js"></script>
+	<!-- swiper js -->
+	<script src="./assets/js/libraries/swiper-bundle.min.js"></script>
+	<!-- fslightbox js -->
+	<script src="./assets/js/libraries/fslightbox.js"></script>
+	<!-- suctom select -->
+	<script src="./assets/js/libraries/jquery.custom-select.js"></script>
+	<!-- main js -->
+	<script src="./assets/js/main.js"></script>
+</body>
+
+</html>
+
+<div class="v-modal v-modal--size_m" data-type-modal="flash" data-period-display="0.4">
+	<div class="v-modal__inner v-modal__inner--centered">
+		<div class="v-modal__content">
+			<div class="v-modal__body">
+				<div class="v-modal__close close" data-dissmis="modal"></div>
+				<h4 class="v-modal__title fz-20 fz-sm-18 mb-24 mb-sm-20 color-primary text-start">Уважаемые посетители
+					сайта!</h4>
+				<div class="mb-4e lh-base fz-sm-14 text-start">
+					<p class="mb-4e">
+						Сегодня <b>08.12.2022</b> наши салоны работают <b>до 18:00</b> <br>
+						<b class="color-orange">
+							Оставьте заявку, и завтра мы вам перезвоним!
+						</b>
+					</p>
+				</div>
+				<a href="/o-kompanii/nashi-rabotyi" class="btn" data-dissmis="modal" style="width: 100%;">
+					<span>Оставить заявку</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

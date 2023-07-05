@@ -10,6 +10,24 @@ const breakPoint = {
 	tel: 480,
 }
 
+if (document.querySelector('header')) {
+	const headerEl = document.querySelector('header');
+
+	const setVariableHeightHeader = (el) => {
+		if (el) {
+			document.documentElement.style.setProperty("--header-height", headerEl.getBoundingClientRect().height + "px");
+		}
+	}
+
+	setTimeout(() => { setVariableHeightHeader(headerEl) }, 0);
+
+	['resize', 'load'].forEach(listener => {
+		window.addEventListener(listener, function () {
+			setVariableHeightHeader(headerEl);
+		});
+	});
+}
+
 /***** INITIALIZING PLUGINS ******/
 if (isElem('.fixblock')) {
 	const fixblockNodes = document.querySelectorAll('.fixblock');
@@ -44,21 +62,37 @@ if (window.$ && typeof window.$.fn.customSelect === 'function') {
 let scrollingWindow = scrollWindow();
 
 document.addEventListener('click', function (e) {
-	if (e.target.closest('.scroll-to[href*="#"]')) {
-		const link = e.target.closest('.scroll-to[href*="#"]');
+	if (e.target.closest('.scroll-to[href]')) {
+		const link = e.target.closest('.scroll-to[href]');
+
 		const id = link.hash;
-		const $section = document.querySelector(id);
 
-		if (!$section) return;
+		try {
+			const $section = document.querySelector(id);
 
-		e.preventDefault();
+			if (!$section) return;
 
-		const $header = document.querySelector('.header') || document.querySelector('header');
-		let coordsSection = window.pageYOffset + $section.getBoundingClientRect().top;
+			e.preventDefault();
 
-		coordsSection = coordsSection - $header.offsetHeight;
+			const $header = document.querySelector('.header') || document.querySelector('header');
+			let coordsSection = window.pageYOffset + $section.getBoundingClientRect().top;
 
-		scrollingWindow.startAmimationScroll(coordsSection);
+			coordsSection = coordsSection - $header.offsetHeight;
+
+			scrollingWindow.startAmimationScroll(coordsSection);
+		} catch (error) {
+			console.error(error);
+		}
+	} else if (e.target.closest('[data-toggle]')) {
+		const targetEl = e.target.closest('[data-toggle]')
+		const id = targetEl.dataset.toggle;
+
+		const contentEl = document.querySelector(`[data-content="${id}"]`);
+
+		if (!contentEl) return;
+
+		$(targetEl).toggleClass('active');
+		$(contentEl).slideToggle();
 	}
 })
 
@@ -69,7 +103,11 @@ if (isElem('.main-slider')) {
 	const swiper = new Swiper(sliderNode, {
 		effect: "coverflow",
 		grabCursor: true,
-		speed: 700,
+		speed: 1700,
+		autoplay: {
+			delay: 5000,
+			pauseOnMouseEnter: true,
+		},
 		spaceBetween: 20,
 		coverflowEffect: {
 			rotate: 50,
@@ -377,6 +415,112 @@ if (isElem('.sv-slider')) {
 }
 
 /****** CUSTOM PLUGIN ******/
+{
+	let isOpen = false;
+
+	document.addEventListener('click', function (e) {
+		if (e.target.closest('.search__toggler-head')) {
+			const parent = e.target.closest('.search__toggler');
+			parent.classList.toggle('open');
+
+			isOpen = parent.classList.contains('open');
+		} else if (isOpen && !e.target.closest('.search__toggler-head')) {
+			for (const item of document.querySelectorAll('.search__toggler')) {
+				item.classList.remove('open');
+			}
+		}
+	});
+
+	$(document).on('tabs:change', function(e) {
+		const $activeTabBtn = $(e.target).find(`[data-tab].active`);
+		
+		if ($activeTabBtn.length) {
+			const textContent = $activeTabBtn.text();
+
+			$('.search__toggler-value').each((_, item) => {
+				item.textContent = textContent;
+			});
+		}
+	})
+}
+
+(function () {
+	function findIndex($obj, $item) {
+		let index = null;
+
+		$obj.each((i, item) => {
+			if (item === $item[0]) {
+				index = i;
+			}
+		});
+
+		return index;
+	}
+
+	function initTabsItem($tabs, $tabsItemActive) {
+		let dataTabs = $tabs.attr('data-tabs');
+		dataTabs = dataTabs.split(/,\s*/)[0];
+
+		if (dataTabs) {
+			const $itemsTabs = $tabs.find('[data-tab]');
+
+			$itemsTabs.each(function (i) {
+				const $sectionsTabs = $(`[data-tabs="${dataTabs}, ${i}"]`);
+				const index = findIndex($itemsTabs, $tabsItemActive);
+				const $unloadedSrc = $sectionsTabs.find('[data-src]');
+
+				if (index !== i) {
+					$sectionsTabs.attr('hidden', true);
+				} else {
+					const $displayedTabs = $(`[data-tabs="${dataTabs}, ${index}"]`);
+					$displayedTabs.removeAttr('hidden');
+					const $itemsTabs = $displayedTabs.find('[data-tab]');
+					$itemsTabs.removeClass('active');
+					$itemsTabs.eq(index).addClass('active');
+
+
+					if ($unloadedSrc.length) {
+						$unloadedSrc.each((i, item) => {
+							const src = $(item).data('src');
+
+							$(item).attr('src', src).removeAttr('data-src');
+						});
+					}
+				}
+			});
+		}
+
+		$tabs.trigger('tabs:change');
+	}
+
+	$('[data-tabs]').each(function () {
+		const $tabs = $(this);
+		let $tabsItemActive = $tabs.find('[data-tab].active');
+
+		if ($tabsItemActive.length !== 1) {
+			const $tabsItems = $tabs.find('[data-tab]');
+
+			$tabsItems.removeClass('active');
+			$tabsItems.eq(0).addClass('active');
+			$tabsItemActive = $tabsItems.eq(0);
+		}
+
+		initTabsItem($tabs, $tabsItemActive);
+
+		$tabs.trigger("tabs:init");
+	});
+
+	$(document).on('click', '[data-tab]', function () {
+		const $tabsItem = $(this);
+		const $tabs = $tabsItem.closest('[data-tabs]');
+		const $tabsItems = $tabs.find('[data-tab]');
+
+		$tabsItems.not($tabsItem).removeClass('active');
+		$tabsItem.addClass('active');
+
+		initTabsItem($tabs, $tabsItem);
+	});
+}());
 
 //fixed header
 if (isElem('header')) {
@@ -466,20 +610,26 @@ if (isElem('[data-search-toggle]') && isElem('[data-search-panel]')) {
 	const panelSelector = '[data-search-panel]';
 	const searchBtnSelector = '[data-search-toggle]';
 	const closePanelSelector = '[data-search-close]';
-	const $searchPanel = document.querySelector(panelSelector);
-	const $searchInput = $searchPanel.querySelector('.search__input');
+	const $searchPanels = document.querySelectorAll(panelSelector);
+	
 	const toggleClass = 'open';
 
 	document.addEventListener('click', function (e) {
 		if (e.target.closest(searchBtnSelector)) {
-			$searchPanel.classList.toggle(toggleClass);
+			let $searchInput;
+			for	(const $item of $searchPanels) {
+				$searchInput = $item.querySelector('.search__input');
+				$item.classList.toggle(toggleClass);
+			}
 			$searchInput.focus();
 		}
 		else if (e.target.closest(closePanelSelector)
-			|| (!e.target.closest(panelSelector) && $searchPanel.classList.contains(toggleClass))) {
-			$searchPanel.classList.remove(toggleClass);
+			|| (!e.target.closest(panelSelector) && document.querySelector(`[data-search-panel].${toggleClass}`))) {
+			for	(const $item of $searchPanels) {
+				$item.classList.toggle(toggleClass);
+			}
 		}
-	})
+	});
 }
 
 // под меню с гамбургером внутри основного меню
